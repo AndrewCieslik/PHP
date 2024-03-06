@@ -1,0 +1,32 @@
+.body-background {
+    background-image: url('<?php echo _BACKGROUND_IMAGE_URL; ?>');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+form {
+    width: 400px;
+    margin: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+input {
+    width: 50%;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 200px;
+}
+
+.result-container {
+    width: 400px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    background-color: lightgrey;
+}
