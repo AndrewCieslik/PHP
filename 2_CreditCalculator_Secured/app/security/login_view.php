@@ -17,11 +17,10 @@
 		<label for="id_pass">pass: </label>
 		<input id="id_pass" type="password" name="pass" />
 	</fieldset>
-	<input type="submit" value="zaloguj" class="pure-button pure-button-primary"/>
+	<input type="submit" value="log in" class="pure-button pure-button-primary"/>
 </form>	
 
 <?php
-//wyświeltenie listy błędów, jeśli istnieją
 if (isset($messages)) {
 	if (count ( $messages ) > 0) {
 		echo '<ol style="padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #f88; width:300px;">';
