@@ -5,12 +5,14 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Kalkulator</title>
-	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href="<?php echo _APP_URL; ?>/css/style.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 
-<div style="width:90%; margin: 2em auto;">
-	<a href="<?php print(_APP_ROOT); ?>/app/security/logout.php" class="pure-button pure-button-active">Wyloguj</a>
+</head>
+<body style="background-image: url('<?php echo _BACKGROUND_IMAGE_URL; ?>');" class="body-background">
+
+<div style="width:30%; margin: 2em auto;">
+<a href="<?php print(_APP_ROOT); ?>/app/security/logout.php" class="pure-button custom-button">Wyloguj</a>
 </div>
 
 <div style="width:90%; margin: 2em auto;">
@@ -43,7 +45,7 @@ if (isset($messages)) {
 ?>
 
 <?php if (isset($result)){ ?>
-<div style="margin-top: 1em; padding: 1em; border-radius: 0.5em; background-color: #ff0; width:25em;">
+<div class = "result-container">
 <?php echo 'Wynik miesiecznej raty: '.$result; ?>
 </div>
 <?php } ?>
