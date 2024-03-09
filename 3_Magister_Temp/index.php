@@ -59,10 +59,7 @@ include "views/view_top.php";
 				<h3 class="tagline">
 					Nie polecamy brac kredytow, ani korzystania z innych instrumentow finansowych
 				</h3>
-				
-				<!-- Nice place to describe your site in a sentence or two -->
-				<p><a href="/download/" class="btn btn-default btn-lg">Download template now</a></p>
-	
+
 			</div> <!-- /col -->
 		</div> <!-- /row -->
 	
@@ -73,17 +70,17 @@ include "views/view_top.php";
 <section class="section" id="about">
 	<div class="container">
 	
-		<h2 class="text-center title">About me</h2>
+		<h2 class="text-center title">O aplikacji</h2>
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-2">    
-				<h5><strong>Where's my lorem ipsum?<br></strong></h5>
-				<p>Well, here it is: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, ullam, ducimus, eaque, ex autem est dolore illo similique quasi unde sint rerum magnam quod amet iste dolorem ad laudantium molestias enim quibusdam inventore totam fugit eum iusto ratione alias deleniti suscipit modi quis nostrum veniam fugiat debitis officiis impedit ipsum natus ipsa. Doloremque, id, at, corporis, libero laborum architecto mollitia molestiae maxime aut deserunt sed perspiciatis quibusdam praesentium consectetur in sint impedit voluptates! Deleniti, sequi voluptate recusandae facere nostrum?</p>    
+				<h5><strong>O Aplikacji<br></strong></h5>
+				<p>Aplikacja ma na celu trening w ramach zajec z tematyki aplikacji webowych</p>    
 			</div>
 			<div class="col-sm-4">
-				<h5><strong>More, more lipsum!<br></strong></h5>    
-				<p>Tempore, eos, voluptatem minus commodi error aut eaque neque consequuntur optio nesciunt quod quibusdam. Ipsum, voluptatibus, totam, modi perspiciatis repudiandae odio ad possimus molestias culpa optio eaque itaque dicta quod cupiditate reiciendis illo illum aspernatur ducimus praesentium quae porro alias repellat quasi cum fugiat accusamus molestiae exercitationem amet fugit sint eligendi omnis adipisci corrupti. Aspernatur.</p>    
-				<h5><strong>Author links<br></strong></h5>    
-				<p><a href="http://be.net/pozhilov9409">Behance</a> / <a href="https://twitter.com/serggg">Twitter</a> / <a href="http://linkedin.com/pozhilov">LinkedIn</a> / <a href="https://www.facebook.com/pozhilov">Facebook</a></p>
+				<h5><strong>Aplikacja rat kredytu<br></strong></h5>    
+				<p>Aplikacja przedstawia prosty kalkulator obliczania rat kredytu bankowego</p>    
+				<h5><strong>Autor: Andrzej<br></strong></h5>    
+				<p>Wiecej o mnie: <a href="https://github.com/andrewcieslik">Github</a></p>
 			</div>
 		</div>
 	</div>
@@ -167,6 +164,9 @@ include "views/view_top.php";
 	</div>
 </section>
 
+<?php
+include "views/view_footer.php";
+?>
 
 <!-- Load js libs only when the page is loaded. -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
