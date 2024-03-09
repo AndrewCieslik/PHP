@@ -24,6 +24,10 @@
 <!-- use "theme-invert" class on bright backgrounds, also try "text-shadows" class -->
 <body class="theme-invert">
 
+<?php
+include "views/view_top.php";
+?>
+
 <nav class="mainmenu">
 	<div class="container">
 		<div class="dropdown">
@@ -53,7 +57,6 @@
 
 				<!-- Short introductory (optional) -->
 				<h3 class="tagline">
-					Aplikacja testowa na potrzeby laboratorium<br>
 					Nie polecamy brac kredytow, ani korzystania z innych instrumentow finansowych
 				</h3>
 				
