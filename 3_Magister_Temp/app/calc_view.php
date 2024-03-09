@@ -12,7 +12,7 @@
         <label for="id_years">Liczba lat kredytu: </label>
         <input id="id_years" type="number" name="years" min="1" required value="<?php if (isset($years))
             print($years); ?>" /><br />
-        <input type="submit" value="Oblicz miesięczną ratę kredytu" />
+        <input type="submit" class="btn btn-default btn-lg" value="Oblicz miesięczną ratę kredytu" />
     </form>
 
     <?php
@@ -32,3 +32,4 @@
     <?php } ?>
 
 </div> 
+
