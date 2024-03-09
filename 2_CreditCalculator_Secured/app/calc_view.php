@@ -5,7 +5,8 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Kalkulator</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo _APP_URL; ?>/css/style.css">
+    <!--<link rel="stylesheet" type="text/css" href="<?php echo _APP_URL; ?>/css/style.css">
+-->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 
 </head>
@@ -17,7 +18,7 @@
 
 <div style="width:90%; margin: 2em auto;">
 
-<form action="<?php print(_APP_URL); ?>/app/calc.php" method="post">
+<form class="pure-form" action="<?php print(_APP_URL); ?>/app/calc.php" method="post">
         <label for="id_credit">Kwota kredytu: </label>
         <input id="id_credit" type="number" step="any" name="credit" min="1" required value="<?php if (isset($credit))
             print($credit); ?>" /><br />
