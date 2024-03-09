@@ -29,4 +29,4 @@ if (empty($messages)) {
     $result = number_format($monthly, 2, '.', '');
 }
 
-include 'calc_view.php';
+include 'calc_result.php';
