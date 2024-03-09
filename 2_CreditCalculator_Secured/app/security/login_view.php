@@ -17,7 +17,7 @@
 		<label for="id_pass">pass: </label>
 		<input id="id_pass" type="password" name="pass" />
 	</fieldset>
-	<input type="submit" value="log in" class="pure-button pure-button-primary"/>
+	<input type="submit" value="Zaloguj" class="pure-button pure-button-primary"/>
 </form>	
 
 <?php
