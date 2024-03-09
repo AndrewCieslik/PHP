@@ -5,8 +5,6 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Kalkulator</title>
-    <!--<link rel="stylesheet" type="text/css" href="<?php echo _APP_URL; ?>/css/style.css">
--->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 
 </head>
@@ -18,7 +16,8 @@
 
 <div style="width:90%; margin: 2em auto;">
 
-<form class="pure-form" action="<?php print(_APP_URL); ?>/app/calc.php" method="post">
+<form class="pure-form pure-form-stacked" action="<?php print(_APP_URL); ?>/app/calc.php" method="post">
+        <legend style="color: white">Zalogowano jako: <?php echo $role ?> </legend>
         <label for="id_credit">Kwota kredytu: </label>
         <input id="id_credit" type="number" step="any" name="credit" min="1" required value="<?php if (isset($credit))
             print($credit); ?>" /><br />
@@ -30,7 +29,7 @@
         <label for="id_years">Liczba lat kredytu: </label>
         <input id="id_years" type="number" name="years" min="1" required value="<?php if (isset($years))
             print($years); ?>" /><br />
-        <input type="submit" value="Oblicz miesięczną ratę" />
+        <input class="pure-button pure-button-primary" type="submit" value="Oblicz miesięczną ratę" />
     </form>
 
 <?php
@@ -45,11 +44,12 @@ if (isset($messages)) {
 }
 ?>
 
-<?php if (isset($result)){ ?>
-<div class = "result-container">
-<?php echo 'Wynik miesiecznej raty: '.$result; ?>
-</div>
-<?php } ?>
+<?php if (isset($result)): ?>
+    <div>
+        <p style="color: white">Wartość miesięcznej raty: <span class="result-value"><?php echo $result; ?> zł</span></p>
+    </div>
+<?php endif; ?>
+
 
 </div>
 
