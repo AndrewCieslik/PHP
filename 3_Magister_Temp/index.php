@@ -23,10 +23,11 @@
 
 <!-- use "theme-invert" class on bright backgrounds, also try "text-shadows" class -->
 <body class="theme-invert">
-
 <?php
-require_once 'config.php';
-include "views/view_top.php";
+    include "views/view_top.php";
+?>
+<?php
+    require_once 'config.php';
 ?>
 
 <nav class="mainmenu">
@@ -37,7 +38,7 @@ include "views/view_top.php";
 			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 				<li><a href="#head" class="active">Wstep</a></li>
 				<li><a href="#about">O aplikacji</a></li>
-				<li><a href="#themes">Oblicz kredyt</a></li>
+				<li><a href="#themes">Oblicz rate kredytu</a></li>
 				<li><a href="#contact">Kontakt</a></li>
 			</ul>
 		</div>
@@ -58,7 +59,7 @@ include "views/view_top.php";
 
 				<!-- Short introductory (optional) -->
 				<h3 class="tagline">
-					Nie polecamy brac kredytow, ani korzystania z innych instrumentow finansowych
+					Przestrzegamy przed roznymi instrumentami finansowymi
 				</h3>
 
 			</div> <!-- /col -->
