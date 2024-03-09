@@ -26,6 +26,7 @@
 <?php
     include "views/view_top.php";
 ?>
+
 <?php
     require_once 'config.php';
 ?>
