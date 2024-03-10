@@ -24,22 +24,12 @@
 <!-- use "theme-invert" class on bright backgrounds, also try "text-shadows" class -->
 <body class="theme-invert">
 <?php
-    include "views/view_top.php";
-?>
-
-<?php
     require_once 'config.php';
 ?>
-
 <?php
+    include "views/view_top.php";
     include "views/view_menu.php";
-?>
-
-<?php
 	include "views/view_main.php";
-?>
-
-<?php
 	include "views/view_footer.php";
 ?>
 
