@@ -6,7 +6,7 @@
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 	
-	<title>Magister - Free html5 template by GetTemplate</title>
+	<title>Magister - Credit Calculator</title>
 
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
 	
@@ -121,7 +121,7 @@
 </section>
 
 <?php
-include "views/view_footer.php";
+	include "views/view_footer.php";
 ?>
 
 <!-- Load js libs only when the page is loaded. -->
