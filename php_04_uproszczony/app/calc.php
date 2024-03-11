@@ -5,78 +5,49 @@ require_once dirname(__FILE__).'/../config.php';
 require_once _ROOT_PATH.'/lib/smarty/Smarty.class.php';
 
 //pobranie parametrów
-function getParams(&$form){
-	$form['x'] = isset($_REQUEST['x']) ? $_REQUEST['x'] : null;
-	$form['y'] = isset($_REQUEST['y']) ? $_REQUEST['y'] : null;
-	$form['op'] = isset($_REQUEST['op']) ? $_REQUEST['op'] : null;	
+function getParams(&$credit,&$percent,&$years){
+	$credit = isset($_REQUEST['credit']) ? $_REQUEST['credit'] : null;
+	$percent = isset($_REQUEST['percent']) ? $_REQUEST['percent'] : null;
+	$years = isset($_REQUEST['years']) ? $_REQUEST['years'] : null;	
 }
 
-//walidacja parametrów z przygotowaniem zmiennych dla widoku
-function validate(&$form,&$infos,&$msgs,&$hide_intro){
-
-	//sprawdzenie, czy parametry zostały przekazane - jeśli nie to zakończ walidację
-	if ( ! (isset($form['x']) && isset($form['y']) && isset($form['op']) ))	return false;	
-	
-	//parametry przekazane zatem
-	//nie pokazuj wstępu strony gdy tryb obliczeń (aby nie trzeba było przesuwać)
-	// - ta zmienna zostanie użyta w widoku aby nie wyświetlać całego bloku itro z tłem 
-	$hide_intro = true;
-
-	$infos [] = 'Przekazano parametry.';
-
-	// sprawdzenie, czy potrzebne wartości zostały przekazane
-	if ( $form['x'] == "") $msgs [] = 'Nie podano liczby 1';
-	if ( $form['y'] == "") $msgs [] = 'Nie podano liczby 2';
-	
-	//nie ma sensu walidować dalej gdy brak parametrów
-	if ( count($msgs)==0 ) {
-		// sprawdzenie, czy $x i $y są liczbami całkowitymi
-		if (! is_numeric( $form['x'] )) $msgs [] = 'Pierwsza wartość nie jest liczbą';
-		if (! is_numeric( $form['y'] )) $msgs [] = 'Druga wartość nie jest liczbą';
+function validate(&$credit,&$percent,&$years,&$messages){
+	if ( ! (isset($credit) && isset($percent) && isset($years))) {
+		return false;
 	}
-	
-	if (count($msgs)>0) return false;
+	if ( $credit == "") {
+		$messages [] = 'Add credit value';
+	}
+	if ( $percent == "") {
+		$messages [] = 'Add the interest rate';
+	}
+	if ( $years == "") {
+		$messages [] = 'Add the number of years';
+	}
+	if (count ( $messages ) != 0) return false;
 	else return true;
 }
+
+function process(&$credit,&$percent,&$years,&$messages,&$result){
+	global $role;
 	
-// wykonaj obliczenia
-function process(&$form,&$infos,&$msgs,&$result){
-	$infos [] = 'Parametry poprawne. Wykonuję obliczenia.';
+	$credit = (float) $credit;
+    $percent = (float) $percent;
+    $years = (int) $years;
 	
-	//konwersja parametrów na int
-	$form['x'] = floatval($form['x']);
-	$form['y'] = floatval($form['y']);
-	
-	//wykonanie operacji
-	switch ($form['op']) {
-	case 'minus' :
-		$result = $form['x'] - $form['y'];
-		$form['op_name'] = '-';
-		break;
-	case 'times' :
-		$result = $form['x'] * $form['y'];
-		$form['op_name'] = '*';
-		break;
-	case 'div' :
-		$result = $form['x'] / $form['y'];
-		$form['op_name'] = '/';
-		break;
-	default :
-		$result = $form['x'] + $form['y'];
-		$form['op_name'] = '+';
-		break;
-	}
+	$monthly = ($credit + ($percent * $credit / 100)) / ($years * 12);
+    $result = number_format($monthly, 2, '.', '');
 }
 
-//inicjacja zmiennych
-$form = null;
-$infos = array();
-$messages = array();
+$credit = null;
+$percent = null;
+$years = null;
 $result = null;
-	
-getParams($form);
-if ( validate($form,$infos,$messages,$hide_intro) ){
-	process($form,$infos,$messages,$result);
+$messages = array();
+
+getParams($credit,$percent,$years);
+if ( validate($credit,$percent,$years,$messages) ) { 
+	process($credit,$percent,$years,$messages,$result);
 }
 
 // 4. Przygotowanie danych dla szablonu

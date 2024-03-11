@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.38, created on 2024-03-11 13:20:41
+/* Smarty version 3.1.38, created on 2024-03-11 13:31:51
   from '/var/www/PHP/php_04_uproszczony/app/calc.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_65eef719c049f9_17856798',
+  'unifunc' => 'content_65eef9b723f159_56530214',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4177e625c409d8251afdc26818dc541c2eaeedc2' => 
     array (
       0 => '/var/www/PHP/php_04_uproszczony/app/calc.tpl',
-      1 => 1490291280,
+      1 => 1710160229,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65eef719c049f9_17856798 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65eef9b723f159_56530214 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_74506769965eef719bf1983_80242557', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_48421101565eef9b72333f4_23943361', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_111339683665eef719bf29a6_37787162', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_30837073065eef9b72342d3_76582092', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/main.html");
 }
 /* {block 'footer'} */
-class Block_74506769965eef719bf1983_80242557 extends Smarty_Internal_Block
+class Block_48421101565eef9b72333f4_23943361 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_74506769965eef719bf1983_80242557',
+    0 => 'Block_48421101565eef9b72333f4_23943361',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ przykładowa tresć stopki wpisana do szablonu głównego z szablonu kalkulatora
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_111339683665eef719bf29a6_37787162 extends Smarty_Internal_Block
+class Block_30837073065eef9b72342d3_76582092 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_111339683665eef719bf29a6_37787162',
+    0 => 'Block_30837073065eef9b72342d3_76582092',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -68,31 +68,29 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 <form class="pure-form pure-form-stacked" action="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
 /app/calc.php" method="post">
-	<fieldset>
-		<label for="x">Pierwsza liczba</label>
-		<input id="x" type="text" placeholder="wartość x" name="x" value="<?php echo $_smarty_tpl->tpl_vars['form']->value['x'];?>
-">
-		<label for="op">Operacja</label>
-		<select id="op" name="op">
+<legend style="color: white">Zalogowano jako: <?php echo '<?php ';?>
+echo $role <?php echo '?>';?>
+ </legend>
+<label for="id_credit">Kwota kredytu: </label>
+<input id="id_credit" type="number" step="any" name="credit" min="1" required value="<?php echo '<?php ';?>
+if (isset($credit))
+	print($credit); <?php echo '?>';?>
+" /><br />
 
-<?php if ((isset($_smarty_tpl->tpl_vars['form']->value['op_name']))) {?>
-<option value="<?php echo $_smarty_tpl->tpl_vars['form']->value['op'];?>
-">ponownie: <?php echo $_smarty_tpl->tpl_vars['form']->value['op_name'];?>
-</option>
-<option value="" disabled="true">---</option>
-<?php }?>
-			<option value="plus">(+) dodaj</option>
-			<option value="minus">(-) odejmij </option>
-			<option value="times">(*) pomnóż</option>
-			<option value="div">(/) podziel</option>
-		</select>
-					
-		<label for="y">Druga liczba</label>
-		<input id="y" type="text" placeholder="wartość y" name="y" value="<?php echo $_smarty_tpl->tpl_vars['form']->value['y'];?>
-">
-	</fieldset>
-	<button type="submit" class="pure-button pure-button-primary">Oblicz</button>
+<label for="id_percent">Oprocentowanie: </label>
+<input id="id_percent" type="number" step="any" name="percent" min="0" required value="<?php echo '<?php ';?>
+if (isset($percent))
+	print($percent); <?php echo '?>';?>
+" /><br />
+
+<label for="id_years">Liczba lat kredytu: </label>
+<input id="id_years" type="number" name="years" min="1" required value="<?php echo '<?php ';?>
+if (isset($years))
+	print($years); <?php echo '?>';?>
+" /><br />
+<input class="pure-button pure-button-primary" type="submit" value="Oblicz miesięczną ratę" />
 </form>
+
 
 <div class="messages">
 
