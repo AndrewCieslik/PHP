@@ -1,24 +1,30 @@
 <?php
-/* Smarty version 3.1.38, created on 2024-03-11 10:21:59
+/* Smarty version 3.1.38, created on 2024-03-11 10:40:51
   from '/var/www/PHP/3_Magister_Temp_Smarty/demo/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_65eecd37b62ad0_64607587',
+  'unifunc' => 'content_65eed1a36a9638_17004893',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7b5b1aa575fad9cafb91d6cc8293b064d19fb77b' => 
     array (
       0 => '/var/www/PHP/3_Magister_Temp_Smarty/demo/templates/index.tpl',
-      1 => 1710147178,
+      1 => 1710150050,
       2 => 'file',
     ),
     '2bfe6c896efc68f5cea1dca04741e58a220149d0' => 
     array (
       0 => '/var/www/PHP/3_Magister_Temp_Smarty/demo/templates/header.tpl',
-      1 => 1710148895,
+      1 => 1710149536,
+      2 => 'file',
+    ),
+    '371985dffbffbdd3b409493afc21e21eb12738dd' => 
+    array (
+      0 => '/var/www/PHP/3_Magister_Temp_Smarty/demo/templates/menu.tpl',
+      1 => 1710150040,
       2 => 'file',
     ),
     'd1a08e30d4059e60b45b2d2d197d5b27c06cc342' => 
@@ -30,7 +36,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_65eecd37b62ad0_64607587 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65eed1a36a9638_17004893 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <<!DOCTYPE html>
 <html lang="en">
@@ -61,6 +67,9 @@ function content_65eecd37b62ad0_64607587 (Smarty_Internal_Template $_smarty_tpl)
 <BODY>
 
 
+
+
+
     <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">    
     <p class="tagline">
         <i>Aplikacja testowa na potrzeby laboratorium - Naglowek</i>
@@ -68,8 +77,28 @@ function content_65eecd37b62ad0_64607587 (Smarty_Internal_Template $_smarty_tpl)
 </div>
 
 
+
+    <nav class="mainmenu">
+    <div class="container">
+        <div class="dropdown">
+            <button type="button" class="navbar-toggle" data-toggle="dropdown">
+                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li><a href="#head" class="active">Wstep</a></li>
+                <li><a href="#about">O aplikacji</a></li>
+                <li><a href="#themes">Oblicz rate kredytu</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
 This is the test
-This is the test
+
 
     <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">    
     <p class="tagline">

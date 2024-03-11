@@ -26,7 +26,4 @@
 </HEAD>
 <BODY>
 
-{block name="content"}
-    {$headerContent}
-{/block}
 
