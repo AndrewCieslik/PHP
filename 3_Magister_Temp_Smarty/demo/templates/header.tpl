@@ -4,7 +4,6 @@
 </HEAD>
 <BODY bgcolor="#ffffff">
 
-
 {block name="content"}
     {$headerContent}
 {/block}
