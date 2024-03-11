@@ -20,5 +20,7 @@ $headerContent = '<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-
     </p>    
 </div>';
 
+
+
 $smarty->assign('headerContent', $headerContent);
 $smarty->display('index.tpl');
