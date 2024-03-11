@@ -28,7 +28,6 @@
     <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	
         <?php
         if (isset($messages)) {
-            echo '<ol style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #f88; width:300px;">';
             foreach ($messages as $msg) {
                 echo '<li>' . $msg . '</li>';
             }
