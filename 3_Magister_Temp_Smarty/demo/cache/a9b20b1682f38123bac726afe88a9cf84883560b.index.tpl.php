@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.38, created on 2024-03-11 10:11:03
+/* Smarty version 3.1.38, created on 2024-03-11 10:14:45
   from '/var/www/PHP/3_Magister_Temp_Smarty/demo/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_65eecaa7d928c3_09301421',
+  'unifunc' => 'content_65eecb8504ec69_77134317',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -18,7 +18,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     '2bfe6c896efc68f5cea1dca04741e58a220149d0' => 
     array (
       0 => '/var/www/PHP/3_Magister_Temp_Smarty/demo/templates/header.tpl',
-      1 => 1710147526,
+      1 => 1710148382,
       2 => 'file',
     ),
     'd1a08e30d4059e60b45b2d2d197d5b27c06cc342' => 
@@ -30,7 +30,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_65eecaa7d928c3_09301421 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65eecb8504ec69_77134317 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <HTML>
 <HEAD>
@@ -39,6 +39,15 @@ function content_65eecaa7d928c3_09301421 (Smarty_Internal_Template $_smarty_tpl)
 <BODY bgcolor="#ffffff">
 
 
+    <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">    
+    <p class="tagline">
+        <i>Aplikacja testowa na potrzeby laboratorium - Naglowek</i>
+    </p>    
+</div>
+
+
+This is the test
+This is the test
 
     <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">    
     <p class="tagline">
@@ -46,12 +55,6 @@ function content_65eecaa7d928c3_09301421 (Smarty_Internal_Template $_smarty_tpl)
         <b>template designed by Sergey Pozhilov (GetTemplate.com)</b>
     </p>	
 </div>
-
-
-This is the test
-This is the test
-
-    
 
 </BODY>
 </HTML>
