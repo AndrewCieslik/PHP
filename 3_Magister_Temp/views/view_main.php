@@ -45,6 +45,7 @@
 <section class="section" id="themes">
 	<div class="container">
 		<h2 class="text-center title">Oblicz rate</h2>
+			
             <?php include "app/calc_view.php";
             ?>
 	</div>
