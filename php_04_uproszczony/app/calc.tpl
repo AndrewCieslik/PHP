@@ -8,27 +8,21 @@
 
 
 <form class="pure-form pure-form-stacked" action="{$app_url}/app/calc.php" method="post">
-	<fieldset>
-		<label for="x">Pierwsza liczba</label>
-		<input id="x" type="text" placeholder="wartość x" name="x" value="{$form['x']}">
-		<label for="op">Operacja</label>
-		<select id="op" name="op">
+<legend style="color: white">Zalogowano jako: <?php echo $role ?> </legend>
+<label for="id_credit">Kwota kredytu: </label>
+<input id="id_credit" type="number" step="any" name="credit" min="1" required value="<?php if (isset($credit))
+	print($credit); ?>" /><br />
 
-{if isset($form['op_name'])}
-<option value="{$form['op']}">ponownie: {$form['op_name']}</option>
-<option value="" disabled="true">---</option>
-{/if}
-			<option value="plus">(+) dodaj</option>
-			<option value="minus">(-) odejmij </option>
-			<option value="times">(*) pomnóż</option>
-			<option value="div">(/) podziel</option>
-		</select>
-					
-		<label for="y">Druga liczba</label>
-		<input id="y" type="text" placeholder="wartość y" name="y" value="{$form['y']}">
-	</fieldset>
-	<button type="submit" class="pure-button pure-button-primary">Oblicz</button>
+<label for="id_percent">Oprocentowanie: </label>
+<input id="id_percent" type="number" step="any" name="percent" min="0" required value="<?php if (isset($percent))
+	print($percent); ?>" /><br />
+
+<label for="id_years">Liczba lat kredytu: </label>
+<input id="id_years" type="number" name="years" min="1" required value="<?php if (isset($years))
+	print($years); ?>" /><br />
+<input class="pure-button pure-button-primary" type="submit" value="Oblicz miesięczną ratę" />
 </form>
+
 
 <div class="messages">
 
