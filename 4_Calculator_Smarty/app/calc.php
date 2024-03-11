@@ -61,10 +61,8 @@ $smarty->assign('page_description','Profesjonalne szablonowanie oparte na biblio
 $smarty->assign('page_header','Szablony Smarty');
 
 //pozostałe zmienne niekoniecznie muszą istnieć, dlatego sprawdzamy aby nie otrzymać ostrzeżenia
-$smarty->assign('form',$form);
 $smarty->assign('result',$result);
 $smarty->assign('messages',$messages);
-$smarty->assign('infos',$infos);
 
 // 5. Wywołanie szablonu
 $smarty->display(_ROOT_PATH.'/app/calc.tpl');

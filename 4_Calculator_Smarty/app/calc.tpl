@@ -8,7 +8,7 @@
 
 
 <form class="pure-form pure-form-stacked" action="{$app_url}/app/calc.php" method="post">
-<legend style="color: white">Zalogowano jako: <?php echo $role ?> </legend>
+	<legend style="color: white">Zalogowano jako: <?php echo $role ?> </legend>
 <label for="id_credit">Kwota kredytu: </label>
 <input id="id_credit" type="number" step="any" name="credit" min="1" required value="<?php if (isset($credit))
 	print($credit); ?>" /><br />
