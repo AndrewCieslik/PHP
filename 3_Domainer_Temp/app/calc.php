@@ -45,5 +45,5 @@ if ( validate($credit,$percent,$years,$messages) ) {
 	process($credit,$percent,$years,$messages,$result);
 }
 
-//include 'calc_view.php';
-header("Location: " ._APP_URL);
+include 'calc_view.php';
+//header("Location: " ._APP_URL);
