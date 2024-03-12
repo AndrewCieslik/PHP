@@ -10,14 +10,14 @@
 	<meta name="author" content="">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="assets/css/whhg.css" />
-	<link rel="stylesheet" href="assets/css/grid.css">
-	<link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="stylesheet" href="<?php print(_APP_URL); ?>/assets/css/whhg.css" />
+	<link rel="stylesheet" href="<?php print(_APP_URL); ?>/assets/css/grid.css">
+	<link rel="stylesheet" href="<?php print(_APP_URL); ?>/assets/css/styles.css">
 
-	<link rel="icon" type="image/png" href="assets/images/favicon.png">
-	<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
+	<link rel="icon" type="image/png" href="<?php print(_APP_URL); ?>/assets/images/favicon.png">
+	<link rel="apple-touch-icon" href="<?php print(_APP_URL); ?>/assets/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php print(_APP_URL); ?>/assets/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php print(_APP_URL); ?>/assets/images/apple-touch-icon-114x114.png">
 </head>
 <body>
 	<div id="Head" class="container">
