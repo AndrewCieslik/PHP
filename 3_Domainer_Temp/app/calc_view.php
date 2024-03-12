@@ -73,7 +73,7 @@
 			
 			<?php if (isset($result)): ?>
 				<div>
-					<p style="color: white">Wartość miesięcznej raty: <span class="result-value"><?php echo $result; ?> zł</span></p>
+					<p>Wartość miesięcznej raty: <span class="result-value"><?php echo $result; ?> zł</span></p>
 				</div>
 			<?php endif; ?>
 		</div>
