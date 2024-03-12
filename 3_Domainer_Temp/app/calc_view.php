@@ -45,6 +45,7 @@
 
 			<form class="pure-form pure-form-stacked" action="<?php print(_APP_URL); ?>/app/calc.php" method="post">
 					<label for="id_credit">Kwota kredytu: </label>
+					<!-- php out(46min 03lab-->
 					<input id="id_credit" type="number" step="any" name="credit" min="1" required value="<?php if (isset($credit))
 						print($credit); ?>" /><br />
 			

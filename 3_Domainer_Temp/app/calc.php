@@ -25,7 +25,6 @@ function validate(&$credit,&$percent,&$years,&$messages){
 }
 
 function process(&$credit,&$percent,&$years,&$messages,&$result){
-	global $role;
 	
 	$credit = (float) $credit;
     $percent = (float) $percent;
@@ -46,4 +45,5 @@ if ( validate($credit,$percent,$years,$messages) ) {
 	process($credit,$percent,$years,$messages,$result);
 }
 
-include 'calc_view.php';
+//include 'calc_view.php';
+header("Location: " ._APP_URL);
