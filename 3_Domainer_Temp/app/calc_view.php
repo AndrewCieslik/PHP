@@ -1,3 +1,5 @@
+<?php
+?>
 <!doctype html>
 <head>
 	<meta charset="utf-8">
@@ -42,7 +44,6 @@
 		<div style="width:90%; margin: 2em auto;">
 
 			<form class="pure-form pure-form-stacked" action="<?php print(_APP_URL); ?>/app/calc.php" method="post">
-					<legend style="color: white">Zalogowano jako: <?php echo $role ?> </legend>
 					<label for="id_credit">Kwota kredytu: </label>
 					<input id="id_credit" type="number" step="any" name="credit" min="1" required value="<?php if (isset($credit))
 						print($credit); ?>" /><br />
@@ -55,7 +56,7 @@
 					<input id="id_years" type="number" name="years" min="1" required value="<?php if (isset($years))
 						print($years); ?>" /><br />
 					<input class="pure-button pure-button-primary" type="submit" value="Oblicz miesięczną ratę" />
-				</form>
+			</form>
 			
 			<?php
 			if (isset($messages)) {
@@ -74,11 +75,8 @@
 					<p style="color: white">Wartość miesięcznej raty: <span class="result-value"><?php echo $result; ?> zł</span></p>
 				</div>
 			<?php endif; ?>
+		</div>
 			
-			
-			</div>
-			
-
 		<h2 class="align-center margin">Reasons to buy MegaDomain.com</h2>
 		<div class="row padding">
 			<div class="col span_8">
