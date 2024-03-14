@@ -46,8 +46,7 @@
 				</div>
 
 				<div class="col span_12">
-                   	<input type="text" placeholder="Your credit value" id="id_credit" name="credit" value="<?php if (isset($credit))
-            print($credit); ?>" />
+                   	<input type="text" placeholder="Your credit value" id="id_credit" name="credit" value="<?php out($credit); ?>" />
                 </div>
 
 				<div class="col span_24">
@@ -55,8 +54,7 @@
 				</div>
 
 				<div class="col span_12">
-                   	<input type="text" placeholder="Percent value" id="id_percent" name="percent" value="<?php if (isset($credit))
-            print($credit); ?>" />
+                   	<input type="text" placeholder="Percent value" id="id_percent" name="percent" value="<?php out($percent); ?>" />
                 </div>
 
 				<div class="col span_24">
@@ -64,8 +62,7 @@
 				</div>
 				
 				<div class="col span_12">
-					<input type="text" placeholder="Credit lenght in years" id="id_years" name="years" value="<?php if (isset($credit))
-            print($credit); ?>" /><br />
+					<input type="text" placeholder="Credit lenght in years" id="id_years" name="years" value="<?php out($years); ?>" /><br />
                 </div>
 				
 				<div class="col span_24">
