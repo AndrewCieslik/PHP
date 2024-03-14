@@ -45,24 +45,24 @@
 					<label for="id_percent"><h1>Credit:</h1></label><br />
 				</div>
 
-				<div class="col span_24">
-                   	<input type="text" placeholder="Your credit value" id="id_credit" name="credit" required value="<?php out($credit); ?>" />
+				<div class="col span_12">
+                   	<input type="text" placeholder="Your credit value" id="id_credit" name="credit" value="<?php out($credit); ?>" />
                 </div>
 
 				<div class="col span_24">
 					<label for="id_percent"><h1>Percent:</h1></label><br />
 				</div>
 
-				<div class="col span_24">
-                   	<input type="text" placeholder="Percent value" id="id_percent" name="percent" required value="<?php out($percent); ?>" />
+				<div class="col span_12">
+                   	<input type="text" placeholder="Percent value" id="id_percent" name="percent" value="<?php out($percent); ?>" />
                 </div>
 
 				<div class="col span_24">
 					<label for="id_years"><h1>Number of years: </h1></label><br />
 				</div>
 				
-				<div class="col span_24">
-					<input type="text" placeholder="Credit lenght in years" id="id_years" name="years" required value="<?php out($years); ?>" /><br />
+				<div class="col span_12">
+					<input type="text" placeholder="Credit lenght in years" id="id_years" name="years" value="<?php out($years); ?>" /><br />
                 </div>
 				
 				<div class="col span_24">
@@ -84,14 +84,17 @@
 						<h2 class="col span_24">The value of the monthly loan: <span class="result-value"><?php echo $result; ?> zł</span></h2>
 					</div>
 						<?php endif; ?>
-					</div>
-					</div>
+				</div>
 			</form>
-			
-			
+		</div>		
+	<div class="row padding">
+</div> 
 
-		<div class="row padding">
-    <div class="col span_8">
+<hr class="divider">
+
+<div class="row padding">
+
+<div class="col span_8">
         <div class="circle"><i class="icon icon-support"></i></div>
         <h3 class="align-center">Simple Loan Calculation</h3>
         <p class="align-center">Planning your finances is crucial. CreditCalculator offers a user-friendly loan calculator to help you estimate your monthly payments.</p>
@@ -108,11 +111,9 @@
         <h3 class="align-center">Customizable Options</h3>
         <p class="align-center">Tailor your loan parameters to suit your needs. CreditCalculator empowers you to adjust variables such as loan amount, interest rate, and term.</p>
     </div>
-</div> <!-- end of row -->
-
-<hr class="divider">
 
 <div class="row padding">
+
     <div class="col span_8">
         <h2>About CreditCalculator</h2>
         <p>At CreditCalculator, we understand the significance of informed financial decisions. Our platform offers comprehensive information about loans and provides valuable tools like our loan calculator to assist you in managing your finances effectively.</p>
