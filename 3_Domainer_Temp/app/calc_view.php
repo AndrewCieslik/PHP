@@ -26,10 +26,6 @@
 				<h1 id="Domain">Credit Calculator<br>
 					<span>Free online calculator for your credit</span></h1>
 			</div>
-		
-			<div id="Action" class="col span_8">
-				<a href="#Offer" class="btn btn-icon btn-block"><i class="icon icon-envelope"></i> Make your offer</a>
-			</div>	
 		</div>
 	</div>
 	
@@ -41,51 +37,60 @@
 			</div>
 		</div>
 
-		<div style="width:90%; margin: 2em auto;">
+		<div style="width:90%; margin: 3em auto;">
 
-			<form class="pure-form pure-form-stacked" action="<?php print(_APP_URL); ?>/app/calc.php" method="post">
-					<label for="id_credit"><h1>Credit: </h1></label>
-					
-					<div class="col span_12">
-                   		 <input type="text" placeholder="Your Name" id="f_name" name="f_name">
-						 
-                	</div>
-					<!-- php out(46min 03lab-->
-					<input class="align-center margin" id="id_credit" type="number" step="any" name="credit" min="1" required value="<?php out($credit); ?>" /><br />
+			<form class=""  action="<?php print(_APP_URL); ?>/app/calc.php" method="post">
+				<br />
+				<div class="col span_24">
+					<label for="id_percent"><h1>Credit:</h1></label><br />
+				</div>
+
+				<div class="col span_24">
+                   	<input type="text" placeholder="Your credit value" id="id_credit" name="credit" required value="<?php out($credit); ?>" />
+                </div>
+
+				<div class="col span_24">
+					<label for="id_percent"><h1>Percent:</h1></label><br />
+				</div>
+
+				<div class="col span_24">
+                   	<input type="text" placeholder="Percent value" id="id_percent" name="percent" required value="<?php out($percent); ?>" />
+                </div>
+
+				<div class="col span_24">
+					<label for="id_years"><h1>Number of years: </h1></label><br />
+				</div>
+				
+				<div class="col span_24">
+					<input type="text" placeholder="Credit lenght in years" id="id_years" name="years" required value="<?php out($years); ?>" /><br />
+                </div>
+				
+				<div class="col span_24">
+					<input class="btn btn-icon btn-block"  value="Count monthly loan" type="submit"><br />
+					<?php
+						if (isset($messages)) {
+							if (count ( $messages ) > 0) {
+							echo '<ol style="margin-top: 1em; padding: 1em 1em 1em 2em; border-radius: 0.5em; background-color: #f88; width:25em;">';
+						foreach ($messages as $msg) {
+						echo '<li>'.$msg.'</li>';
+						}
+						echo '</ol>';
+						}
+						}
+					?>
 			
-					<label for="id_percent"><h1>Percent: </h1></label>
-					<input class="align-center margin" id="id_percent" type="number" step="any" name="percent" min="0" required value="<?php out($percent); ?>" /><br />
-			
-					<label for="id_years"><h1>Number of years: </h1></label>
-					<input class="align-center margin" id="id_years" type="number" name="years" min="1" required value="<?php out($years); ?>" /><br /></br>
-					<div class="col span_8">
-						<input class="btn btn-icon btn-block"  value="Count monthly loan" type="submit"><i class="icon icon-envelope"></i>
+					<?php if (isset($result)): ?>
+					<div>
+						<h2 class="col span_24">The value of the monthly loan: <span class="result-value"><?php echo $result; ?> zł</span></h2>
+					</div>
+						<?php endif; ?>
+					</div>
 					</div>
 			</form>
 			
-			</br></br></br>
+			
 
-			<?php
-			if (isset($messages)) {
-				if (count ( $messages ) > 0) {
-					echo '<ol style="margin-top: 1em; padding: 1em 1em 1em 2em; border-radius: 0.5em; background-color: #f88; width:25em;">';
-					foreach ($messages as $msg) {
-						echo '<li>'.$msg.'</li>';
-					}
-					echo '</ol>';
-				}
-			}
-			?>
-			
-			<?php if (isset($result)): ?>
-				<div>
-					<h2 class ="box">The value of the monthly loan: <span class="result-value"><?php echo $result; ?> zł</span></h2>
-				</div>
-			<?php endif; ?>
-		</div>
-			
-		<h2 class="align-center margin">Reasons to Use CreditCalculator</h2>
-<div class="row padding">
+		<div class="row padding">
     <div class="col span_8">
         <div class="circle"><i class="icon icon-support"></i></div>
         <h3 class="align-center">Simple Loan Calculation</h3>
