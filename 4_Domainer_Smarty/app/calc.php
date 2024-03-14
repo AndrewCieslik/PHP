@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__ . '/../config.php';
+require_once _ROOT_PATH.'/lib/smarty/Smarty.class.php';
+
 
 function getParams(&$credit,&$percent,&$years){
 	$credit = isset($_REQUEST['credit']) ? $_REQUEST['credit'] : null;
@@ -45,5 +47,17 @@ if ( validate($credit,$percent,$years,$messages) ) {
 	process($credit,$percent,$years,$messages,$result);
 }
 
-include 'calc_view.php';
-//header("Location: " ._APP_URL);
+$smarty = new Smarty();
+
+$smarty->assign('app_url',_APP_URL);
+$smarty->assign('root_path',_ROOT_PATH);
+$smarty->assign('page_title','Przykład 04');
+$smarty->assign('page_description','Profesjonalne szablonowanie oparte na bibliotece Smarty');
+$smarty->assign('page_header','Szablony Smarty');
+
+//pozostałe zmienne niekoniecznie muszą istnieć, dlatego sprawdzamy aby nie otrzymać ostrzeżenia
+$smarty->assign('result',$result);
+$smarty->assign('messages',$messages);
+
+// 5. Wywołanie szablonu
+$smarty->display(_ROOT_PATH.'/app/calc.tpl');
