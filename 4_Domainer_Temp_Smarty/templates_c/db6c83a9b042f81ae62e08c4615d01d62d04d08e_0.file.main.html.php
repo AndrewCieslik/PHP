@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.38, created on 2024-03-14 19:23:01
+/* Smarty version 3.1.38, created on 2024-03-14 19:52:50
   from '/var/www/PHP/4_Domainer_Temp_Smarty/templates/main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_65f34085c0b2f4_71316627',
+  'unifunc' => 'content_65f347822b8539_09798620',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'db6c83a9b042f81ae62e08c4615d01d62d04d08e' => 
     array (
       0 => '/var/www/PHP/4_Domainer_Temp_Smarty/templates/main.html',
-      1 => 1710440579,
+      1 => 1710440854,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f34085c0b2f4_71316627 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f347822b8539_09798620 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <head>
 	<meta charset="utf-8">
@@ -91,7 +91,7 @@ function content_65f34085c0b2f4_71316627 (Smarty_Internal_Template $_smarty_tpl)
 				</div>
 				
 				<div class="col span_12">
-					<input type="text" placeholder="Credit lenght in years" id="id_years" name="years" />
+					<input type="text" placeholder="Credit lenght in years" id="id_years" name="years"/>
                 </div>
 				
 				<div class="col span_24">
