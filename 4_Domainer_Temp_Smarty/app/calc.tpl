@@ -75,16 +75,6 @@
 {/block}
 
 {block name = content}
-    <div id="Head" class="container">
-        <div class="row">
-            <div class="col span_16">
-                <h1 id="Domain">Credit Calculator<br>
-                    <span>Free online calculator for your credit</span>
-                </h1>
-            </div>
-        </div>
-    </div>
-
     <div id="Content" class="container">
 
         <div class="row special">
@@ -180,7 +170,17 @@
         <div id="Content-end" class="container"></div>
 {/block}
 
-{block name = header}{/block}
+{block name = header}
+    <div id="Head" class="container">
+        <div class="row">
+            <div class="col span_16">
+                <h1 id="Domain">Credit Calculator<br>
+                    <span>Free online calculator for your credit</span>
+                </h1>
+            </div>
+        </div>
+    </div>
+{/block}
 
 {block name = footer}
         <div id="Footer" class="container">
