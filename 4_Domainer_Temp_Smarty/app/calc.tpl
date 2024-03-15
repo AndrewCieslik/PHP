@@ -11,7 +11,7 @@
             </div>
 
             <div class="col span_12">
-                <input type="text" placeholder="Your credit value" id="id_credit" name="credit" />
+                <input type="text" placeholder="Your credit value" id="id_credit" name="credit" value="{if isset($credit)}{$credit}{/if}"/>
             </div>
 
             <div class="col span_24">
@@ -21,7 +21,7 @@
             </div>
 
             <div class="col span_12">
-                <input type="text" placeholder="Percent value" id="id_percent" name="percent" />
+                <input type="text" placeholder="Percent value" id="id_percent" name="percent" value="{if isset($percent)}{$percent}{/if}"/>
             </div>
 
             <div class="col span_24">
@@ -31,7 +31,7 @@
             </div>
 
             <div class="col span_12">
-                <input type="text" placeholder="Credit lenght in years" id="id_years" name="years" />
+                <input type="text" placeholder="Credit lenght in years" id="id_years" name="years" value="{if isset($years)}{$years}{/if}"/>
             </div>
 
             <div class="col span_24">
