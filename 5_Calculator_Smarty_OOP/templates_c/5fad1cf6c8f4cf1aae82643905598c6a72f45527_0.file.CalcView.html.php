@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-03-15 11:56:30
+/* Smarty version 3.1.30, created on 2024-03-15 13:54:31
   from "/var/www/PHP/5_Calculator_Smarty_OOP/app/CalcView.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_65f4295e81a7d7_58659939',
+  'unifunc' => 'content_65f445075270a0_23814411',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5fad1cf6c8f4cf1aae82643905598c6a72f45527' => 
     array (
       0 => '/var/www/PHP/5_Calculator_Smarty_OOP/app/CalcView.html',
-      1 => 1710498707,
+      1 => 1710506832,
       2 => 'file',
     ),
   ),
@@ -21,24 +21,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../templates/main.html' => 1,
   ),
 ),false)) {
-function content_65f4295e81a7d7_58659939 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f445075270a0_23814411 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_57895722065f4295e80afc1_89450938', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_131230322065f44507519c26_42586880', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_87158482765f4295e8199e5_39927605', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_124933272665f445075266b3_32132691', 'content');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:../templates/main.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'footer'} */
-class Block_57895722065f4295e80afc1_89450938 extends Smarty_Internal_Block
+class Block_131230322065f44507519c26_42586880 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -47,13 +47,13 @@ footer example<?php
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_87158482765f4295e8199e5_39927605 extends Smarty_Internal_Block
+class Block_124933272665f445075266b3_32132691 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
-<h3>Credit calculator - test</h2>
+<h2>Credit calculator - test</h2>
 
 <form class="pure-form pure-form-stacked" action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /app/calc.php" method="post">
