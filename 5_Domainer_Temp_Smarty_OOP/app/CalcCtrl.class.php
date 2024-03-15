@@ -88,6 +88,6 @@ class CalcCtrl {
 		$smarty->assign('form',$this->form);
 		$smarty->assign('res',$this->result);
 		
-		$smarty->display($conf->root_path.'/app/calc.tpl');
+		$smarty->display($conf->root_path.'/app/CalcView.html');
 	}
 }
