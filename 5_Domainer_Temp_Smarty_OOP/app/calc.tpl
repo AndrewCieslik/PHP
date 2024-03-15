@@ -1,4 +1,4 @@
-{extends file="../templates/main.html"}
+{extends file=$conf->root_path|cat:"/templates/main.html"}
 
 {block name=calc}
     <div style="width:90%; margin: 3em auto;">
@@ -11,7 +11,7 @@
             </div>
 
             <div class="col span_12">
-                <input type="text" placeholder="Your credit value" id="id_credit" name="credit" value="{if isset($credit)}{$credit}{/if}"/>
+                <input type="text" placeholder="Your credit value" id="id_credit" name="credit" value="{$form->credit}"/>
             </div>
 
             <div class="col span_24">
@@ -21,7 +21,7 @@
             </div>
 
             <div class="col span_12">
-                <input type="text" placeholder="Percent value" id="id_percent" name="percent" value="{if isset($percent)}{$percent}{/if}"/>
+                <input type="text" placeholder="Percent value" id="id_percent" name="percent" value="{$form->percent}"/>
             </div>
 
             <div class="col span_24">
@@ -31,7 +31,7 @@
             </div>
 
             <div class="col span_12">
-                <input type="text" placeholder="Credit lenght in years" id="id_years" name="years" value="{if isset($years)}{$years}{/if}"/>
+                <input type="text" placeholder="Credit lenght in years" id="id_years" name="years" value="{$form->years}"/>
             </div>
 
             <div class="col span_24">
