@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-03-15 10:21:41
+/* Smarty version 3.1.30, created on 2024-03-15 10:44:55
   from "/var/www/PHP/5_Calculator_Smarty_OOP/templates/main.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_65f41325ae1506_43733720',
+  'unifunc' => 'content_65f4189792dd43_04111477',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cd43e4c5a6014b80ddfec93146d6d430a90cd7b7' => 
     array (
       0 => '/var/www/PHP/5_Calculator_Smarty_OOP/templates/main.html',
-      1 => 1491292348,
+      1 => 1710494663,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f41325ae1506_43733720 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f4189792dd43_04111477 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -29,7 +29,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['page_description']->value)===null||$tmp==='' ? 'Opis domyślny' : $tmp);?>
+	<meta name="description" content="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['page_description']->value)===null||$tmp==='' ? 'Credit calculator' : $tmp);?>
 ">
 	<title><?php echo (($tmp = @$_smarty_tpl->tpl_vars['page_title']->value)===null||$tmp==='' ? "Tytuł domyślny" : $tmp);?>
 </title>
@@ -40,19 +40,19 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <body>
 
 <div class="header">
-	<h1><?php echo (($tmp = @$_smarty_tpl->tpl_vars['page_title']->value)===null||$tmp==='' ? "Tytuł domyślny" : $tmp);?>
+	<h1><?php echo (($tmp = @$_smarty_tpl->tpl_vars['page_title']->value)===null||$tmp==='' ? "Credit calculator" : $tmp);?>
 </h1>
-	<h2><?php echo (($tmp = @$_smarty_tpl->tpl_vars['page_header']->value)===null||$tmp==='' ? "Tytuł domyślny" : $tmp);?>
+	<h2><?php echo (($tmp = @$_smarty_tpl->tpl_vars['page_header']->value)===null||$tmp==='' ? "Credit calculator" : $tmp);?>
 </h1>
 	<p>
-		<?php echo (($tmp = @$_smarty_tpl->tpl_vars['page_description']->value)===null||$tmp==='' ? "Opis domyślny" : $tmp);?>
+		<?php echo (($tmp = @$_smarty_tpl->tpl_vars['page_description']->value)===null||$tmp==='' ? "Credit calculator" : $tmp);?>
 
 	</p>
 </div>
 
 <div class="content">
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9562741165f41325ae0e87_32580120', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_175851226565f4189792cbe4_38882185', 'content');
 ?>
 
 </div><!-- content -->
@@ -60,7 +60,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9562741165f41325ae
 <div class="footer">
 	<p>
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_117912762165f41325ae1310_33879493', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_169888295265f4189792d765_86186453', 'footer');
 ?>
 
 	</p>
@@ -72,7 +72,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_117912762165f41325
 </body>
 </html><?php }
 /* {block 'content'} */
-class Block_9562741165f41325ae0e87_32580120 extends Smarty_Internal_Block
+class Block_175851226565f4189792cbe4_38882185 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -81,7 +81,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'footer'} */
-class Block_117912762165f41325ae1310_33879493 extends Smarty_Internal_Block
+class Block_169888295265f4189792d765_86186453 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
