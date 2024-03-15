@@ -2,7 +2,7 @@
 
 {block name=calc}
     <div style="width:90%; margin: 3em auto;">
-        <form class="" action="{$app_url}/app/calc.php" method="post">
+        <form class="" action="{$conf->$app_url}/app/calc.php" method="post">
             <br />
             <div class="col span_24">
                 <label for="id_percent">
@@ -37,36 +37,32 @@
             <div class="col span_24">
                 <input class="btn btn-icon btn-block" value="Count monthly loan" type="submit"><br />
 
-                {if isset($messages)}
-                    {if count($messages) > 0}
-                        <h3>Error: </h3>
-                        <ol class="err">
-                            {foreach  $messages as $msg}
-                                {strip}
-                                    <li>{$msg}</li>
-                                {/strip}
-                            {/foreach}
-                        </ol>
-                    {/if}
+                {if $msgs->isError()}
+                    <h4>Errors: </h4>
+                    <ol class="err">
+                    {foreach $msgs->getErrors() as $err}
+                    {strip}
+                        <li>{$err}</li>
+                    {/strip}
+                    {/foreach}
+                    </ol>
                 {/if}
-
-                {if isset($infos)}
-                    {if count($infos) > 0}
-                        <h3>Information: </h3>
-                        <ol class="inf">
-                            {foreach  $infos as $msg}
-                                {strip}
-                                    <li>{$msg}</li>
-                                {/strip}
-                            {/foreach}
-                        </ol>
-                    {/if}
+                
+                {if $msgs->isInfo()}
+                    <h4>Information: </h4>
+                    <ol class="inf">
+                    {foreach $msgs->getInfos() as $inf}
+                    {strip}
+                        <li>{$inf}</li>
+                    {/strip}
+                    {/foreach}
+                    </ol>
                 {/if}
-
-                {if isset($result)}
-                    <h2>Result:</h2>
+                
+                {if isset($res->result)}
+                    <h4>Result: </h4>
                     <p class="res">
-                    <h1>{$result} zl</h1>
+                    {$res->result}
                     </p>
                 {/if}
             </div>
