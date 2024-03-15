@@ -39,7 +39,7 @@
 
                 {if isset($messages)}
                     {if count($messages) > 0}
-                        <h3>Wystąpiły błędy: </h3>
+                        <h3>Error: </h3>
                         <ol class="err">
                             {foreach  $messages as $msg}
                                 {strip}
@@ -52,7 +52,7 @@
 
                 {if isset($infos)}
                     {if count($infos) > 0}
-                        <h3>Informacje: </h3>
+                        <h3>Information: </h3>
                         <ol class="inf">
                             {foreach  $infos as $msg}
                                 {strip}
@@ -64,7 +64,7 @@
                 {/if}
 
                 {if isset($result)}
-                    <h2>Wynik</h2>
+                    <h2>Result:</h2>
                     <p class="res">
                     <h1>{$result} zl</h1>
                     </p>
