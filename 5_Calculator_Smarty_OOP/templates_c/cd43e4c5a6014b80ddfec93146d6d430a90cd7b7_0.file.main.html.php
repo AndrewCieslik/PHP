@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-03-15 10:44:55
+/* Smarty version 3.1.30, created on 2024-03-15 11:56:30
   from "/var/www/PHP/5_Calculator_Smarty_OOP/templates/main.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_65f4189792dd43_04111477',
+  'unifunc' => 'content_65f4295e826b55_68770510',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cd43e4c5a6014b80ddfec93146d6d430a90cd7b7' => 
     array (
       0 => '/var/www/PHP/5_Calculator_Smarty_OOP/templates/main.html',
-      1 => 1710494663,
+      1 => 1710498455,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f4189792dd43_04111477 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f4295e826b55_68770510 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -52,15 +52,15 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 
 <div class="content">
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_175851226565f4189792cbe4_38882185', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19840805165f4295e8258d4_70896157', 'content');
 ?>
 
-</div><!-- content -->
+</div>>
 
 <div class="footer">
 	<p>
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_169888295265f4189792d765_86186453', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_114739158565f4295e8265a6_46437572', 'footer');
 ?>
 
 	</p>
@@ -72,7 +72,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_169888295265f41897
 </body>
 </html><?php }
 /* {block 'content'} */
-class Block_175851226565f4189792cbe4_38882185 extends Smarty_Internal_Block
+class Block_19840805165f4295e8258d4_70896157 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -81,7 +81,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'footer'} */
-class Block_169888295265f4189792d765_86186453 extends Smarty_Internal_Block
+class Block_114739158565f4295e8265a6_46437572 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
