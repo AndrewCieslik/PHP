@@ -31,9 +31,9 @@ class CalcCtrl {
 	 * Pobranie parametrów
 	 */
 	public function getParams(){
-		$this->form->x = isset($_REQUEST ['x']) ? $_REQUEST ['x'] : null;
-		$this->form->y = isset($_REQUEST ['y']) ? $_REQUEST ['y'] : null;
-		$this->form->op = isset($_REQUEST ['op']) ? $_REQUEST ['op'] : null;
+		$this->form->credit = isset($_REQUEST ['credit']) ? $_REQUEST ['credit'] : null;
+		$this->form->percent = isset($_REQUEST ['percent']) ? $_REQUEST ['percent'] : null;
+		$this->form->years = isset($_REQUEST ['years']) ? $_REQUEST ['years'] : null;
 	}
 	
 	/** 
@@ -42,29 +42,36 @@ class CalcCtrl {
 	 */
 	public function validate() {
 		// sprawdzenie, czy parametry zostały przekazane
-		if (! (isset ( $this->form->x ) && isset ( $this->form->y ) && isset ( $this->form->op ))) {
+		if (! (isset ( $this->form->credit ) && isset ( $this->form->percent ) && isset ( $this->form->years ))) {
 			// sytuacja wystąpi kiedy np. kontroler zostanie wywołany bezpośrednio - nie z formularza
 			return false; //zakończ walidację z błędem
 		}
 		
 		// sprawdzenie, czy potrzebne wartości zostały przekazane
-		if ($this->form->x == "") {
+		if ($this->form->credit == "") {
 			$this->msgs->addError('Nie podano liczby 1');
 		}
-		if ($this->form->y == "") {
+		if ($this->form->percent == "") {
 			$this->msgs->addError('Nie podano liczby 2');
+		}
+		if ($this->form->years == "") {
+			$this->msgs->addError('Nie podano liczby 3');
 		}
 		
 		// nie ma sensu walidować dalej gdy brak parametrów
 		if (! $this->msgs->isError()) {
 			
 			// sprawdzenie, czy $x i $y są liczbami całkowitymi
-			if (! is_numeric ( $this->form->x )) {
+			if (! is_numeric ( $this->form->credit )) {
 				$this->msgs->addError('Pierwsza wartość nie jest liczbą całkowitą');
 			}
 			
-			if (! is_numeric ( $this->form->y )) {
+			if (! is_numeric ( $this->form->percent )) {
 				$this->msgs->addError('Druga wartość nie jest liczbą całkowitą');
+			}
+
+			if (! is_numeric ( $this->form->years )) {
+				$this->msgs->addError('Trzecia wartość nie jest liczbą całkowitą');
 			}
 		}
 		
@@ -81,29 +88,30 @@ class CalcCtrl {
 		if ($this->validate()) {
 				
 			//konwersja parametrów na int
-			$this->form->x = intval($this->form->x);
-			$this->form->y = intval($this->form->y);
+			$this->form->credit = intval($this->form->credit);
+			$this->form->percent = intval($this->form->percent);
+			$this->form->years = intval($this->form->years);
 			$this->msgs->addInfo('Parametry poprawne.');
 				
-			//wykonanie operacji
-			switch ($this->form->op) {
-				case 'minus' :
-					$this->result->result = $this->form->x - $this->form->y;
-					$this->result->op_name = '-';
-					break;
-				case 'times' :
-					$this->result->result = $this->form->x * $this->form->y;
-					$this->result->op_name = '*';
-					break;
-				case 'div' :
-					$this->result->result = $this->form->x / $this->form->y;
-					$this->result->op_name = '/';
-					break;
-				default :
-					$this->result->result = $this->form->x + $this->form->y;
-					$this->result->op_name = '+';
-					break;
-			}
+			// //wykonanie operacji
+			// switch ($this->form->op) {
+			// 	case 'minus' :
+			// 		$this->result->result = $this->form->x - $this->form->y;
+			// 		$this->result->op_name = '-';
+			// 		break;
+			// 	case 'times' :
+			// 		$this->result->result = $this->form->x * $this->form->y;
+			// 		$this->result->op_name = '*';
+			// 		break;
+			// 	case 'div' :
+			// 		$this->result->result = $this->form->x / $this->form->y;
+			// 		$this->result->op_name = '/';
+			// 		break;
+			// 	default :
+			// 		$this->result->result = $this->form->x + $this->form->y;
+			// 		$this->result->op_name = '+';
+			// 		break;
+			// }
 			
 			$this->msgs->addInfo('Wykonano obliczenia.');
 		}
@@ -121,9 +129,9 @@ class CalcCtrl {
 		$smarty = new Smarty();
 		$smarty->assign('conf',$conf);
 		
-		$smarty->assign('page_title','Przykład 05');
-		$smarty->assign('page_description','Obiektowość. Funkcjonalność aplikacji zamknięta w metodach różnych obiektów. Pełen model MVC.');
-		$smarty->assign('page_header','Obiekty w PHP');
+		$smarty->assign('page_title','Calculator example');
+		$smarty->assign('page_description','MVC/OOP');
+		$smarty->assign('page_header','Objects in PHP');
 				
 		$smarty->assign('msgs',$this->msgs);
 		$smarty->assign('form',$this->form);
