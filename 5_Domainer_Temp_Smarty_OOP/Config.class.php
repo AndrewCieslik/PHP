@@ -6,4 +6,3 @@ class Config{
 	public $app_root;
 	public $app_url; 
 }
-?>
