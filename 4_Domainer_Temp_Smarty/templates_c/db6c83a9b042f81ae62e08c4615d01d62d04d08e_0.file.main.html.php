@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.38, created on 2024-03-14 19:52:50
+/* Smarty version 3.1.38, created on 2024-03-15 08:08:59
   from '/var/www/PHP/4_Domainer_Temp_Smarty/templates/main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_65f347822b8539_09798620',
+  'unifunc' => 'content_65f3f40be5a2b7_81041730',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'db6c83a9b042f81ae62e08c4615d01d62d04d08e' => 
     array (
       0 => '/var/www/PHP/4_Domainer_Temp_Smarty/templates/main.html',
-      1 => 1710440854,
+      1 => 1710486524,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f347822b8539_09798620 (Smarty_Internal_Template $_smarty_tpl) {
-?><!doctype html>
+function content_65f3f40be5a2b7_81041730 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, false);
+?>
+<!doctype html>
 <head>
 	<meta charset="utf-8">
 	<meta charset=utf-8>
@@ -64,66 +67,12 @@ function content_65f347822b8539_09798620 (Smarty_Internal_Template $_smarty_tpl)
 				<h3 class="align-center">Before proceeding with your loan application, please be aware that taking a loan involves financial risks and careful consideration of repayment terms.</h3>
 			</div>
 		</div>
+		<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_105989772165f3f40be595f2_89016080', 'content');
+?>
 
-		<div style="width:90%; margin: 3em auto;">
 
-			<form class=""  action="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
-/app/calc.php" method="post">
-				<br />
-				<div class="col span_24">
-					<label for="id_percent"><h1>Credit:</h1></label><br />
-				</div>
-
-				<div class="col span_12">
-                   	<input type="text" placeholder="Your credit value" id="id_credit" name="credit"/>
-                </div>
-
-				<div class="col span_24">
-					<label for="id_percent"><h1>Percent:</h1></label><br />
-				</div>
-
-				<div class="col span_12">
-                   	<input type="text" placeholder="Percent value" id="id_percent" name="percent" />
-                </div>
-
-				<div class="col span_24">
-					<label for="id_years"><h1>Number of years: </h1></label><br />
-				</div>
-				
-				<div class="col span_12">
-					<input type="text" placeholder="Credit lenght in years" id="id_years" name="years"/>
-                </div>
-				
-				<div class="col span_24">
-					<input class="btn btn-icon btn-block"  value="Count monthly loan" type="submit"><br />
-					<?php echo '<?php
-						';?>
-if (isset($messages)) {
-							if (count ( $messages ) > 0) {
-							echo '<ol style="margin-top: 1em; padding: 1em 1em 1em 2em; border-radius: 0.5em; background-color: #f88; width:25em;">';
-						foreach ($messages as $msg) {
-						echo '<li>'.$msg.'</li>';
-						}
-						echo '</ol>';
-						}
-						}
-					<?php echo '?>';?>
-
-			
-					<?php echo '<?php ';?>
-if (isset($result)): <?php echo '?>';?>
-
-					<div>
-						<h2 class="col span_24">The value of the monthly loan: <span class="result-value"><?php echo '<?php ';?>
-echo $result; <?php echo '?>';?>
- zł</span></h2>
-					</div>
-						<?php echo '<?php ';?>
-endif; <?php echo '?>';?>
-
-				</div>
-			</form>
-		</div>		
+	<!--content-->	
 	<div class="row padding">
 </div> 
 
@@ -219,4 +168,20 @@ endif; <?php echo '?>';?>
 
 </body>
 </html><?php }
+/* {block 'content'} */
+class Block_105989772165f3f40be595f2_89016080 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'content' => 
+  array (
+    0 => 'Block_105989772165f3f40be595f2_89016080',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+ 
+		<?php
+}
+}
+/* {/block 'content'} */
 }
