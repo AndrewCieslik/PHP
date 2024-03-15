@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.38, created on 2024-03-15 15:14:00
+/* Smarty version 3.1.38, created on 2024-03-15 19:28:41
   from '/var/www/PHP/5_Domainer_Temp_Smarty_OOP/templates/main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_65f457a8db29d8_67450915',
+  'unifunc' => 'content_65f49359793cf2_79804767',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cf3a41902aa52b28eff7ebac54c30048811942a5' => 
     array (
       0 => '/var/www/PHP/5_Domainer_Temp_Smarty_OOP/templates/main.html',
-      1 => 1710511718,
+      1 => 1710512397,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f457a8db29d8_67450915 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65f49359793cf2_79804767 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -35,7 +35,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
-/assets/css/whhg.css" />
+/assets/css/whhg.css">
 	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /assets/css/grid.css">
 	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
@@ -52,17 +52,17 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 </head>
 <body>
 	<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_192986250465f457a8db1c49_99307508', 'header');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_120775295365f493597931e3_92751545', 'header');
 ?>
 
 
 	<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_102817336665f457a8db2104_69651072', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1393121265f49359793562_14555584', 'content');
 ?>
 
 
 	<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_130641405965f457a8db2408_50731008', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_187470354665f493597937f9_24094558', 'footer');
 ?>
 
 
@@ -77,12 +77,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_130641405965f457a8
 </body>
 </html><?php }
 /* {block 'header'} */
-class Block_192986250465f457a8db1c49_99307508 extends Smarty_Internal_Block
+class Block_120775295365f493597931e3_92751545 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'header' => 
   array (
-    0 => 'Block_192986250465f457a8db1c49_99307508',
+    0 => 'Block_120775295365f493597931e3_92751545',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -90,12 +90,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'header'} */
 /* {block 'content'} */
-class Block_102817336665f457a8db2104_69651072 extends Smarty_Internal_Block
+class Block_1393121265f49359793562_14555584 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_102817336665f457a8db2104_69651072',
+    0 => 'Block_1393121265f49359793562_14555584',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -103,12 +103,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'footer'} */
-class Block_130641405965f457a8db2408_50731008 extends Smarty_Internal_Block
+class Block_187470354665f493597937f9_24094558 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_130641405965f457a8db2408_50731008',
+    0 => 'Block_187470354665f493597937f9_24094558',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

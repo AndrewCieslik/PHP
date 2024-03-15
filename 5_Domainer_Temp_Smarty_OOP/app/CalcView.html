@@ -2,7 +2,7 @@
 
 {block name=calc}
     <div style="width:90%; margin: 3em auto;">
-        <form class="" action="{$conf->$app_url}/app/calc.php" method="post">
+        <form class="" action="{$conf->$app_url}" method="post">
             <br />
             <div class="col span_24">
                 <label for="id_percent">
@@ -149,8 +149,7 @@
                     <!-- Result Messages -->
                     <div class="row" id="error_msg">
                         <div class="col span_24">
-                            <b>Sorry, but there were errors found with the form you submitted:
-                                <i></i></b>
+                            <b>Sorry, but there were errors found with the form you submitted:<i></i></b>
                             <br><a href="javascript:void(0);" id="new_try">Try Again</a>
                         </div>
                     </div>
