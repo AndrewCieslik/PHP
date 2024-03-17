@@ -2,7 +2,7 @@
 
 {block name=calc}
     <div style="width:90%; margin: 3em auto;">
-        <form class="" action="{$conf->$app_url}" method="post">
+        <form class="" action="{$conf->action_root}calcCompute" method="post">
             <br />
             <div class="col span_24">
                 <label for="id_percent">
