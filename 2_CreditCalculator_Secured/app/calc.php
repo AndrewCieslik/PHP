@@ -26,7 +26,7 @@ function validate(&$credit,&$percent,&$years,&$messages){
 }
 
 function process(&$credit,&$percent,&$years,&$messages,&$result){
-	global $role;
+	global $role; //without it we will have only local new $role inside the method
 	
 	$credit = (float) $credit;
     $percent = (float) $percent;

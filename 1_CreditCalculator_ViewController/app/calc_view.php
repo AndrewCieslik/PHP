@@ -10,7 +10,8 @@
 <body style="background-image: url('<?php echo _BACKGROUND_IMAGE_URL; ?>');" class="body-background">
     <form action="<?php print(_APP_URL); ?>/app/calc.php" method="post">
         <label for="id_credit">Kwota kredytu: </label>
-        <input id="id_credit" type="number" step="any" name="credit" min="1" required value="<?php if (isset($credit)? print($credit):print('Write number'); ?>" /><br />
+        <input id="id_credit" type="number" step="any" name="credit" min="1" required value="<?php if (isset($credit))
+            print($credit); ?>" /><br />
 
         <label for="id_percent">Oprocentowanie: </label>
         <input id="id_percent" type="number" step="any" name="percent" min="0" required value="<?php if (isset($percent))
