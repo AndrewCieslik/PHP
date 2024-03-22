@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-03-17 07:30:08
+/* Smarty version 3.1.30, created on 2024-03-22 08:10:00
   from "D:\xampp\htdocs\PHP\6_Calculator_Smarty_OOP_action\app\calc\CalcView.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_65f68df0b331c6_94348504',
+  'unifunc' => 'content_65fd3cd8e23363_41665748',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '51ad45df4b5f2aa5a225bcb23b49bec2bfbead70' => 
     array (
       0 => 'D:\\xampp\\htdocs\\PHP\\6_Calculator_Smarty_OOP_action\\app\\calc\\CalcView.html',
-      1 => 1710656976,
+      1 => 1711094996,
       2 => 'file',
     ),
   ),
@@ -20,33 +20,37 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f68df0b331c6_94348504 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65fd3cd8e23363_41665748 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_200551158165f68df0755af9_01861440', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_208933337465fd3cd8d01274_31957351', 'footer');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_169204149365f68df0b32528_58955519', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_73100826665fd3cd8e22222_63354676', 'content');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender(($_smarty_tpl->tpl_vars['conf']->value->root_path).("/templates/main.html"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, true);
 }
 /* {block 'footer'} */
-class Block_200551158165f68df0755af9_01861440 extends Smarty_Internal_Block
+class Block_208933337465fd3cd8d01274_31957351 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
-footer example<?php
+footer example
+	<p>
+		Widok oparty na stylach <a href="http://purecss.io/" target="_blank">Pure CSS Yahoo!</a>. (autor przykładu: Przemysław Kudłacik)
+	</p>
+<?php
 }
 }
 /* {/block 'footer'} */
 /* {block 'content'} */
-class Block_169204149365f68df0b32528_58955519 extends Smarty_Internal_Block
+class Block_73100826665fd3cd8e22222_63354676 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
