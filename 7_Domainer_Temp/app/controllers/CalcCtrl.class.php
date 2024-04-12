@@ -100,6 +100,6 @@ class CalcCtrl {
 		getSmarty()->assign('form',$this->form);
 		getSmarty()->assign('res',$this->result);
 		
-		getSmarty()->display($conf->root_path.'CalcView.tpl');
+		getSmarty()->display('CalcView.tpl');
 	}
 }
