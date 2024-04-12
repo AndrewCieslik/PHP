@@ -1,8 +1,61 @@
-{extends file="main.tpl"}
+<?php
+/* Smarty version 3.1.30, created on 2024-04-12 13:09:46
+  from "D:\xampp\htdocs\PHP\php_07_role\app\views\CalcView.tpl" */
 
-{block name=calc}
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_6619167a561d96_62998310',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '043130ded5d817a9bf65ce1513793099eb764aea' => 
+    array (
+      0 => 'D:\\xampp\\htdocs\\PHP\\php_07_role\\app\\views\\CalcView.tpl',
+      1 => 1712920180,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:main.tpl' => 1,
+  ),
+),false)) {
+function content_6619167a561d96_62998310 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, true);
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4965472016619167a55a575_32342862', 'calc');
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18652376146619167a55e804_35818604', 'content');
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18827390136619167a55fef2_23100133', 'header');
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7729959766619167a561557_69371488', 'footer');
+$_smarty_tpl->inheritance->endChild();
+$_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
+}
+/* {block 'calc'} */
+class Block_4965472016619167a55a575_32342862 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
     <div style="width:90%; margin: 3em auto;">
-        <form class="" action="{$conf->action_root}calcCompute" method="post">
+        <form class="" action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+calcCompute" method="post">
             <br />
             <div class="col span_24">
                 <label for="id_percent">
@@ -11,7 +64,8 @@
             </div>
 
             <div class="col span_12">
-                <input type="text" placeholder="Your credit value" id="id_credit" name="credit" value="{$form->credit}"/>
+                <input type="text" placeholder="Your credit value" id="id_credit" name="credit" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->credit;?>
+"/>
             </div>
 
             <div class="col span_24">
@@ -21,7 +75,8 @@
             </div>
 
             <div class="col span_12">
-                <input type="text" placeholder="Percent value" id="id_percent" name="percent" value="{$form->percent}"/>
+                <input type="text" placeholder="Percent value" id="id_percent" name="percent" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->percent;?>
+"/>
             </div>
 
             <div class="col span_24">
@@ -31,45 +86,77 @@
             </div>
 
             <div class="col span_12">
-                <input type="text" placeholder="Credit lenght in years" id="id_years" name="years" value="{$form->years}"/>
+                <input type="text" placeholder="Credit lenght in years" id="id_years" name="years" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->years;?>
+"/>
             </div>
 
             <div class="col span_24">
                 <input class="btn btn-icon btn-block" value="Count monthly loan" type="submit"><br />
 
-                {if $msgs->isError()}
+                <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isError()) {?>
                     <h4>Errors: </h4>
                     <ol class="err">
-                    {foreach $msgs->getErrors() as $err}
-                    {strip}
-                        <li>{$err}</li>
-                    {/strip}
-                    {/foreach}
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getErrors(), 'err');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['err']->value) {
+?>
+                    <li><?php echo $_smarty_tpl->tpl_vars['err']->value;?>
+</li>
+                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
                     </ol>
-                {/if}
+                <?php }?>
                 
-                {if $msgs->isInfo()}
+                <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isInfo()) {?>
                     <h4>Information: </h4>
                     <ol class="inf">
-                    {foreach $msgs->getInfos() as $inf}
-                    {strip}
-                        <li>{$inf}</li>
-                    {/strip}
-                    {/foreach}
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getInfos(), 'inf');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['inf']->value) {
+?>
+                    <li><?php echo $_smarty_tpl->tpl_vars['inf']->value;?>
+</li>
+                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
                     </ol>
-                {/if}
+                <?php }?>
                 
-                {if isset($res->result)}
+                <?php if (isset($_smarty_tpl->tpl_vars['res']->value->result)) {?>
                     <p class="res">
-                        <h1>Result: {$res->result} zl</h1>
+                        <h1>Result: <?php echo $_smarty_tpl->tpl_vars['res']->value->result;?>
+ zl</h1>
                     </p>
-                {/if}
+                <?php }?>
             </div>
         </form>
     </div>
-{/block}
+<?php
+}
+}
+/* {/block 'calc'} */
+/* {block 'calc'} */
+class Block_10924403726619167a55d6c3_18183662 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block 'calc'} */
+/* {block 'content'} */
+class Block_18652376146619167a55e804_35818604 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
 
-{block name = content}
     <div id="Content" class="container">
 
         <div class="row special">
@@ -78,7 +165,10 @@
                     involves financial risks and careful consideration of repayment terms.</h3>
             </div>
         </div>
-        {block name=calc}{/block}
+        <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10924403726619167a55d6c3_18183662', 'calc', $this->tplIndex);
+?>
+
 
         <div class="row padding">
         </div>
@@ -162,9 +252,16 @@
             </div>
         </div>
         <div id="Content-end" class="container"></div>
-{/block}
+<?php
+}
+}
+/* {/block 'content'} */
+/* {block 'header'} */
+class Block_18827390136619167a55fef2_23100133 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
 
-{block name = header}
     <div id="Head" class="container">
         <div class="row">
             <div class="col span_16">
@@ -174,13 +271,24 @@
             </div>
         </div>
     </div>
-{/block}
+<?php
+}
+}
+/* {/block 'header'} */
+/* {block 'footer'} */
+class Block_7729959766619167a561557_69371488 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
 
-{block name = footer}
         <div id="Footer" class="container">
             <div class="row top">
                 <div class="col span_16">Copyright &copy; 2014, Domain holder. All rights reserved.</div>
                 <div class="col span_8 align-right">Design: <a href="http://www.gettemplate.com/">GetTemplate</a></div>
             </div>
         </div>
-{/block}
+<?php
+}
+}
+/* {/block 'footer'} */
+}
