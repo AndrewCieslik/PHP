@@ -32,9 +32,9 @@ class CalcCtrl {
 	}
 
 	public function getParams(){
-		$this->form->credit = isset($_REQUEST ['credit']) ? $_REQUEST ['credit'] : null;
-		$this->form->percent = isset($_REQUEST ['percent']) ? $_REQUEST ['percent'] : null;
-		$this->form->years = isset($_REQUEST ['years']) ? $_REQUEST ['years'] : null;
+		$this->form->credit = getFromRequest('credit');
+		$this->form->percent = getFromRequest('percent');
+		$this->form->years = getFromRequest('years');
 	}
 
 	public function validate() {

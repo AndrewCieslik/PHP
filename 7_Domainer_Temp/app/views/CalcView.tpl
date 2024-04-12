@@ -1,5 +1,4 @@
-{* {extends file=$conf->root_path|cat:"/templates/main.html"} *}
-{extends file="main.tpl"}
+{extends file=$conf->root_path|cat:"/templates/main.tpl"}
 
 {*block calc is inside block content*}
 {block name=calc}
