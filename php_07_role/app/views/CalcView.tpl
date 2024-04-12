@@ -68,6 +68,8 @@
             </div>
         </form>
     </div>
+	{include file='messages.tpl'}
+
 {/block}
 
 {block name = content}
