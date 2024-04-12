@@ -37,9 +37,9 @@ class CalcCtrl {
 	 * Pobranie parametrów
 	 */
 	public function getParams(){
-		$this->form->x = getFromRequest('x');
-		$this->form->y = getFromRequest('y');
-		$this->form->op = getFromRequest('op');
+		$this->form->x = getFromRequest('credit');
+		$this->form->y = getFromRequest('percent');
+		$this->form->op = getFromRequest('years');
 	}
 	
 	/** 
@@ -48,32 +48,37 @@ class CalcCtrl {
 	 */
 	public function validate() {
 		// sprawdzenie, czy parametry zostały przekazane
-		if (! (isset ( $this->form->x ) && isset ( $this->form->y ) && isset ( $this->form->op ))) {
+		if (! (isset ( $this->form->credit ) && isset ( $this->form->percent ) && isset ( $this->form->years ))) {
 			// sytuacja wystąpi kiedy np. kontroler zostanie wywołany bezpośrednio - nie z formularza
 			return false;
 		}
 		
 		// sprawdzenie, czy potrzebne wartości zostały przekazane
-		if ($this->form->x == "") {
+		if ($this->form->credit == "") {
 			getMessages()->addError('Nie podano liczby 1');
 		}
-		if ($this->form->y == "") {
+		if ($this->form->percent == "") {
 			getMessages()->addError('Nie podano liczby 2');
+		}
+		if ($this->form->years == "") {
+			getMessages()->addError('Nie podano liczby 3');
 		}
 		
 		// nie ma sensu walidować dalej gdy brak parametrów
 		if (! getMessages()->isError()) {
 			
 			// sprawdzenie, czy $x i $y są liczbami całkowitymi
-			if (! is_numeric ( $this->form->x )) {
+			if (! is_numeric ( $this->form->credit )) {
 				getMessages()->addError('Pierwsza wartość nie jest liczbą całkowitą');
 			}
 			
-			if (! is_numeric ( $this->form->y )) {
+			if (! is_numeric ( $this->form->percent )) {
 				getMessages()->addError('Druga wartość nie jest liczbą całkowitą');
 			}
+			if (! is_numeric ( $this->form->years )) {
+				getMessages()->addError('Trzecia wartość nie jest liczbą całkowitą');
+			}
 		}
-		
 		return ! getMessages()->isError();
 	}
 	
@@ -86,46 +91,24 @@ class CalcCtrl {
 		
 		if ($this->validate()) {
 				
-			//konwersja parametrów na int
-			$this->form->x = intval($this->form->x);
-			$this->form->y = intval($this->form->y);
-			getMessages()->addInfo('Parametry poprawne.');
+			//if (inRole('admin')) {
+				$this->form->credit = (float)($this->form->credit);
+				$this->form->percent = (float)($this->form->percent);
+				$this->form->years = (int)($this->form->years);
+				$this->msgs->addInfo('Correct parameters.');
+					
+				$this->result->result = ($this->form->credit + ($this->form->percent * $this->form->credit / 100)) / ($this->form->years * 12);
+				$this->result->result = number_format($this->result->result, 2, '.', '');
 				
-			//wykonanie operacji
-			switch ($this->form->op) {
-				case 'minus' :
-					if (inRole('admin')) {
-						$this->result->result = $this->form->x - $this->form->y;
-						$this->result->op_name = '-';
-					} else {
-						getMessages()->addError('Tylko administrator może wykonać tę operację');
-					}
-					break;
-				case 'times' :
-					$this->result->result = $this->form->x * $this->form->y;
-					$this->result->op_name = '*';
-					break;
-				case 'div' :
-					if (inRole('admin')) {
-						$this->result->result = $this->form->x / $this->form->y;
-						$this->result->op_name = '/';
-					} else {
-						getMessages()->addError('Tylko administrator może wykonać tę operację');
-					}
-					break;
-				default :
-					$this->result->result = $this->form->x + $this->form->y;
-					$this->result->op_name = '+';
-					break;
-			}
+				$this->msgs->addInfo('Correct.');
+			// } else {
+			// 	getMessages()->addError('Tylko administrator może wykonać tę operację');
 			
 			getMessages()->addInfo('Wykonano obliczenia.');
 		}
 		
 		$this->generateView();
 	}
-	
-	
 	/**
 	 * Wygenerowanie widoku
 	 */
