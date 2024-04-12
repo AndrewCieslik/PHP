@@ -1,5 +1,6 @@
 {extends file="main.tpl"}
 
+{*block calc is inside block content*}
 {block name=calc}
     <div style="width:90%; margin: 3em auto;">
         <form class="" action="{$conf->action_root}calcCompute" method="post">

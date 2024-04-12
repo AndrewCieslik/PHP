@@ -3,7 +3,7 @@
 namespace app\forms;
 
 class CalcForm {
-	public $x;
-	public $y;
-	public $op;
+	public $credit;
+	public $percent;
+	public $years;
 } 
