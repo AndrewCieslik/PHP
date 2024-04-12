@@ -1,5 +1,4 @@
 <?php
-<?php
 // W skrypcie definicji kontrolera nie trzeba dołączać już niczego.
 // Kontroler wskazuje tylko za pomocą 'use' te klasy z których jawnie korzysta
 // (gdy korzysta niejawnie to nie musi - np używa obiektu zwracanego przez funkcję)
