@@ -90,19 +90,16 @@ class CalcCtrl {
 	}
 	
 	public function generateView(){
-		global $conf;
-		
-		$smarty = new Smarty();
-		$smarty->assign('conf',$conf);
-		
-		$smarty->assign('page_title','Calculator example');
-		$smarty->assign('page_description','MVC/OOP');
-		$smarty->assign('page_header','Objects in PHP');
+		getSmarty()->assign('user',unserialize($_SESSION['user']));
+
+		getSmarty()->assign('page_title','Calculator example');
+		getSmarty()->assign('page_description','MVC/OOP');
+		getSmarty()->assign('page_header','Objects in PHP');
 				
-		$smarty->assign('msgs',$this->msgs);
-		$smarty->assign('form',$this->form);
-		$smarty->assign('res',$this->result);
+		getSmarty()->assign('msgs',$this->msgs);
+		getSmarty()->assign('form',$this->form);
+		getSmarty()->assign('res',$this->result);
 		
-		$smarty->display($conf->root_path.'/app/views/CalcView.tpl');
+		getSmarty()->display($conf->root_path.'CalcView.tpl');
 	}
 }
