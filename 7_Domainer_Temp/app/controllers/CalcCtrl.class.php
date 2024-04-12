@@ -1,9 +1,25 @@
 <?php
-require_once $conf->root_path.'/lib/smarty/Smarty.class.php';
-require_once $conf->root_path.'/lib/Messages.class.php';
-require_once $conf->root_path.'/app/calc/CalcForm.class.php';
-require_once $conf->root_path.'/app/calc/CalcResult.class.php';
+<?php
+// W skrypcie definicji kontrolera nie trzeba dołączać już niczego.
+// Kontroler wskazuje tylko za pomocą 'use' te klasy z których jawnie korzysta
+// (gdy korzysta niejawnie to nie musi - np używa obiektu zwracanego przez funkcję)
 
+// Zarejestrowany autoloader klas załaduje odpowiedni plik automatycznie w momencie, gdy skrypt będzie go chciał użyć.
+// Jeśli nie wskaże się klasy za pomocą 'use', to PHP będzie zakładać, iż klasa znajduje się w bieżącej
+// przestrzeni nazw - tutaj jest to przestrzeń 'app\controllers'.
+
+// Przypominam, że tu również są dostępne globalne funkcje pomocnicze - o to nam właściwie chodziło
+
+namespace app\controllers;
+
+//zamieniamy zatem 'require' na 'use' wskazując jedynie przestrzeń nazw, w której znajduje się klasa
+use app\forms\CalcForm;
+use app\transfer\CalcResult;
+
+/** Kontroler kalkulatora
+ * @author Przemysław Kudłacik
+ *
+ */
 class CalcCtrl {
 
 	private $msgs;   
@@ -88,6 +104,6 @@ class CalcCtrl {
 		$smarty->assign('form',$this->form);
 		$smarty->assign('res',$this->result);
 		
-		$smarty->display($conf->root_path.'/app/calc/CalcView.tpl');
+		$smarty->display($conf->root_path.'/app/views/CalcView.tpl');
 	}
 }
