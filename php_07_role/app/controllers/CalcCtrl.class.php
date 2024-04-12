@@ -37,9 +37,9 @@ class CalcCtrl {
 	 * Pobranie parametrów
 	 */
 	public function getParams(){
-		$this->form->x = getFromRequest('credit');
-		$this->form->y = getFromRequest('percent');
-		$this->form->op = getFromRequest('years');
+		$this->form->credit = getFromRequest('credit');
+		$this->form->percent = getFromRequest('percent');
+		$this->form->years = getFromRequest('years');
 	}
 	
 	/** 
