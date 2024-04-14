@@ -9,10 +9,10 @@
 			<input id="id_login" type="text" name="login"/>
 		</div>
         <div class="pure-control-group">
-			<label for="id_pass">pass: </label>
-			<input id="id_pass" type="password" name="pass" /><br />
+			<label for="id_pass">password: </label>
+			<input id="id_pass" type="text" name="pass" /><br />
 		</div>
-		<div class="pure-controls">
+		<div class="pure-control-group">
 			<input type="submit" value="zaloguj" class="pure-button pure-button-primary"/>
 		</div>
 	</fieldset>
