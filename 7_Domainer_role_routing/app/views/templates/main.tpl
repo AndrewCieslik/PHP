@@ -1,31 +1,14 @@
-<!doctype html>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>
-	<meta charset="utf-8">
-	<meta charset=utf-8>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Domainer - Credit Calculator</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="{$conf->app_url}/assets/css/whhg.css">
-	<link rel="stylesheet" href="{$conf->app_url}/assets/css/grid.css">
-	<link rel="stylesheet" href="{$conf->app_url}/assets/css/styles.css">
-
-	<link rel="icon" type="image/png" href="{$conf->app_url}/assets/images/favicon.png">
-	<link rel="apple-touch-icon" href="{$conf->app_url}/assets/images/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="{$conf->app_url}/assets/images/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="{$conf->app_url}/assets/images/apple-touch-icon-114x114.png">
+	<meta charset="utf-8" />
+	<title>{$page_title|default:"brak tytułu"}</title>
+	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{$conf->app_url}/css/style.css" />
 </head>
 <body>
-	{block name = header}{/block}
-
-	{block name = content}{/block}
-
-	{block name = footer}{/block}
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="{$conf->app_url}/assets/js/main.js"></script>
-
+	<div style="margin: 1em;">
+		{block name=content} Domyślna treść zawartości .... {/block}
+	</div>
 </body>
 </html>
