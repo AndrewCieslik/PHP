@@ -1,6 +1,6 @@
 {extends file="main.tpl"}
 
-{*block calc is inside block content*}
+{*block calc & log_status is inside block content*}
 {block name=calc}
     <div style="width:90%; margin: 3em auto;">
         <form class="" action="{$conf->action_root}calcCompute" method="post">
@@ -36,7 +36,7 @@
             </div>
 
             <div class="col span_24">
-                <input class="btn btn-icon btn-block" value="Count monthly loan" type="submit"><br />
+                <input class="btn btn-large" value="Count monthly loan" type="submit"><br />
 
                 {if $msgs->isError()}
                     <h4>Errors: </h4>
@@ -66,6 +66,8 @@
                     </p>
                 {/if}
             </div>
+            <div class="row">
+            </div>
         </form>
     </div>
 	
@@ -80,6 +82,8 @@
                     involves financial risks and careful consideration of repayment terms.</h3>
             </div>
         </div>
+
+        {block name = log_status}{/block}
         {block name=calc}{/block}
 
         <div class="row padding">
@@ -185,4 +189,11 @@
                 <div class="col span_8 align-right">Design: <a href="http://www.gettemplate.com/">GetTemplate</a></div>
             </div>
         </div>
+{/block}
+
+{block name=log_status}
+    <div class="pure-menu pure-menu-horizontal bottom-margin">
+	<a href="{$conf->action_url}logout"  class="btn btn-large">LOGOUT</a>
+	<span>user: {$user->login}, role: {$user->role}</span>
+</div>
 {/block}
