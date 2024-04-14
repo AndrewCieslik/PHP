@@ -78,12 +78,6 @@ class CalcCtrl {
             $this->form->percent = (float)$this->form->percent;
             $this->form->years = (int)$this->form->years;
 			getMessages()->addInfo('Parametry poprawne.');
-			
-			$this->form->credit = (float)$this->form->credit;
-            $this->form->percent = (float)$this->form->percent;
-            $this->form->years = (int)$this->form->years;
-            
-            $this->msgs->addInfo('Poprawne dane wejściowe');
             
             $this->result->result = ($this->form->credit + ($this->form->percent * $this->form->credit / 100)) / ($this->form->years * 12);
             $this->result->result = number_format($this->result->result, 2, '.', '');
@@ -95,7 +89,7 @@ class CalcCtrl {
 	}
 	
 	public function action_calcShow(){
-		getMessages()->addInfo('Witaj w kalkulatorze');
+		//getMessages()->addInfo('Witaj w kalkulatorze');
 		$this->generateView();
 	}
 	
