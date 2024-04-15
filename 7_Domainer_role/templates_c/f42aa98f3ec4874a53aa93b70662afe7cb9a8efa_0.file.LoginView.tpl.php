@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-04-14 21:17:45
+/* Smarty version 3.1.30, created on 2024-04-15 08:20:46
   from "D:\xampp\htdocs\PHP\7_Domainer_role\app\views\LoginView.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_661c2bd9c19023_88468671',
+  'unifunc' => 'content_661cc73ee17ea4_57893495',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f42aa98f3ec4874a53aa93b70662afe7cb9a8efa' => 
     array (
       0 => 'D:\\xampp\\htdocs\\PHP\\7_Domainer_role\\app\\views\\LoginView.tpl',
-      1 => 1713122229,
+      1 => 1713162042,
       2 => 'file',
     ),
   ),
@@ -22,21 +22,21 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_661c2bd9c19023_88468671 (Smarty_Internal_Template $_smarty_tpl) {
+function content_661cc73ee17ea4_57893495 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2008057172661c2bd9c171a8_67506493', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_810162288661cc73ee17490_24547458', 'content');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'content'} */
-class Block_2008057172661c2bd9c171a8_67506493 extends Smarty_Internal_Block
+class Block_810162288661cc73ee17490_24547458 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

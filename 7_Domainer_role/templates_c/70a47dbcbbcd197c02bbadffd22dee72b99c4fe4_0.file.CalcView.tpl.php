@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-04-14 18:23:04
+/* Smarty version 3.1.30, created on 2024-04-15 07:57:25
   from "D:\xampp\htdocs\PHP\7_Domainer_role\app\views\CalcView.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_661c02e81e7ba8_00216434',
+  'unifunc' => 'content_661cc1c5015337_02454661',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '70a47dbcbbcd197c02bbadffd22dee72b99c4fe4' => 
     array (
       0 => 'D:\\xampp\\htdocs\\PHP\\7_Domainer_role\\app\\views\\CalcView.tpl',
-      1 => 1713111779,
+      1 => 1713122239,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_661c02e81e7ba8_00216434 (Smarty_Internal_Template $_smarty_tpl) {
+function content_661cc1c5015337_02454661 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -29,27 +29,32 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1212001969661c02e81df715_82517093', 'calc');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1441046375661cc1c500d833_90359336', 'calc');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_721078014661c02e81e2479_56132080', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1765273670661cc1c5012cc1_20323096', 'content');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1806315857661c02e81e3910_95849582', 'header');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1112076360661cc1c5013398_01139001', 'header');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1206750928661c02e81e72c0_77472050', 'footer');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1391854912661cc1c5013b28_85794058', 'footer');
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1777862102661cc1c5014f50_19040895', 'log_status');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'calc'} */
-class Block_1212001969661c02e81df715_82517093 extends Smarty_Internal_Block
+class Block_1441046375661cc1c500d833_90359336 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -92,7 +97,7 @@ calcCompute" method="post">
             </div>
 
             <div class="col span_24">
-                <input class="btn btn-icon btn-block" value="Count monthly loan" type="submit"><br />
+                <input class="btn btn-large" value="Count monthly loan" type="submit"><br />
 
                 <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isError()) {?>
                     <h4>Errors: </h4>
@@ -139,6 +144,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                     </p>
                 <?php }?>
             </div>
+            <div class="row">
+            </div>
         </form>
     </div>
 	
@@ -146,15 +153,22 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 }
 /* {/block 'calc'} */
+/* {block 'log_status'} */
+class Block_246292556661cc1c5010b68_61814889 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+}
+}
+/* {/block 'log_status'} */
 /* {block 'calc'} */
-class Block_226677771661c02e81e19c4_36688320 extends Smarty_Internal_Block
+class Block_1991852042661cc1c5012751_75883640 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 }
 /* {/block 'calc'} */
 /* {block 'content'} */
-class Block_721078014661c02e81e2479_56132080 extends Smarty_Internal_Block
+class Block_1765273670661cc1c5012cc1_20323096 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -167,8 +181,13 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     involves financial risks and careful consideration of repayment terms.</h3>
             </div>
         </div>
+
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_226677771661c02e81e19c4_36688320', 'calc', $this->tplIndex);
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_246292556661cc1c5010b68_61814889', 'log_status', $this->tplIndex);
+?>
+
+        <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1991852042661cc1c5012751_75883640', 'calc', $this->tplIndex);
 ?>
 
 
@@ -259,7 +278,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_226677771661c02e81
 }
 /* {/block 'content'} */
 /* {block 'header'} */
-class Block_1806315857661c02e81e3910_95849582 extends Smarty_Internal_Block
+class Block_1112076360661cc1c5013398_01139001 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -278,7 +297,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'header'} */
 /* {block 'footer'} */
-class Block_1206750928661c02e81e72c0_77472050 extends Smarty_Internal_Block
+class Block_1391854912661cc1c5013b28_85794058 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -293,4 +312,21 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 }
 /* {/block 'footer'} */
+/* {block 'log_status'} */
+class Block_1777862102661cc1c5014f50_19040895 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+    <div class="pure-menu pure-menu-horizontal bottom-margin">
+	<a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+logout"  class="btn btn-large">LOGOUT</a>
+	<span>user: <?php echo $_smarty_tpl->tpl_vars['user']->value->login;?>
+, role: <?php echo $_smarty_tpl->tpl_vars['user']->value->role;?>
+</span>
+</div>
+<?php
+}
+}
+/* {/block 'log_status'} */
 }
