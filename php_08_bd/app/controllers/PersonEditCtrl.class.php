@@ -22,6 +22,8 @@ class PersonEditCtrl {
 		$this->form->name = getFromRequest('name',true,'Błędne wywołanie aplikacji');
 		$this->form->surname = getFromRequest('surname',true,'Błędne wywołanie aplikacji');
 		$this->form->birthdate = getFromRequest('birthdate',true,'Błędne wywołanie aplikacji');
+		$this->form->telefon = getFromRequest('telefon',true,'Błędne wywołanie aplikacji');
+
 
 		if ( getMessages()->isError() ) return false;
 
@@ -34,6 +36,9 @@ class PersonEditCtrl {
 		}
 		if (empty(trim($this->form->birthdate))) {
 			getMessages()->addError('Wprowadź datę urodzenia');
+		}
+		if (empty(trim($this->form->telefon))) {
+			getMessages()->addError('Wprowadź numer telefonu');
 		}
 
 		if ( getMessages()->isError() ) return false;
@@ -74,6 +79,8 @@ class PersonEditCtrl {
 				$this->form->name = $record['name'];
 				$this->form->surname = $record['surname'];
 				$this->form->birthdate = $record['birthdate'];
+				$this->form->telefon = $record['telefon'];
+
 			} catch (PDOException $e){
 				getMessages()->addError('Wystąpił błąd podczas odczytu rekordu');
 				if (getConf()->debug) getMessages()->addError($e->getMessage());			
@@ -119,7 +126,9 @@ class PersonEditCtrl {
 						getDB()->insert("person", [
 							"name" => $this->form->name,
 							"surname" => $this->form->surname,
-							"birthdate" => $this->form->birthdate
+							"birthdate" => $this->form->birthdate,
+							"telefon" => $this->form->telefon
+
 						]);
 					} else { //za dużo rekordów
 						// Gdy za dużo rekordów to pozostań na stronie
@@ -132,7 +141,9 @@ class PersonEditCtrl {
 					getDB()->update("person", [
 						"name" => $this->form->name,
 						"surname" => $this->form->surname,
-						"birthdate" => $this->form->birthdate
+						"birthdate" => $this->form->birthdate,
+						"telefon" => $this->form->telefon
+
 					], [ 
 						"idperson" => $this->form->id
 					]);
