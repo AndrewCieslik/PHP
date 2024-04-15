@@ -214,7 +214,7 @@ class Medoo
 			$stack[] = is_int($key) ? $value : $key . '=' . $value;
 		}
 
-		$dsn = $driver . ':' . implode($stack, ';');
+		$dsn = $driver . ':' . implode(';', $stack);
 
 		if (
 			in_array($this->type, ['mariadb', 'mysql', 'pgsql', 'sybase', 'mssql']) &&
@@ -488,7 +488,7 @@ class Medoo
 			}
 		}
 
-		return implode($stack, ',');
+		return implode(',', $stack);
 	}
 
 	protected function arrayQuote($array)
@@ -500,7 +500,7 @@ class Medoo
 			$stack[] = is_int($value) ? $value : $this->pdo->quote($value);
 		}
 
-		return implode($stack, ',');
+		return implode(',', $stack);
 	}
 
 	protected function innerConjunct($data, $map, $conjunctor, $outer_conjunctor)
@@ -1259,7 +1259,7 @@ class Medoo
 				}
 			}
 
-			$stack[] = '(' . implode($values, ', ') . ')';
+			$stack[] = '(' . implode(', ', $values) . ')';
 		}
 
 		foreach ($columns as $key)
