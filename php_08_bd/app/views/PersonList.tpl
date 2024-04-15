@@ -37,6 +37,7 @@
 		<td>{$p["name"]}</td>
 		<td>{$p["surname"]}</td>
 		<td>{$p["birthdate"]}</td>
+		<td>{$p["telefon"]}</td>
 		<td>
 			<a class="button-small pure-button button-secondary" href="{$conf->action_url}personEdit&id={$p['idperson']}">Edytuj</a>
 			&nbsp;
