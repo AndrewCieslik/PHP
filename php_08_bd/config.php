@@ -4,7 +4,7 @@ $conf->debug = true; # ustaw na true podczas tworzenia systemu i używaj w aplik
 # konfiguracja podstawowa
 $conf->server_name = 'localhost';
 $conf->server_url = 'http://'.$conf->server_name;
-$conf->app_root = '/php_08_bd';
+$conf->app_root = '/PHP/php_08_bd';
 $conf->action_root = $conf->app_root.'/ctrl.php?action=';
 
 # konfiguracja bazy danych (wymagane)
