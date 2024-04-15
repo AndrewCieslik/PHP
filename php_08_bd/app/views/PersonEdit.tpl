@@ -18,6 +18,10 @@
             <label for="birthdate">data ur.</label>
             <input id="birthdate" type="text" placeholder="data ur." name="birthdate" value="{$form->birthdate}">
         </div>
+        <div class="pure-control-group">
+            <label for="telefon">telefon</label>
+            <input id="telefon" type="text" placeholder="telefon" name="telefon" value="{$form->telefon}">
+        </div>
 		<div class="pure-controls">
 			<input type="submit" class="pure-button pure-button-primary" value="Zapisz"/>
 			<a class="pure-button button-secondary" href="{$conf->action_root}personList">Powrót</a>
