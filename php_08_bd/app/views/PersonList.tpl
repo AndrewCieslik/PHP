@@ -26,6 +26,7 @@
 		<th>imię</th>
 		<th>nazwisko</th>
 		<th>data ur.</th>
+		<th>telefon</th>
 		<th>opcje</th>
 	</tr>
 </thead>
