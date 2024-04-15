@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-04-15 19:59:20
+/* Smarty version 3.1.30, created on 2024-04-15 20:53:02
   from "D:\xampp\htdocs\PHP\php_08_bd\app\views\PersonEdit.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_661d6af8906de8_69421985',
+  'unifunc' => 'content_661d778e3f7392_17067224',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cdeca0f9afa93d6d53c06354d37f5faa1541645b' => 
     array (
       0 => 'D:\\xampp\\htdocs\\PHP\\php_08_bd\\app\\views\\PersonEdit.tpl',
-      1 => 1713185132,
+      1 => 1713206726,
       2 => 'file',
     ),
   ),
@@ -21,21 +21,21 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_661d6af8906de8_69421985 (Smarty_Internal_Template $_smarty_tpl) {
+function content_661d778e3f7392_17067224 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1039693348661d6af8906958_63145359', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1628399252661d778e3f6e26_44739486', 'top');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'top'} */
-class Block_1039693348661d6af8906958_63145359 extends Smarty_Internal_Block
+class Block_1628399252661d778e3f6e26_44739486 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -59,6 +59,11 @@ personSave" method="post" class="pure-form pure-form-aligned">
 		<div class="pure-control-group">
             <label for="birthdate">data ur.</label>
             <input id="birthdate" type="text" placeholder="data ur." name="birthdate" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->birthdate;?>
+">
+        </div>
+        <div class="pure-control-group">
+            <label for="telefon">telefon</label>
+            <input id="telefon" type="text" placeholder="telefon" name="telefon" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->telefon;?>
 ">
         </div>
 		<div class="pure-controls">

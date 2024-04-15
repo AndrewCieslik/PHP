@@ -60,6 +60,7 @@ class PersonListCtrl {
 					"name",
 					"surname",
 					"birthdate",
+					"telefon"
 				], $where );
 		} catch (PDOException $e){
 			getMessages()->addError('Wystąpił błąd podczas pobierania rekordów');
