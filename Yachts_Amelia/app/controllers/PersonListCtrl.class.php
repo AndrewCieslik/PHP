@@ -56,11 +56,11 @@ class PersonListCtrl {
         //wykonanie zapytania
 
         try {
-            $this->records = App::getDB()->select("person", [
-                "idperson",
+            $this->records = App::getDB()->select("clients", [
+                "id_client",
                 "name",
                 "surname",
-                "birthdate",
+                "phone",
                     ], $where);
         } catch (\PDOException $e) {
             Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');

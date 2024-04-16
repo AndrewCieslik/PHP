@@ -3,8 +3,8 @@
 namespace app\forms;
 
 class PersonEditForm {
-	public $id;
+	public $id_client;
 	public $name;
 	public $surname;
-	public $birthdate;
+	public $phone;
 }
