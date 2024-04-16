@@ -21,6 +21,8 @@
 </div>
 
 {block name=top} {/block}
+{block name=top_yacht} {/block}
+
 
 {block name=messages}
 
@@ -39,6 +41,7 @@
 {/block}
 
 {block name=bottom} {/block}
+{block name=bottom_yacht} {/block}
 
 </body>
 
