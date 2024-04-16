@@ -20,10 +20,10 @@ class PersonEditCtrl {
     // Walidacja danych przed zapisem (nowe dane lub edycja).
     public function validateSave() {
         //0. Pobranie parametrów z walidacją
-        $this->form->id = ParamUtils::getFromRequest('id', true, 'Błędne wywołanie aplikacji');
+        $this->form->id = ParamUtils::getFromRequest('id_user', true, 'Błędne wywołanie aplikacji');
         $this->form->name = ParamUtils::getFromRequest('name', true, 'Błędne wywołanie aplikacji');
         $this->form->surname = ParamUtils::getFromRequest('surname', true, 'Błędne wywołanie aplikacji');
-        $this->form->birthdate = ParamUtils::getFromRequest('phone', true, 'Błędne wywołanie aplikacji');
+        $this->form->phone = ParamUtils::getFromRequest('phone', true, 'Błędne wywołanie aplikacji');
 
         if (App::getMessages()->isError())
             return false;
@@ -35,7 +35,7 @@ class PersonEditCtrl {
         if (empty(trim($this->form->surname))) {
             Utils::addErrorMessage('Wprowadź nazwisko');
         }
-        if (empty(trim($this->form->birthdate))) {
+        if (empty(trim($this->form->phone))) {
             Utils::addErrorMessage('Wprowadź numer telefonu');
         }
 
@@ -70,14 +70,14 @@ class PersonEditCtrl {
         if ($this->validateEdit()) {
             try {
                 // 2. odczyt z bazy danych osoby o podanym ID (tylko jednego rekordu)
-                $record = App::getDB()->get("clients", "*", [
-                    "idperson" => $this->form->id
+                $record = App::getDB()->get("users", "*", [
+                    "id_user" => $this->form->id_user
                 ]);
                 // 2.1 jeśli osoba istnieje to wpisz dane do obiektu formularza
-                $this->form->id = $record['id_client'];
+                $this->form->id_user = $record['id_user'];
                 $this->form->name = $record['name'];
                 $this->form->surname = $record['surname'];
-                $this->form->birthdate = $record['phone'];
+                $this->form->phone = $record['phone'];
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił błąd podczas odczytu rekordu');
                 if (App::getConf()->debug)
@@ -95,8 +95,8 @@ class PersonEditCtrl {
 
             try {
                 // 2. usunięcie rekordu
-                App::getDB()->delete("clients", [
-                    "idperson" => $this->form->id
+                App::getDB()->delete("users", [
+                    "idperson" => $this->form->id_user
                 ]);
                 Utils::addInfoMessage('Pomyślnie usunięto rekord');
             } catch (\PDOException $e) {
@@ -118,11 +118,11 @@ class PersonEditCtrl {
             try {
 
                 //2.1 Nowy rekord
-                if ($this->form->id == '') {
+                if ($this->form->id_user == '') {
                     //sprawdź liczebność rekordów - nie pozwalaj przekroczyć 20
-                    $count = App::getDB()->count("clients");
+                    $count = App::getDB()->count("users");
                     if ($count <= 20) {
-                        App::getDB()->insert("clients", [
+                        App::getDB()->insert("users", [
                             "name" => $this->form->name,
                             "surname" => $this->form->surname,
                             "phone" => $this->form->phone
@@ -135,12 +135,12 @@ class PersonEditCtrl {
                     }
                 } else {
                     //2.2 Edycja rekordu o danym ID
-                    App::getDB()->update("clients", [
+                    App::getDB()->update("users", [
                         "name" => $this->form->name,
                         "surname" => $this->form->surname,
                         "phone" => $this->form->phone
                             ], [
-                        "id_client" => $this->form->id_client
+                        "id_user" => $this->form->id_user
                     ]);
                 }
                 Utils::addInfoMessage('Pomyślnie zapisano rekord');

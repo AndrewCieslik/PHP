@@ -25,7 +25,7 @@
 	<tr>
 		<th>imię</th>
 		<th>nazwisko</th>
-		<th>data ur.</th>
+		<th>telefon</th>
 		<th>opcje</th>
 	</tr>
 </thead>
@@ -35,11 +35,11 @@
 	<tr>
 		<td>{$p["name"]}</td>
 		<td>{$p["surname"]}</td>
-		<td>{$p["birthdate"]}</td>
+		<td>{$p["phone"]}</td>
 		<td>
-			<a class="button-small pure-button button-secondary" href="{$conf->action_url}personEdit/{$p['idperson']}">Edytuj</a>
+			<a class="button-small pure-button button-secondary" href="{$conf->action_url}personEdit/{$p['id_user']}">Edytuj</a>
 			&nbsp;
-			<a class="button-small pure-button button-warning" href="{$conf->action_url}personDelete/{$p['idperson']}">Usuń</a>
+			<a class="button-small pure-button button-warning" href="{$conf->action_url}personDelete/{$p['id_user']}">Usuń</a>
 		</td>
 	</tr>
 {/strip}

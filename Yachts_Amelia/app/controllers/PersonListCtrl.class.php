@@ -56,8 +56,8 @@ class PersonListCtrl {
         //wykonanie zapytania
 
         try {
-            $this->records = App::getDB()->select("clients", [
-                "id_client",
+            $this->records = App::getDB()->select("users", [
+                "id_user",
                 "name",
                 "surname",
                 "phone",

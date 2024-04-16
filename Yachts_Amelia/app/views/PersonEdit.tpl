@@ -15,15 +15,15 @@
             <input id="surname" type="text" placeholder="nazwisko" name="surname" value="{$form->surname}">
         </div>
 		<div class="pure-control-group">
-            <label for="birthdate">data ur.</label>
-            <input id="birthdate" type="text" placeholder="data ur." name="birthdate" value="{$form->birthdate}">
+            <label for="phone">telefon</label>
+            <input id="phone" type="text" placeholder="telefon" name="phone" value="{$form->phone}">
         </div>
 		<div class="pure-controls">
 			<input type="submit" class="pure-button pure-button-primary" value="Zapisz"/>
 			<a class="pure-button button-secondary" href="{$conf->action_root}personList">Powrót</a>
 		</div>
 	</fieldset>
-    <input type="hidden" name="id" value="{$form->id}">
+    <input type="hidden" name="id_user" value="{$form->id_user}">
 </form>	
 </div>
 
