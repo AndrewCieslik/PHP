@@ -5,13 +5,13 @@
 <div class="bottom-margin">
 <form action="{$conf->action_root}yachtSave" method="post" class="pure-form pure-form-aligned">
 	<fieldset>
-		<legend>Dane osoby</legend>
+		<legend>Dane jachtu</legend>
 		<div class="pure-control-group">
             <label for="model">model</label>
             <input id="model" type="text" placeholder="model" name="model" value="{$form->model}">
         </div>
 		<div class="pure-control-group">
-            <label for="name">nazwisko</label>
+            <label for="name">nazwa</label>
             <input id="name" type="text" placeholder="nazwa" name="name" value="{$form->name}">
         </div>
 		<div class="pure-controls">

@@ -2,15 +2,15 @@
 
 {block name=top_yacht}
 
-{* <div class="bottom-margin">
+<div class="bottom-margin">
 <form class="pure-form pure-form-stacked" action="{$conf->action_url}yachtList">
 	<legend>Opcje wyszukiwania jachtów</legend>
 	<fieldset>
-		<input type="text" placeholder="nazwisko" name="sf_surname" value="{$searchForm->surname}" /><br />
+		<input type="text" placeholder="model" name="sf_model" value="{$searchForm->model}" /><br />
 		<button type="submit" class="pure-button pure-button-primary">Filtruj</button>
 	</fieldset>
 </form>
-</div>	 *}
+</div>	
 
 {/block}
 
