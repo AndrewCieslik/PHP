@@ -4,12 +4,12 @@ $conf->debug = true; # set true during development and use in your code (for ins
 # ---- Main webapp configuration
 $conf->server_name = 'localhost';   # server address and port
 $conf->protocol = 'http';           # http or https
-$conf->app_root = '/PHP/php_09_bd/public';   # project subfolder in domain (relative to main domain)
+$conf->app_root = '/PHP/Yachts_Amelia/public';   # project subfolder in domain (relative to main domain)
 
 # ---- Database config - values required by Medoo
 $conf->db_type = 'mysql';
 $conf->db_server = 'localhost';
-$conf->db_name = 'simpledb';
+$conf->db_name = 'yachts_charter';
 $conf->db_user = 'root';
 $conf->db_pass = '';
 $conf->db_charset = 'utf8';
