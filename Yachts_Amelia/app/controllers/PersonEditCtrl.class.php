@@ -23,7 +23,7 @@ class PersonEditCtrl {
         $this->form->id = ParamUtils::getFromRequest('id', true, 'Błędne wywołanie aplikacji');
         $this->form->name = ParamUtils::getFromRequest('name', true, 'Błędne wywołanie aplikacji');
         $this->form->surname = ParamUtils::getFromRequest('surname', true, 'Błędne wywołanie aplikacji');
-        $this->form->birthdate = ParamUtils::getFromRequest('birthdate', true, 'Błędne wywołanie aplikacji');
+        $this->form->birthdate = ParamUtils::getFromRequest('phone', true, 'Błędne wywołanie aplikacji');
 
         if (App::getMessages()->isError())
             return false;
@@ -36,7 +36,7 @@ class PersonEditCtrl {
             Utils::addErrorMessage('Wprowadź nazwisko');
         }
         if (empty(trim($this->form->birthdate))) {
-            Utils::addErrorMessage('Wprowadź datę urodzenia');
+            Utils::addErrorMessage('Wprowadź numer telefonu');
         }
 
         if (App::getMessages()->isError())
@@ -44,10 +44,10 @@ class PersonEditCtrl {
 
         // 2. sprawdzenie poprawności przekazanych parametrów
 
-        $d = \DateTime::createFromFormat('Y-m-d', $this->form->birthdate);
-        if ($d === false) {
-            Utils::addErrorMessage('Zły format daty. Przykład: 2015-12-20');
-        }
+        // $d = \DateTime::createFromFormat('Y-m-d', $this->form->birthdate);
+        // if ($d === false) {
+        //     Utils::addErrorMessage('Zły format daty. Przykład: 2015-12-20');
+        // }
 
         return !App::getMessages()->isError();
     }
@@ -70,14 +70,14 @@ class PersonEditCtrl {
         if ($this->validateEdit()) {
             try {
                 // 2. odczyt z bazy danych osoby o podanym ID (tylko jednego rekordu)
-                $record = App::getDB()->get("person", "*", [
+                $record = App::getDB()->get("clients", "*", [
                     "idperson" => $this->form->id
                 ]);
                 // 2.1 jeśli osoba istnieje to wpisz dane do obiektu formularza
-                $this->form->id = $record['idperson'];
+                $this->form->id = $record['id_client'];
                 $this->form->name = $record['name'];
                 $this->form->surname = $record['surname'];
-                $this->form->birthdate = $record['birthdate'];
+                $this->form->birthdate = $record['phone'];
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił błąd podczas odczytu rekordu');
                 if (App::getConf()->debug)
@@ -95,7 +95,7 @@ class PersonEditCtrl {
 
             try {
                 // 2. usunięcie rekordu
-                App::getDB()->delete("person", [
+                App::getDB()->delete("clients", [
                     "idperson" => $this->form->id
                 ]);
                 Utils::addInfoMessage('Pomyślnie usunięto rekord');
@@ -120,12 +120,12 @@ class PersonEditCtrl {
                 //2.1 Nowy rekord
                 if ($this->form->id == '') {
                     //sprawdź liczebność rekordów - nie pozwalaj przekroczyć 20
-                    $count = App::getDB()->count("person");
+                    $count = App::getDB()->count("clients");
                     if ($count <= 20) {
-                        App::getDB()->insert("person", [
+                        App::getDB()->insert("clients", [
                             "name" => $this->form->name,
                             "surname" => $this->form->surname,
-                            "birthdate" => $this->form->birthdate
+                            "phone" => $this->form->phone
                         ]);
                     } else { //za dużo rekordów
                         // Gdy za dużo rekordów to pozostań na stronie
@@ -135,12 +135,12 @@ class PersonEditCtrl {
                     }
                 } else {
                     //2.2 Edycja rekordu o danym ID
-                    App::getDB()->update("person", [
+                    App::getDB()->update("clients", [
                         "name" => $this->form->name,
                         "surname" => $this->form->surname,
-                        "birthdate" => $this->form->birthdate
+                        "phone" => $this->form->phone
                             ], [
-                        "idperson" => $this->form->id
+                        "id_client" => $this->form->id_client
                     ]);
                 }
                 Utils::addInfoMessage('Pomyślnie zapisano rekord');
