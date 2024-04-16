@@ -14,3 +14,9 @@ Utils::addRoute('personNew',     'PersonEditCtrl',	['user','admin']);
 Utils::addRoute('personEdit',    'PersonEditCtrl',	['user','admin']);
 Utils::addRoute('personSave',    'PersonEditCtrl',	['user','admin']);
 Utils::addRoute('personDelete',  'PersonEditCtrl',	['admin']);
+
+Utils::addRoute('yachtList',    'YachtListCtrl');
+Utils::addRoute('yachtNew',     'yachtEditCtrl',	['user','admin']);
+Utils::addRoute('yachtEdit',    'yachtEditCtrl',	['user','admin']);
+Utils::addRoute('yachtSave',    'yachtEditCtrl',	['user','admin']);
+Utils::addRoute('yachtDelete',  'yachtEditCtrl',	['admin']);

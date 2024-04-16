@@ -16,7 +16,7 @@
         </div>
 		<div class="pure-controls">
 			<input type="submit" class="pure-button pure-button-primary" value="Zapisz"/>
-			<a class="pure-button button-secondary" href="{$conf->action_root}personList">Powrót</a>
+			<a class="pure-button button-secondary" href="{$conf->action_root}yachtList">Powrót</a>
 		</div>
 	</fieldset>
     <input type="hidden" name="id_yacht" value="{$form->id_yacht}">
