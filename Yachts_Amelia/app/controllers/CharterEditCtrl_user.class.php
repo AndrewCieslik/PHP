@@ -61,12 +61,12 @@ class CharterEditCtrl_user {
         return !App::getMessages()->isError();
     }
 
-    public function action_CharterNew() {
+    public function action_CharterNew_user() {
         $this->generateView();
     }
 
     //wysiweltenie rekordu do edycji wskazanego parametrem 'id'
-    public function action_CharterEdit() {
+    public function action_CharterEdit_user() {
         // 1. walidacja id osoby do edycji
         if ($this->validateEdit()) {
             try {
@@ -92,7 +92,7 @@ class CharterEditCtrl_user {
         $this->generateView();
     }
 
-    public function action_CharterDelete() {
+    public function action_CharterDelete_user() {
         // 1. walidacja id osoby do usuniecia
         if ($this->validateEdit()) {
 
@@ -113,7 +113,7 @@ class CharterEditCtrl_user {
         App::getRouter()->forwardTo('CharterList');
     }
 
-    public function action_CharterSave() {
+    public function action_CharterSave_user() {
 
         // 1. Walidacja danych formularza (z pobraniem)
         if ($this->validateSave()) {

@@ -20,7 +20,7 @@ class charterListCtrl_user {
     public function validate() {
         // 1. sprawdzenie, czy parametry zostały przekazane
         // - nie trzeba sprawdzać
-        $this->form->surname = ParamUtils::getFromRequest('sf_surname');
+        $this->form->surname = ParamUtils::getFromRequest('sf_charter');
 
         // 2. sprawdzenie poprawności przekazanych parametrów
         // - nie trzeba sprawdzać
@@ -37,8 +37,8 @@ class charterListCtrl_user {
 
         // 2. Przygotowanie mapy z parametrami wyszukiwania (nazwa_kolumny => wartość)
         $search_params = []; //przygotowanie pustej struktury (aby była dostępna nawet gdy nie będzie zawierała wierszy)
-        if (isset($this->form->surname) && strlen($this->form->surname) > 0) {
-            $search_params['surname[~]'] = $this->form->surname . '%'; // dodanie symbolu % zastępuje dowolny ciąg znaków na końcu
+        if (isset($this->form->surname) && strlen($this->form->id_charter) > 0) {
+            $search_params['id_charter[~]'] = $this->form->id_charter . '%'; // dodanie symbolu % zastępuje dowolny ciąg znaków na końcu
         }
 
         // 3. Pobranie listy rekordów z bazy danych
@@ -52,7 +52,7 @@ class charterListCtrl_user {
             $where = &$search_params;
         }
         //dodanie frazy sortującej po nazwisku
-        $where ["ORDER"] = "surname";
+        $where ["ORDER"] = "id_charter";
         //wykonanie zapytania
 
         try {
