@@ -1,6 +1,6 @@
 {extends file="main.tpl"}
 
-{block name=top_yacht}
+{block name=top}
 
 <div class="bottom-margin">
 <form class="pure-form pure-form-stacked" action="{$conf->action_url}yachtList">
@@ -14,7 +14,7 @@
 
 {/block}
 
-{block name=bottom_yacht}
+{block name=bottom}
 
 <div class="bottom-margin">
 <a class="pure-button button-success" href="{$conf->action_root}yachtNew">+ Nowy jacht</a>
@@ -28,7 +28,7 @@
 	</tr>
 </thead>
 <tbody>
-{foreach $yachts as $y}
+{foreach $people as $p}
 {strip}
 	<tr>
 		<td>{$p["model"]}</td>

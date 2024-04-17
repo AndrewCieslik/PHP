@@ -1,6 +1,6 @@
 {extends file="main.tpl"}
 
-{block name=top_yacht}
+{block name=top}
 
 <div class="bottom-margin">
 <form action="{$conf->action_root}yachtSave" method="post" class="pure-form pure-form-aligned">

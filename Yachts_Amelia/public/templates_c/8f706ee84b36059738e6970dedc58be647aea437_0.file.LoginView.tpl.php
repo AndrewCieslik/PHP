@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-04-16 10:41:12
+/* Smarty version 3.1.30, created on 2024-04-17 21:13:56
   from "D:\xampp\htdocs\PHP\Yachts_Amelia\app\views\LoginView.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_661e39a81d52a3_52563820',
+  'unifunc' => 'content_66201f74f1b7d4_89764651',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8f706ee84b36059738e6970dedc58be647aea437' => 
     array (
       0 => 'D:\\xampp\\htdocs\\PHP\\Yachts_Amelia\\app\\views\\LoginView.tpl',
-      1 => 1713185132,
+      1 => 1713381233,
       2 => 'file',
     ),
   ),
@@ -21,21 +21,21 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_661e39a81d52a3_52563820 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66201f74f1b7d4_89764651 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_456567294661e39a81d4412_17889762', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_192678757166201f74f1b286_47737126', 'top');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'top'} */
-class Block_456567294661e39a81d4412_17889762 extends Smarty_Internal_Block
+class Block_192678757166201f74f1b286_47737126 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -50,7 +50,7 @@ login" method="post" class="pure-form pure-form-aligned bottom-margin">
 "/>
 		</div>
         <div class="pure-control-group">
-			<label for="id_pass">pass: </label>
+			<label for="id_pass">password: </label>
 			<input id="id_pass" type="password" name="pass" /><br />
 		</div>
 		<div class="pure-controls">

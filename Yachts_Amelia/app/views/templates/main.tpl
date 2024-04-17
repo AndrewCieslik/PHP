@@ -12,7 +12,7 @@
 <body style="margin: 20px;">
 
 <div class="pure-menu pure-menu-horizontal bottom-margin">
-	<a href="{$conf->action_root}personList" class="pure-menu-heading pure-menu-link">Lista</a>
+	<a href="{$conf->action_root}personList_user" class="pure-menu-heading pure-menu-link">Moje rezerwacje</a>
 	<a href="{$conf->action_root}yachtList" class="pure-menu-heading pure-menu-link">Lista jachtów</a>
 {if count($conf->roles)>0}
 	<a href="{$conf->action_root}logout" class="pure-menu-heading pure-menu-link">Wyloguj</a>
@@ -22,7 +22,6 @@
 </div>
 
 {block name=top} {/block}
-{block name=top_yacht} {/block}
 
 
 {block name=messages}
@@ -42,7 +41,6 @@
 {/block}
 
 {block name=bottom} {/block}
-{block name=bottom_yacht} {/block}
 
 </body>
 
