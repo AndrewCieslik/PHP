@@ -6,7 +6,7 @@ use core\Utils;
 App::getRouter()->setDefaultRoute('loginShow'); // akcja/ścieżka domyślna
 App::getRouter()->setLoginRoute('login'); // akcja/ścieżka na potrzeby logowania (przekierowanie, gdy nie ma dostępu)
 
-//Utils::addRoute('personList',    'PersonListCtrl');
+Utils::addRoute('personList',    'PersonListCtrl');
 Utils::addRoute('loginShow',     'LoginCtrl');
 Utils::addRoute('login',         'LoginCtrl');
 Utils::addRoute('logout',        'LoginCtrl');
@@ -25,4 +25,4 @@ Utils::addRoute('charterList_user', 'CharterListCtrl_user', ['user', 'admin']);
 Utils::addRoute('charterNew_user',     'charterEditCtrl_user',	['user','admin']);
 Utils::addRoute('charterEdit_user',    'charterEditCtrl_user',	['user','admin']);
 Utils::addRoute('charterSave_user',    'charterEditCtrl_user',	['user','admin']);
-Utils::addRoute('charterDelete_user',  'charterEditCtrl_user',	['admin']);
+Utils::addRoute('charterDelete_user',  'charterEditCtrl_user',	['user', 'admin']);

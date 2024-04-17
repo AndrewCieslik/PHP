@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-04-16 19:59:12
+/* Smarty version 3.1.30, created on 2024-04-17 22:07:20
   from "D:\xampp\htdocs\PHP\Yachts_Amelia\app\views\PersonList.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_661ebc70a3a410_47968673',
+  'unifunc' => 'content_66202bf8d2b672_01516100',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '14506ed4beb956da02d6cbcf62c5cc21d1dd1ea2' => 
     array (
       0 => 'D:\\xampp\\htdocs\\PHP\\Yachts_Amelia\\app\\views\\PersonList.tpl',
-      1 => 1713290314,
+      1 => 1713381304,
       2 => 'file',
     ),
   ),
@@ -21,26 +21,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_661ebc70a3a410_47968673 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66202bf8d2b672_01516100 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_259273798661ebc70a33c09_33099556', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_30374665066202bf8d1ff35_24673868', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_527669184661ebc70a3a022_83169650', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_105677081666202bf8d2b1f2_58706399', 'bottom');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'top'} */
-class Block_259273798661ebc70a33c09_33099556 extends Smarty_Internal_Block
+class Block_30374665066202bf8d1ff35_24673868 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -63,7 +63,7 @@ personList">
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_527669184661ebc70a3a022_83169650 extends Smarty_Internal_Block
+class Block_105677081666202bf8d2b1f2_58706399 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

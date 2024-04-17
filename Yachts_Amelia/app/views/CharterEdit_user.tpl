@@ -3,7 +3,7 @@
 {block name=top}
 
 <div class="bottom-margin">
-<form action="{$conf->action_root}charterSave" method="post" class="pure-form pure-form-aligned">
+<form action="{$conf->action_root}charterSave_user" method="post" class="pure-form pure-form-aligned">
 	<fieldset>
 		<legend>Dane charteru</legend>
 		<div class="pure-control-group">
