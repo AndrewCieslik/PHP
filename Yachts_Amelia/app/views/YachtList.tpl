@@ -26,6 +26,8 @@
 		<th>id jachtu</th>
 		<th>model</th>
 		<th>nazwa</th>
+		<th>opcje</th>
+
 	</tr>
 </thead>
 <tbody>

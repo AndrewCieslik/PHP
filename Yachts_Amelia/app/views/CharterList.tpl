@@ -28,7 +28,9 @@
 		<th>id klienta</th>
 		<th>data rozpoczęcia</th>
 		<th>data zakończenia</th>
-		<th>zatwierdzone</th>
+		<th>zatwierdź</th>
+		<th>opcje</th>
+
 
 	</tr>
 </thead>

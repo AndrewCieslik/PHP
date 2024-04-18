@@ -25,6 +25,7 @@ class CharterEditCtrl {
         $this->form->id_yacht = ParamUtils::getFromRequest('id_yacht', true, 'Błędne wywołanie aplikacji');
         $this->form->date_start = ParamUtils::getFromRequest('date_start', true, 'Błędne wywołanie aplikacji');
         $this->form->date_end = ParamUtils::getFromRequest('date_end', true, 'Błędne wywołanie aplikacji');
+        $this->form->approved = ParamUtils::getFromRequest('approved', true, 'Błędne wywołanie aplikacji');
 
         if (App::getMessages()->isError())
             return false;
@@ -80,6 +81,7 @@ class CharterEditCtrl {
                 $this->form->id_yacht = $record['id_yacht'];
                 $this->form->date_start = $record['date_start'];
                 $this->form->date_end = $record['date_end'];
+                $this->form->approved = $record['approved'];
 
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił błąd podczas odczytu rekordu');
@@ -130,7 +132,8 @@ class CharterEditCtrl {
                             "id_user" => $this->form->id_user,
                             "id_yacht" => $this->form->id_yacht,
                             "date_start" => $this->form->date_start,
-                            "date_end" => $this->form->date_end
+                            "date_end" => $this->form->date_end,
+                            "approved" => $this->form->approved
                         ]);
                     } else { //za dużo rekordów
                         // Gdy za dużo rekordów to pozostań na stronie
@@ -144,7 +147,9 @@ class CharterEditCtrl {
                         "id_user" => $this->form->id_user,
                             "id_yacht" => $this->form->id_yacht,
                             "date_start" => $this->form->date_start,
-                            "date_end" => $this->form->date_end
+                            "date_end" => $this->form->date_end,
+                            "approved" => $this->form->approved
+
                             ], [
                         "id_charter" => $this->form->id_charter
                     ]);
