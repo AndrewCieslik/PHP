@@ -20,7 +20,7 @@ class CharterListCtrl {
     public function validate() {
         // 1. sprawdzenie, czy parametry zostały przekazane
         // - nie trzeba sprawdzać
-        $this->form->surname = ParamUtils::getFromRequest('sf_surname');
+        $this->form->id_charter = ParamUtils::getFromRequest('sf_charter');
 
         // 2. sprawdzenie poprawności przekazanych parametrów
         // - nie trzeba sprawdzać

@@ -9,7 +9,7 @@
 		<div class="pure-control-group">
             <label for="id_user">id klienta</label>
             <input id="id_user" type="text" placeholder="id klienta" name="id_user" value="{$form->id_user}">
-        </div>
+        </div> 
 		<div class="pure-control-group">
             <label for="id_yacht">id jachtu</label>
             <input id="id_yacht" type="text" placeholder="id jachtu" name="id_yacht" value="{$form->id_yacht}">

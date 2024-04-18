@@ -58,7 +58,7 @@ class CharterEditCtrl {
     public function validateEdit() {
         //pobierz parametry na potrzeby wyswietlenia danych do edycji
         //z widoku listy osób (parametr jest wymagany)
-        $this->form->id_user = ParamUtils::getFromCleanURL(1, true, 'Błędne wywołanie aplikacji');
+        $this->form->id_charter = ParamUtils::getFromCleanURL(1, true, 'Błędne wywołanie aplikacji');
         return !App::getMessages()->isError();
     }
 
@@ -160,7 +160,7 @@ class CharterEditCtrl {
             }
 
             // 3b. Po zapisie przejdź na stronę listy osób (w ramach tego samego żądania http)
-            App::getRouter()->forwardTo('CharterList');
+            App::getRouter()->forwardTo('charterList');
         } else {
             // 3c. Gdy błąd walidacji to pozostań na stronie
             $this->generateView();
