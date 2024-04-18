@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-04-18 19:03:55
+/* Smarty version 3.1.30, created on 2024-04-18 20:40:00
   from "D:\xampp\htdocs\PHP\Yachts_Amelia\app\views\CharterEdit.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6621527bac3788_79301566',
+  'unifunc' => 'content_66216900465872_27708155',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e5ba7a424ad0c32e08421a9e5f3d7e62d2b80a3e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\PHP\\Yachts_Amelia\\app\\views\\CharterEdit.tpl',
-      1 => 1713459832,
+      1 => 1713464553,
       2 => 'file',
     ),
   ),
@@ -21,21 +21,21 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_6621527bac3788_79301566 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66216900465872_27708155 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18896895396621527bac2767_23316877', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_163881613566216900464f16_03878920', 'top');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'top'} */
-class Block_18896895396621527bac2767_23316877 extends Smarty_Internal_Block
+class Block_163881613566216900464f16_03878920 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

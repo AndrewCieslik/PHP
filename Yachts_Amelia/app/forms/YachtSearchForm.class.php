@@ -3,5 +3,5 @@
 namespace app\forms;
 
 class YachtSearchForm {
-	public $name;
+	public $model;
 } 
