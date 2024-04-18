@@ -12,11 +12,12 @@
 <body style="margin: 20px;">
 
 <div class="pure-menu pure-menu-horizontal bottom-margin">
-	<a href="{$conf->action_root}charterList_user" class="pure-menu-heading pure-menu-link">Moje rezerwacje</a>
-	<a href="{$conf->action_root}personList" class="pure-menu-heading pure-menu-link">Lista klientów</a>
+	<a href="{$conf->action_root}charterList_user" class="pure-menu-heading pure-menu-link">Panel klienta</a>
+	{* <a href="{$conf->action_root}personList" class="pure-menu-heading pure-menu-link">Lista klientów</a> *}
 
 	<a href="{$conf->action_root}yachtList" class="pure-menu-heading pure-menu-link">Lista jachtów</a>
 {if count($conf->roles)>0}
+	<a href="{$conf->action_root}personList" class="pure-menu-heading pure-menu-link">Panel zarządzania</a>
 	<a href="{$conf->action_root}logout" class="pure-menu-heading pure-menu-link">Wyloguj</a>
 {else}	
 	<a href="{$conf->action_root}loginShow" class="pure-menu-heading pure-menu-link">Zaloguj</a>
