@@ -10,18 +10,18 @@ Utils::addRoute('personList',    'PersonListCtrl');
 Utils::addRoute('loginShow',     'LoginCtrl');
 Utils::addRoute('login',         'LoginCtrl');
 Utils::addRoute('logout',        'LoginCtrl');
-Utils::addRoute('personNew',     'PersonEditCtrl',	['user','admin']);
-Utils::addRoute('personEdit',    'PersonEditCtrl',	['user','admin']);
-Utils::addRoute('personSave',    'PersonEditCtrl',	['user','admin']);
+Utils::addRoute('personNew',     'PersonEditCtrl',	['admin']);
+Utils::addRoute('personEdit',    'PersonEditCtrl',	['admin']);
+Utils::addRoute('personSave',    'PersonEditCtrl',	['admin']);
 Utils::addRoute('personDelete',  'PersonEditCtrl',	['admin']);
 
 Utils::addRoute('yachtList',    'YachtListCtrl');
-Utils::addRoute('yachtNew',     'YachtEditCtrl',	['user','admin']);
-Utils::addRoute('yachtEdit',    'YachtEditCtrl',	['user','admin']);
-Utils::addRoute('yachtSave',    'YachtEditCtrl',	['user','admin']);
+Utils::addRoute('yachtNew',     'YachtEditCtrl',	['admin']);
+Utils::addRoute('yachtEdit',    'YachtEditCtrl',	['admin']);
+Utils::addRoute('yachtSave',    'YachtEditCtrl',	['admin']);
 Utils::addRoute('yachtDelete',  'YachtEditCtrl',	['admin']);
 
-// Utils::addRoute('charterList_user', 'CharterListCtrl_user', ['user', 'admin']);
+Utils::addRoute('charterList_user', 'CharterListCtrl_user', ['user', 'admin']);
 // Utils::addRoute('charterNew_user',     'CharterEditCtrl_user',	['user','admin']);
 // Utils::addRoute('charterEdit_user',    'CharterEditCtrl_user',	['user','admin']);
 // Utils::addRoute('charterSave_user',    'CharterEditCtrl_user',	['user','admin']);
