@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-04-18 19:08:32
+/* Smarty version 3.1.30, created on 2024-04-18 22:53:23
   from "D:\xampp\htdocs\PHP\Yachts_Amelia\app\views\YachtList.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_662153901fcff6_67118474',
+  'unifunc' => 'content_6621884360bcc4_00364047',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1219568294350aca2ec82389bd0eff6625801ea4' => 
     array (
       0 => 'D:\\xampp\\htdocs\\PHP\\Yachts_Amelia\\app\\views\\YachtList.tpl',
-      1 => 1713460079,
+      1 => 1713473599,
       2 => 'file',
     ),
   ),
@@ -21,26 +21,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_662153901fcff6_67118474 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6621884360bcc4_00364047 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_51663681662153901e53d3_71771552', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1024323964662188435f99a0_97109370', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_22385795662153901fc1d7_22560199', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15693823176621884360aad8_60958688', 'bottom');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'top'} */
-class Block_51663681662153901e53d3_71771552 extends Smarty_Internal_Block
+class Block_1024323964662188435f99a0_97109370 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -63,7 +63,7 @@ yachtList">
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_22385795662153901fc1d7_22560199 extends Smarty_Internal_Block
+class Block_15693823176621884360aad8_60958688 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -77,7 +77,7 @@ yachtNew">+ Nowy jacht</a>
 <table id="tab_people" class="pure-table pure-table-bordered">
 <thead>
 	<tr>
-		<th>id jachtu</th>
+		<th>id</th>
 		<th>model</th>
 		<th>nazwa</th>
 		<th>opcje</th>

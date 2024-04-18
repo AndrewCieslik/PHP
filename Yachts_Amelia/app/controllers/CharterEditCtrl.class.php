@@ -44,12 +44,15 @@ class CharterEditCtrl {
         if (App::getMessages()->isError())
             return false;
 
-        // 2. sprawdzenie poprawności przekazanych parametrów
-
-        // $d = \DateTime::createFromFormat('Y-m-d', $this->form->birthdate);
-        // if ($d === false) {
-        //     Utils::addErrorMessage('Zły format daty. Przykład: 2015-12-20');
-        // }
+        //2. sprawdzenie poprawności przekazanych parametrów
+        $d = \DateTime::createFromFormat('Y-m-d', $this->form->date_start);
+        if ($d === false) {
+            Utils::addErrorMessage('Zły format daty. Przykład: 2015-12-20');
+        }
+        $d = \DateTime::createFromFormat('Y-m-d', $this->form->date_end);
+        if ($d === false) {
+            Utils::addErrorMessage('Zły format daty. Przykład: 2015-12-20');
+        }
 
         return !App::getMessages()->isError();
     }
@@ -112,7 +115,7 @@ class CharterEditCtrl {
         }
 
         // 3. Przekierowanie na stronę listy osób
-        App::getRouter()->forwardTo('CharterList');
+        App::getRouter()->forwardTo('charterList');
     }
 
     public function action_CharterSave() {

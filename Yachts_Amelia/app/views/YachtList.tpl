@@ -23,7 +23,7 @@
 <table id="tab_people" class="pure-table pure-table-bordered">
 <thead>
 	<tr>
-		<th>id jachtu</th>
+		<th>id</th>
 		<th>model</th>
 		<th>nazwa</th>
 		<th>opcje</th>
