@@ -20,7 +20,7 @@ class CharterEditCtrl {
     // Walidacja danych przed zapisem (nowe dane lub edycja).
     public function validateSave() {
         //0. Pobranie parametrów z walidacją
-        $this->form->id_charter = ParamUtils::getFromRequest('id_charter', true, 'Błędne wywołanie aplikacji');
+        // $this->form->id_charter = ParamUtils::getFromRequest('id_charter', true, 'Błędne wywołanie aplikacji');
         $this->form->id_user = ParamUtils::getFromRequest('id_user', true, 'Błędne wywołanie aplikacji');
         $this->form->id_yacht = ParamUtils::getFromRequest('id_yacht', true, 'Błędne wywołanie aplikacji');
         $this->form->date_start = ParamUtils::getFromRequest('date_start', true, 'Błędne wywołanie aplikacji');
@@ -123,7 +123,7 @@ class CharterEditCtrl {
             try {
 
                 //2.1 Nowy rekord
-                if ($this->form->id_user == '') {
+                if ($this->form->id_charter == '') {
                     //sprawdź liczebność rekordów - nie pozwalaj przekroczyć 20
                     $count = App::getDB()->count("charters");
                     if ($count <= 20) {
@@ -144,7 +144,7 @@ class CharterEditCtrl {
                 } else {
                     //2.2 Edycja rekordu o danym ID
                     App::getDB()->update("charters", [
-                        "id_user" => $this->form->id_user,
+                            "id_user" => $this->form->id_user,
                             "id_yacht" => $this->form->id_yacht,
                             "date_start" => $this->form->date_start,
                             "date_end" => $this->form->date_end,
