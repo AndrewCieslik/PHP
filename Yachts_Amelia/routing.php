@@ -27,4 +27,6 @@ Utils::addRoute('charterEdit_user',    'charterEditCtrl_user',	['user','admin'])
 Utils::addRoute('charterSave_user',    'charterEditCtrl_user',	['user','admin']);
 Utils::addRoute('charterDelete_user',  'charterEditCtrl_user',	['user', 'admin']);
 
-Utils::addRoute('controlPanel', 'PersonListCtrl', ['admin']);
+Utils::addRoute('controlPanel', 'ControlPanelCtrl', ['admin']);
+Utils::addRoute('charterList', 'CharterListCtrl', ['admin']);
+

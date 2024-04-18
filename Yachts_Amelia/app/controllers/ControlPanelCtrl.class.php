@@ -9,7 +9,7 @@ use core\ParamUtils;
 
 class ControlPanelCtrl {
 
-    public function action_displayPanel() {
+    public function action_controlPanel() {
             // Nie ma potrzeby żadnej logiki w tym kontrolerze,
             // ponieważ chcesz tylko wyświetlić szablon ControlPanel.tpl.
             // Jeśli nie potrzebujesz żadnej logiki, możesz pozostawić tę funkcję pustą.
