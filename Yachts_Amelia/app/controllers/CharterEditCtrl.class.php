@@ -100,7 +100,7 @@ class CharterEditCtrl {
 
             try {
                 // 2. usunięcie rekordu
-                App::getDB()->delete("id_charter", [
+                App::getDB()->delete("charters", [
                     "id_charter" => $this->form->id_charter
                 ]);
                 Utils::addInfoMessage('Pomyślnie usunięto rekord');
