@@ -5,7 +5,7 @@ namespace app\controllers;
 use core\App;
 use core\Utils;
 use core\ParamUtils;
-use app\forms\charterSearchForm_user;
+use app\forms\charterSearchForm;
 
 class charterListCtrl {
 
@@ -28,7 +28,7 @@ class charterListCtrl {
         return !App::getMessages()->isError();
     }
 
-    public function action_charterList_user() {
+    public function action_charterList() {
         // 1. Walidacja danych formularza (z pobraniem)
         // - W tej aplikacji walidacja nie jest potrzebna, ponieważ nie wystąpią błedy podczas podawania nazwiska.
         //   Jednak pozostawiono ją, ponieważ gdyby uzytkownik wprowadzał np. datę, lub wartość numeryczną, to trzeba
@@ -37,7 +37,7 @@ class charterListCtrl {
 
         // 2. Przygotowanie mapy z parametrami wyszukiwania (nazwa_kolumny => wartość)
         $search_params = []; //przygotowanie pustej struktury (aby była dostępna nawet gdy nie będzie zawierała wierszy)
-        if (isset($this->form->surname) && strlen($this->form->id_charter) > 0) {
+        if (isset($this->form->id_charter) && strlen($this->form->id_charter) > 0) {
             $search_params['id_charter[~]'] = $this->form->id_charter . '%'; // dodanie symbolu % zastępuje dowolny ciąg znaków na końcu
         }
 
@@ -62,6 +62,7 @@ class charterListCtrl {
                 "id_yacht",
                 "date_start",
                 "date_end",
+                "approved"
                     ], $where);
         } catch (\PDOException $e) {
             Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');

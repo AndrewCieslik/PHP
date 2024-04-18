@@ -23,6 +23,7 @@
 <table id="tab_people" class="pure-table pure-table-bordered">
 <thead>
 	<tr>
+		<th>id jachtu</th>
 		<th>model</th>
 		<th>nazwa</th>
 	</tr>
@@ -31,6 +32,7 @@
 {foreach $people as $p}
 {strip}
 	<tr>
+		<td>{$p["id_yacht"]}</td>
 		<td>{$p["model"]}</td>
 		<td>{$p["name"]}</td>
 		<td>

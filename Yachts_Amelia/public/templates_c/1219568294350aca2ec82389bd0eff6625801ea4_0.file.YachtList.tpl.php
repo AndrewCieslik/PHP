@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-04-17 14:54:04
+/* Smarty version 3.1.30, created on 2024-04-18 17:26:22
   from "D:\xampp\htdocs\PHP\Yachts_Amelia\app\views\YachtList.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_661fc66cbe9a51_47271010',
+  'unifunc' => 'content_66213b9ed78914_33344300',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1219568294350aca2ec82389bd0eff6625801ea4' => 
     array (
       0 => 'D:\\xampp\\htdocs\\PHP\\Yachts_Amelia\\app\\views\\YachtList.tpl',
-      1 => 1713358442,
+      1 => 1713453978,
       2 => 'file',
     ),
   ),
@@ -21,26 +21,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_661fc66cbe9a51_47271010 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66213b9ed78914_33344300 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1202497824661fc66cbe29c0_50296400', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_137644760766213b9ed5c7e2_55208005', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1608826793661fc66cbe9538_66512157', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_212853404266213b9ed77a73_91352070', 'bottom');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'top'} */
-class Block_1202497824661fc66cbe29c0_50296400 extends Smarty_Internal_Block
+class Block_137644760766213b9ed5c7e2_55208005 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -63,7 +63,7 @@ yachtList">
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_1608826793661fc66cbe9538_66512157 extends Smarty_Internal_Block
+class Block_212853404266213b9ed77a73_91352070 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -77,6 +77,7 @@ yachtNew">+ Nowy jacht</a>
 <table id="tab_people" class="pure-table pure-table-bordered">
 <thead>
 	<tr>
+		<th>id jachtu</th>
 		<th>model</th>
 		<th>nazwa</th>
 	</tr>
@@ -87,7 +88,8 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
 ?>
-<tr><td><?php echo $_smarty_tpl->tpl_vars['p']->value["model"];?>
+<tr><td><?php echo $_smarty_tpl->tpl_vars['p']->value["id_yacht"];?>
+</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["model"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["name"];?>
 </td><td><a class="button-small pure-button button-secondary" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
 yachtEdit/<?php echo $_smarty_tpl->tpl_vars['p']->value['id_yacht'];?>

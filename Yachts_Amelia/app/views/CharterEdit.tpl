@@ -8,15 +8,15 @@
 		<legend>Dane charteru</legend>
 		<div class="pure-control-group">
             <label for="name">Numer jachtu*</label>
-            <input id="name" type="text" placeholder="imię" name="name" value="{$form->id_yacht}">
+            <input id="id_yacht" type="text" placeholder="imię" name="id_yacht" value="{$form->id_yacht}">
         </div>
 		<div class="pure-control-group">
-            <label for="surname">Data rozpoczęcia</label>
-            <input id="surname" type="text" placeholder="data startu" name="date_start" value="{$form->date_start}">
+            <label for="date_start">Data rozpoczęcia</label>
+            <input id="date_start" type="text" placeholder="data startu" name="date_start" value="{$form->date_start}">
         </div>
 		<div class="pure-control-group">
-            <label for="phone">Data zakończenia</label>
-            <input id="phone" type="text" placeholder="data końca" name="date_end" value="{$form->date_end}">
+            <label for="date_end">Data zakończenia</label>
+            <input id="date_end" type="text" placeholder="data końca" name="date_end" value="{$form->date_end}">
         </div>
 		<div class="pure-controls">
 			<input type="submit" class="pure-button pure-button-primary" value="Zapisz"/>
