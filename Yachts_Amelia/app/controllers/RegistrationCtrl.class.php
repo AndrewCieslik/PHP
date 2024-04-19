@@ -15,18 +15,18 @@ class RegistrationCtrl {
         $this->form = new RegistrationForm();
     }
 
-    public function validate() {
+    public function validateSave() {
         // Pobranie parametrów z formularza 
-        $this->form->id_user = ParamUtils::getFromRequest('id_user');
-        $this->form->name = ParamUtils::getFromRequest('name');
-        $this->form->surname = ParamUtils::getFromRequest('surname');
-        $this->form->login = ParamUtils::getFromRequest('login');
-        $this->form->password = ParamUtils::getFromRequest('password');
-        $this->form->password2 = ParamUtils::getFromRequest('password2');
-        $this->form->phone = ParamUtils::getFromRequest('phone');
+        $this->form->id_user = ParamUtils::getFromRequest('id_user', true, 'Błędne wywołanie aplikacji');
+        $this->form->name = ParamUtils::getFromRequest('name', true, 'Błędne wywołanie aplikacji');
+        $this->form->surname = ParamUtils::getFromRequest('surname', true, 'Błędne wywołanie aplikacji');
+        $this->form->login = ParamUtils::getFromRequest('login', true, 'Błędne wywołanie aplikacji');
+        $this->form->password = ParamUtils::getFromRequest('password', true, 'Błędne wywołanie aplikacji');
+        $this->form->password2 = ParamUtils::getFromRequest('password2', true, 'Błędne wywołanie aplikacji');
+        $this->form->phone = ParamUtils::getFromRequest('phone', true, 'Błędne wywołanie aplikacji');
 
         // Walidacja danych
-        if (empty($this->form->name) || empty($this->form->surname) || empty($this->form->login) || empty($this->form->password) || empty($this->form->phone)) {
+        if (empty($this->form->name) || empty($this->form->surname) || empty($this->form->login) || empty($this->form->password)  || empty($this->form->password2) || empty($this->form->phone)) {
             Utils::addErrorMessage('Wszystkie pola są wymagane');
             return false;
         }
@@ -37,18 +37,21 @@ class RegistrationCtrl {
 
         // Sprawdzenie, czy użytkownik o podanym loginie już istnieje (tutaj można dodać logikę sprawdzającą w bazie danych)
 
-        return true;
+        return !App::getMessages()->isError();
     }
 
     public function action_register() {
-        if ($this->validate()) {
+
+        // 1. Walidacja danych formularza (z pobraniem)
+        if ($this->validateSave()) {
             // 2. Zapis danych w bazie
             try {
+
                 //2.1 Nowy rekord
-                if ($this->form->id_user == '') {
+                if ($this->form->id_yacht == '') {
                     //sprawdź liczebność rekordów - nie pozwalaj przekroczyć 20
-                    $count = App::getDB()->count("users");
-                    if ($count <= 20000) {
+                    $count = App::getDB()->count("yachts");
+                    if ($count <= 20) {
                         App::getDB()->insert("users", [
                             "name" => $this->form->name,
                             "surname" => $this->form->surname,
@@ -87,12 +90,11 @@ class RegistrationCtrl {
                 if (App::getConf()->debug)
                     Utils::addErrorMessage($e->getMessage());
             }
-            // Rejestracja udana, można przekierować na inną stronę lub wykonać inne akcje
-            Utils::addInfoMessage('Rejestracja zakończona sukcesem');
-            // Przekierowanie na stronę główną lub gdziekolwiek chcesz
-            App::getRouter()->redirectTo('login');
+
+            // 3b. Po zapisie przejdź na stronę listy osób (w ramach tego samego żądania http)
+            App::getRouter()->forwardTo('personList');
         } else {
-            // Wyświetlenie formularza rejestracji ponownie w przypadku nieprawidłowych danych
+            // 3c. Gdy błąd walidacji to pozostań na stronie
             $this->generateView();
         }
     }
