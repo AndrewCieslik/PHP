@@ -15,7 +15,7 @@
 	<a href="{$conf->action_root}userPanel" class="pure-menu-heading pure-menu-link">Panel klienta</a>
 	{* <a href="{$conf->action_root}personList" class="pure-menu-heading pure-menu-link">Lista klientów</a> *}
 
-	<a href="{$conf->action_root}yachtList" class="pure-menu-heading pure-menu-link">Lista jachtów</a>
+	<a href="{$conf->action_root}yachtList_open" class="pure-menu-heading pure-menu-link">Lista jachtów</a>
 {if count($conf->roles)>0}
 	<a href="{$conf->action_root}controlPanel" class="pure-menu-heading pure-menu-link">Control Panel</a>
 	<a href="{$conf->action_root}logout" class="pure-menu-heading pure-menu-link">Wyloguj</a>
