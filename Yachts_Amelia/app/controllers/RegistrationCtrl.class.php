@@ -46,6 +46,9 @@ class RegistrationCtrl {
         if ($this->validateSave()) {
             // 2. Zapis danych w bazie
             try {
+                 // Rozpoczęcie transakcji
+                App::getDB()->beginTransaction();
+
                 // Wstawienie danych użytkownika do tabeli 'users'
                 App::getDB()->insert("users", [
                     "name" => $this->form->name,
@@ -59,7 +62,14 @@ class RegistrationCtrl {
                     "password" => $this->form->password,
                     "id_user" => App::getDB()->id() //Ostatnie użyte id_users
                 ]);
+
+                // Zatwierdzenie transakcji
+                App::getDB()->commit();
+
             } catch (\PDOException $e) {
+                // W przypadku błędu transakcji, cofnięcie zmian
+                App::getDB()->rollBack();
+                
                 Utils::addErrorMessage('Wystąpił nieoczekiwany błąd podczas zapisu rekordu');
                 if (App::getConf()->debug)
                     Utils::addErrorMessage($e->getMessage());
