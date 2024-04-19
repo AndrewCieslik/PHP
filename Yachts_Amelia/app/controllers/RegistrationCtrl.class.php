@@ -3,6 +3,7 @@ namespace app\controllers;
 
 use core\App;
 use core\Utils;
+use core\ParamUtils;
 use app\forms\RegistrationForm;
 
 class RegistrationCtrl {
