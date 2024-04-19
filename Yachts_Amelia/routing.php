@@ -39,3 +39,9 @@ Utils::addRoute('charterSave',    'CharterEditCtrl',	['admin']);
 Utils::addRoute('charterDelete',  'CharterEditCtrl',	['admin']);
 
 Utils::addRoute('register', 'RegistrationCtrl');
+
+Utils::addRoute('roleList',    'RoleListCtrl',          ['admin']);
+Utils::addRoute('roleNew',     'RoleEditCtrl',	        ['admin']);
+Utils::addRoute('roleEdit',    'RoleEditCtrl',	        ['admin']);
+Utils::addRoute('roleSave',    'RoleEditCtrl',	        ['admin']);
+Utils::addRoute('roleDelete',  'RoleEditCtrl',	        ['admin']);
