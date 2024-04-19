@@ -100,7 +100,7 @@ class RoleEditCtrl {
         App::getRouter()->forwardTo('roleList');
     }
 
-    public function action_yachtSave() {
+    public function action_roleSave() {
 
         // 1. Walidacja danych formularza (z pobraniem)
         if ($this->validateSave()) {
@@ -137,7 +137,7 @@ class RoleEditCtrl {
             }
 
             // 3b. Po zapisie przejdź na stronę listy osób (w ramach tego samego żądania http)
-            App::getRouter()->forwardTo('roleList');
+            App::getRouter()->forwardTo('roleEdit');
         } else {
             // 3c. Gdy błąd walidacji to pozostań na stronie
             $this->generateView();
