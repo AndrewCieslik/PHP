@@ -20,6 +20,11 @@
             <label for="password">Hasło: </label>
             <input id="password" type="password" name="password" />
         </div>
+		<div class="pure-control-group">
+            <label for="password2">Powtórz hasło: </label>
+            <input id="password2" type="password" name="password2" />
+        </div>
+	
         <div class="pure-control-group">
             <label for="phone">Telefon: </label>
             <input id="phone" type="text" name="phone" value="{$form->phone}"/>

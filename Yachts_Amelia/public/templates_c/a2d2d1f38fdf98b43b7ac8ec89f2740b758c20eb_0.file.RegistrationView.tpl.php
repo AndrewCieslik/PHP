@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-04-19 11:08:36
+/* Smarty version 3.1.30, created on 2024-04-19 11:52:26
   from "D:\xampp\htdocs\PHP\Yachts_Amelia\app\views\RegistrationView.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6622349472b8b5_40789454',
+  'unifunc' => 'content_66223eda241b46_63412143',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a2d2d1f38fdf98b43b7ac8ec89f2740b758c20eb' => 
     array (
       0 => 'D:\\xampp\\htdocs\\PHP\\Yachts_Amelia\\app\\views\\RegistrationView.tpl',
-      1 => 1713517553,
+      1 => 1713520342,
       2 => 'file',
     ),
   ),
@@ -21,21 +21,21 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_6622349472b8b5_40789454 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66223eda241b46_63412143 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20428218106622349472b2f5_88651431', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_79655738966223eda2413e3_45714327', 'top');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'top'} */
-class Block_20428218106622349472b2f5_88651431 extends Smarty_Internal_Block
+class Block_79655738966223eda2413e3_45714327 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -63,6 +63,11 @@ register" method="post" class="pure-form pure-form-aligned bottom-margin">
             <label for="password">Hasło: </label>
             <input id="password" type="password" name="password" />
         </div>
+		<div class="pure-control-group">
+            <label for="password2">Powtórz hasło: </label>
+            <input id="password2" type="password" name="password2" />
+        </div>
+	
         <div class="pure-control-group">
             <label for="phone">Telefon: </label>
             <input id="phone" type="text" name="phone" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->phone;?>

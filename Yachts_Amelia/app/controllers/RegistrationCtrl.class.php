@@ -21,11 +21,16 @@ class RegistrationCtrl {
         $this->form->surname = ParamUtils::getFromRequest('surname');
         $this->form->login = ParamUtils::getFromRequest('login');
         $this->form->password = ParamUtils::getFromRequest('password');
+        $this->form->password2 = ParamUtils::getFromRequest('password2');
         $this->form->phone = ParamUtils::getFromRequest('phone');
 
         // Walidacja danych
         if (empty($this->form->name) || empty($this->form->surname) || empty($this->form->login) || empty($this->form->password) || empty($this->form->phone)) {
             Utils::addErrorMessage('Wszystkie pola są wymagane');
+            return false;
+        }
+        if ($this->form->password != $this->form->password2) {
+            Utils::addErrorMessage('Powtórz poprawnie hasło');
             return false;
         }
 
