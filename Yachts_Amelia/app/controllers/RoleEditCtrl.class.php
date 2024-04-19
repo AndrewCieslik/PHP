@@ -20,8 +20,8 @@ class RoleEditCtrl {
     // Walidacja danych przed zapisem (nowe dane lub edycja).
     public function validateSave() {
         //0. Pobranie parametrów z walidacją
-        $this->form->id_role = ParamUtils::getFromRequest('id_role', true, 'Błędne wywołanie aplikacji');
-        $this->form->role = ParamUtils::getFromRequest('role', true, 'Błędne wywołanie aplikacji');
+        $this->form->id_role = ParamUtils::getFromRequest('id_role');
+        $this->form->role = ParamUtils::getFromRequest('role');
 
         if (App::getMessages()->isError())
             return false;
