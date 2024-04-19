@@ -39,7 +39,7 @@ class LoginCtrl {
 
         // sprawdzenie, czy dane logowania poprawne
         // (takie informacje najczęściej przechowuje się w bazie danych)
-        if ($this->form->login == "admin" && $this->form->pass == "admin") {
+        if ($this->form->login == "marta" && $this->form->pass == "marta") {
             RoleUtils::addRole('admin');
         } else if ($this->form->login == "user" && $this->form->pass == "user") {
             RoleUtils::addRole('user');

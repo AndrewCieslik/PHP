@@ -35,3 +35,5 @@ Utils::addRoute('charterNew',     'CharterEditCtrl',	['admin']);
 Utils::addRoute('charterEdit',    'CharterEditCtrl',	['admin']);
 Utils::addRoute('charterSave',    'CharterEditCtrl',	['admin']);
 Utils::addRoute('charterDelete',  'CharterEditCtrl',	['admin']);
+
+Utils::addRoute('register', 'RegistrationCtrl');

@@ -21,6 +21,8 @@
 	<a href="{$conf->action_root}logout" class="pure-menu-heading pure-menu-link">Wyloguj</a>
 {else}	
 	<a href="{$conf->action_root}loginShow" class="pure-menu-heading pure-menu-link">Zaloguj</a>
+	<a href="{$conf->action_root}register" class="pure-menu-heading pure-menu-link">Zarejestruj</a>
+
 {/if}
 </div>
 
