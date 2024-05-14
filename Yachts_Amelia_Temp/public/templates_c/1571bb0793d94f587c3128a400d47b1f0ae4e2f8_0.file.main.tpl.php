@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2024-05-14 21:49:39
+  from "D:\xampp\htdocs\PHP\Yachts_Amelia_Temp\app\views\templates\main.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_6643c0536247e8_07226524',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '1571bb0793d94f587c3128a400d47b1f0ae4e2f8' => 
+    array (
+      0 => 'D:\\xampp\\htdocs\\PHP\\Yachts_Amelia_Temp\\app\\views\\templates\\main.tpl',
+      1 => 1715716165,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6643c0536247e8_07226524 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +32,8 @@
 	
 	<title>Initio - Free, multipurpose html5 template by GetTemplate</title>
 
-	<link rel="shortcut icon" href="{$conf->app_url}/images/gt_favicon.png">
+	<link rel="shortcut icon" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/images/gt_favicon.png">
 	
 	<!-- Bootstrap -->
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
@@ -17,16 +42,20 @@
 	<!-- Fonts -->
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
 	<!-- Custom styles -->
-	<link rel="stylesheet" href="{$conf->app_url}/css/styles.css">
+	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/css/styles.css">
 
-	<!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
+	<!--[if lt IE 9]> <?php echo '<script'; ?>
+ src="assets/js/html5shiv.js"><?php echo '</script'; ?>
+> <![endif]-->
 </head>
 <body class="home">
 
 <header id="header">
 	<div id="head" class="parallax" parallax-speed="2">
 		<h1 id="logo" class="text-center">
-			<img class="img-circle" src="{$conf->app_url}/images/guy.jpg" alt="">
+			<img class="img-circle" src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/images/guy.jpg" alt="">
 			<span class="title">Anthony Russel</span>
 			<span class="tagline">A mystery person<br>
 				<a href="">anthony.russel42@example.com</a></span>
@@ -106,7 +135,8 @@
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 					<a class="thumbnail" href="sidebar-right.html">
 						<span class="img">
-							<img src="{$conf->app_url}/images/s1.jpg" alt="">
+							<img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/images/s1.jpg" alt="">
 							<span class="cover"><span class="more">See details &rarr;</span></span>
 						</span>
 						<span class="title">Sample title - big data solutions</span>
@@ -119,7 +149,8 @@
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 					<a class="thumbnail" href="sidebar-right.html">
 						<span class="img">
-							<img src="{$conf->app_url}/images/s1.jpg" alt="">
+							<img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/images/s1.jpg" alt="">
 							<span class="cover"><span class="more">See details &rarr;</span></span>
 						</span>
 						<span class="title">Pure ipsum - development services for people</span>
@@ -132,7 +163,8 @@
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 					<a class="thumbnail" href="sidebar-right.html">
 						<span class="img">
-							<img src="{$conf->app_url}/images/s1.jpg" alt="">
+							<img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/images/s1.jpg" alt="">
 							<span class="cover"><span class="more">See details &rarr;</span></span>
 						</span>
 						<span class="title">Lorem studios - interior and patio design</span>
@@ -145,7 +177,8 @@
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 					<a class="thumbnail" href="sidebar-right.html">
 						<span class="img">
-							<img src="{$conf->app_url}/images/s1.jpg" alt="">
+							<img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/images/s1.jpg" alt="">
 							<span class="cover"><span class="more">See details &rarr;</span></span>
 						</span>
 						<span class="title">Pure ipsum - development services for people</span>
@@ -158,7 +191,8 @@
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 					<a class="thumbnail" href="sidebar-right.html">
 						<span class="img">
-							<img src="{$conf->app_url}/images/s1.jpg" alt="">
+							<img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/images/s1.jpg" alt="">
 							<span class="cover"><span class="more">See details &rarr;</span></span>
 						</span>
 						<span class="title">Lorem studios - interior and patio design</span>
@@ -171,7 +205,8 @@
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 					<a class="thumbnail" href="sidebar-right.html">
 						<span class="img">
-							<img src="{$conf->app_url}/images/s1.jpg" alt="">
+							<img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/images/s1.jpg" alt="">
 							<span class="cover"><span class="more">See details &rarr;</span></span>
 						</span>
 						<span class="title">Lorem studios - interior and patio design</span>
@@ -200,7 +235,8 @@
 			<h2 class="section-title"><span>Clients</span></h2>
 			<div class="col-lg-12">
 				<p>
-					<img src="{$conf->app_url}/images/sample_clients.png" alt="">
+					<img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/images/sample_clients.png" alt="">
 				</p>
 			</div>
 		</div> <!-- /section -->
@@ -283,8 +319,17 @@
 
 
 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="{$conf->app_url}/js/template.js"></script>
+<?php echo '<script'; ?>
+ src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+/js/template.js"><?php echo '</script'; ?>
+>
 </body>
 </html>
+<?php }
+}
