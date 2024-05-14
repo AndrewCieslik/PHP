@@ -1,4 +1,4 @@
-<!-- {* <!DOCTYPE HTML>
+{* <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 
 <head>
@@ -47,4 +47,4 @@
 
 {block name=bottom} {/block}
 </body>	
-</html> *} -->
+</html> *}
