@@ -26,10 +26,10 @@
 <header id="header">
 	<div id="head" class="parallax" parallax-speed="2">
 		<h1 id="logo" class="text-center">
-			<img class="img-circle" src="{$conf->app_url}/images/guy.jpg" alt="">
-			<span class="title">Anthony Russel</span>
-			<span class="tagline">A mystery person<br>
-				<a href="">anthony.russel42@example.com</a></span>
+			<img class="img-circle" src="{$conf->app_url}/images/2898_Jezioro-Wdzydze-rekreacja-i-relaks.jpg" alt="">
+			<span class="title">Wdzydze Czarter Jachtów</span>
+			<span class="tagline">Kaszuby zapraszają!<br>
+				<a href="">na.kaszuby@example.com</a></span>
 		</h1>
 	</div>
 
@@ -43,8 +43,8 @@
 			<div class="navbar-collapse collapse">
 				
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="main.tpl">Home</a></li>
-					<li><a href="about.html">About</a></li>
+					<li class="active"><a href="{$conf->action_root}userPanel">Panel klienta</a></li>
+					<li><a href="{$conf->action_root}yachtList_open">Lista jachtów</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -67,8 +67,29 @@
 		
 		<div class="row section topspace">
 			<div class="col-md-12">
-				<p class="lead text-center text-muted">Let me tell you something my friend. hope is a dangerous thing. hope can drive a man insane. you <a href="about.html">measure</a> yourself by the people who measure themselves by you. it only took me <a href="sidebar-right.html">six days</a>. </p>
-			</div>
+				<!-- <p class="lead text-center text-muted">Let me tell you something my friend. hope is a dangerous thing. hope can drive a man insane. you <a href="about.html">measure</a> yourself by the people who measure themselves by you. it only took me <a href="sidebar-right.html">six days</a>. </p>
+				-->
+			{block name=top} {/block}
+
+
+				{block name=messages}
+				
+				{if $msgs->isMessage()}
+				<div class="messages bottom-margin">
+					<ul>
+					{foreach $msgs->getMessages() as $msg}
+					{strip}
+						<li class="msg {if $msg->isError()}error{/if} {if $msg->isWarning()}warning{/if} {if $msg->isInfo()}info{/if}">{$msg->text}</li>
+					{/strip}
+					{/foreach}
+					</ul>
+				</div>
+				{/if}
+				
+				{/block}
+				
+				{block name=bottom} {/block}
+				</div>
 		</div> <!-- / section -->
 		
 		<div class="row section featured topspace">
@@ -208,6 +229,7 @@
 	</div>	<!-- /container -->
 
 </main>
+
 
 <footer id="footer">
 	<div class="container">

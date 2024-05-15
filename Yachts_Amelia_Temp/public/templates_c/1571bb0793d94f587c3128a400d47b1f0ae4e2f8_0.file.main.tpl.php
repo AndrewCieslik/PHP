@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-05-14 21:49:39
+/* Smarty version 3.1.30, created on 2024-05-15 12:03:55
   from "D:\xampp\htdocs\PHP\Yachts_Amelia_Temp\app\views\templates\main.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6643c0536247e8_07226524',
+  'unifunc' => 'content_6644888b94a442_59987860',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1571bb0793d94f587c3128a400d47b1f0ae4e2f8' => 
     array (
       0 => 'D:\\xampp\\htdocs\\PHP\\Yachts_Amelia_Temp\\app\\views\\templates\\main.tpl',
-      1 => 1715716165,
+      1 => 1715767429,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6643c0536247e8_07226524 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6644888b94a442_59987860 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,10 +57,10 @@ function content_6643c0536247e8_07226524 (Smarty_Internal_Template $_smarty_tpl)
 	<div id="head" class="parallax" parallax-speed="2">
 		<h1 id="logo" class="text-center">
 			<img class="img-circle" src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
-/images/guy.jpg" alt="">
-			<span class="title">Anthony Russel</span>
-			<span class="tagline">A mystery person<br>
-				<a href="">anthony.russel42@example.com</a></span>
+/images/2898_Jezioro-Wdzydze-rekreacja-i-relaks.jpg" alt="">
+			<span class="title">Wdzydze Czarter Jachtów</span>
+			<span class="tagline">Kaszuby zapraszają!<br>
+				<a href="">na.kaszuby@example.com</a></span>
 		</h1>
 	</div>
 
@@ -72,8 +74,10 @@ function content_6643c0536247e8_07226524 (Smarty_Internal_Template $_smarty_tpl)
 			<div class="navbar-collapse collapse">
 				
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="main.tpl">Home</a></li>
-					<li><a href="about.html">About</a></li>
+					<li class="active"><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+userPanel">Panel klienta</a></li>
+					<li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+yachtList_open">Lista jachtów</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -96,8 +100,24 @@ function content_6643c0536247e8_07226524 (Smarty_Internal_Template $_smarty_tpl)
 		
 		<div class="row section topspace">
 			<div class="col-md-12">
-				<p class="lead text-center text-muted">Let me tell you something my friend. hope is a dangerous thing. hope can drive a man insane. you <a href="about.html">measure</a> yourself by the people who measure themselves by you. it only took me <a href="sidebar-right.html">six days</a>. </p>
-			</div>
+				<!-- <p class="lead text-center text-muted">Let me tell you something my friend. hope is a dangerous thing. hope can drive a man insane. you <a href="about.html">measure</a> yourself by the people who measure themselves by you. it only took me <a href="sidebar-right.html">six days</a>. </p>
+				-->
+			<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11024106596644888b8fcaf7_17051014', 'top');
+?>
+
+
+
+				<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11522977716644888b93d424_67058419', 'messages');
+?>
+
+				
+				<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7319876316644888b93faf2_74308285', 'bottom');
+?>
+
+				</div>
 		</div> <!-- / section -->
 		
 		<div class="row section featured topspace">
@@ -245,6 +265,7 @@ function content_6643c0536247e8_07226524 (Smarty_Internal_Template $_smarty_tpl)
 
 </main>
 
+
 <footer id="footer">
 	<div class="container">
 		<div class="row">
@@ -332,4 +353,53 @@ function content_6643c0536247e8_07226524 (Smarty_Internal_Template $_smarty_tpl)
 </body>
 </html>
 <?php }
+/* {block 'top'} */
+class Block_11024106596644888b8fcaf7_17051014 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+ <?php
+}
+}
+/* {/block 'top'} */
+/* {block 'messages'} */
+class Block_11522977716644888b93d424_67058419 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+				
+				<?php if ($_smarty_tpl->tpl_vars['msgs']->value->isMessage()) {?>
+				<div class="messages bottom-margin">
+					<ul>
+					<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getMessages(), 'msg');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['msg']->value) {
+?>
+					<li class="msg <?php if ($_smarty_tpl->tpl_vars['msg']->value->isError()) {?>error<?php }?> <?php if ($_smarty_tpl->tpl_vars['msg']->value->isWarning()) {?>warning<?php }?> <?php if ($_smarty_tpl->tpl_vars['msg']->value->isInfo()) {?>info<?php }?>"><?php echo $_smarty_tpl->tpl_vars['msg']->value->text;?>
+</li>
+					<?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+					</ul>
+				</div>
+				<?php }?>
+				
+				<?php
+}
+}
+/* {/block 'messages'} */
+/* {block 'bottom'} */
+class Block_7319876316644888b93faf2_74308285 extends Smarty_Internal_Block
+{
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+ <?php
+}
+}
+/* {/block 'bottom'} */
 }
