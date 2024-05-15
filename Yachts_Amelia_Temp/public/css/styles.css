@@ -242,6 +242,7 @@ a:hover {
   font-family: Alice, Georgia, serif;
   font-size: 49px;
   font-size: 3.0625rem;
+  color: rgb(207, 202, 202);
 }
 #head .title a {
   text-decoration: none;
