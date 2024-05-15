@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-05-15 12:03:55
+/* Smarty version 3.1.30, created on 2024-05-15 12:19:26
   from "D:\xampp\htdocs\PHP\Yachts_Amelia_Temp\app\views\templates\main.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6644888b94a442_59987860',
+  'unifunc' => 'content_66448c2e43dbd5_01690858',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1571bb0793d94f587c3128a400d47b1f0ae4e2f8' => 
     array (
       0 => 'D:\\xampp\\htdocs\\PHP\\Yachts_Amelia_Temp\\app\\views\\templates\\main.tpl',
-      1 => 1715767429,
+      1 => 1715768361,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6644888b94a442_59987860 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66448c2e43dbd5_01690858 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -46,6 +46,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 	<!-- Custom styles -->
 	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /css/styles.css">
+	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
 
 	<!--[if lt IE 9]> <?php echo '<script'; ?>
  src="assets/js/html5shiv.js"><?php echo '</script'; ?>
@@ -78,15 +79,17 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 userPanel">Panel klienta</a></li>
 					<li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 yachtList_open">Lista jachtów</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="sidebar-left.html">Left Sidebar</a></li>
-							<li><a href="sidebar-right.html">Right Sidebar</a></li>
-							<li><a href="single.html">Blog Post</a></li>
-						</ul>
-					</li>
-					<li><a href="blog.html">Blog</a></li>
+					<?php if (count($_smarty_tpl->tpl_vars['conf']->value->roles) > 0) {?>
+						<li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+controlPanel" class="pure-menu-heading pure-menu-link">Control Panel</a></li>
+						<li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+logout" class="pure-menu-heading pure-menu-link">Wyloguj</a></li>
+					<?php } else { ?>	
+						<li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+loginShow" class="pure-menu-heading pure-menu-link">Zaloguj</a></li>
+						<li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+register" class="pure-menu-heading pure-menu-link">Zarejestruj</a></li>
+					<?php }?>
 				</ul>
 			
 			</div><!--/.nav-collapse -->			
@@ -103,18 +106,18 @@ yachtList_open">Lista jachtów</a></li>
 				<!-- <p class="lead text-center text-muted">Let me tell you something my friend. hope is a dangerous thing. hope can drive a man insane. you <a href="about.html">measure</a> yourself by the people who measure themselves by you. it only took me <a href="sidebar-right.html">six days</a>. </p>
 				-->
 			<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11024106596644888b8fcaf7_17051014', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3780101466448c2e42a917_62203847', 'top');
 ?>
 
 
 
 				<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11522977716644888b93d424_67058419', 'messages');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_91709074566448c2e434f31_59771448', 'messages');
 ?>
 
 				
 				<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7319876316644888b93faf2_74308285', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_179132511966448c2e436632_41826975', 'bottom');
 ?>
 
 				</div>
@@ -354,7 +357,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7319876316644888b9
 </html>
 <?php }
 /* {block 'top'} */
-class Block_11024106596644888b8fcaf7_17051014 extends Smarty_Internal_Block
+class Block_3780101466448c2e42a917_62203847 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -363,7 +366,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'top'} */
 /* {block 'messages'} */
-class Block_11522977716644888b93d424_67058419 extends Smarty_Internal_Block
+class Block_91709074566448c2e434f31_59771448 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -394,7 +397,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block 'messages'} */
 /* {block 'bottom'} */
-class Block_7319876316644888b93faf2_74308285 extends Smarty_Internal_Block
+class Block_179132511966448c2e436632_41826975 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

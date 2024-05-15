@@ -4,9 +4,9 @@
 
 <div class="bottom-margin">
 <form class="pure-form pure-form-stacked" action="{$conf->action_url}yachtList">
-	<legend>Opcje wyszukiwania jachtów</legend>
+	<legend>Wyszukaj dany model jachtu: </legend>
 	<fieldset>
-		<input type="text" placeholder="model" name="sf_model" value="{$searchForm->model}" /><br />
+		<input type="text" placeholder="np. Antila" name="sf_model" value="{$searchForm->model}" /><br />
 		<button type="submit" class="pure-button pure-button-primary">Filtruj</button>
 	</fieldset>
 </form>
