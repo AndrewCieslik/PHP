@@ -41,7 +41,7 @@ class LoginCtrl {
 
         // Przygotowanie parametrów do wyszukiwania użytkownika w bazie danych
         $search_params = [];
-        $search_params['username'] = $this->form->login;
+        $search_params['name'] = $this->form->login;
         $num_params = sizeof($search_params);
         if ($num_params > 1) {
             $where = ["AND" => &$search_params];
@@ -52,11 +52,10 @@ class LoginCtrl {
         try {
             // Wyszukiwanie użytkownika w bazie danych
             $this->form->records = App::getDB()->select("users", [
-                "username",
+                "id_user",
                 "name",
                 "surname",
-                "password",
-                "user_id"
+                "phone"
             ], $where);
         } catch (\PDOException $e) {
             // Obsługa błędów podczas wyszukiwania w bazie danych
@@ -67,11 +66,11 @@ class LoginCtrl {
 
         // Sprawdzenie, czy użytkownik istnieje i czy hasło się zgadza
         $user_exists = !empty($this->form->records);
-        if ($user_exists && $this->form->login == $this->form->records[0]["username"] && $this->form->pass == $this->form->records[0]["password"]) {
+        if ($user_exists && $this->form->pass == $this->form->records[0]["phone"]) {
 
             // Przygotowanie parametrów do wyszukiwania ról użytkownika
             $search_params = [];
-            $search_params['users_user_id'] = $this->form->records[0]["user_id"];
+            $search_params['id_user'] = $this->form->records[0]["id_user"];
             $num_params = sizeof($search_params);
             if ($num_params > 1) {
                 $where = ["AND" => &$search_params];
@@ -80,8 +79,8 @@ class LoginCtrl {
             }
             try {
                 // Wyszukiwanie ról przypisanych do użytkownika
-                $roles_associated_table = App::getDB()->select("users_roles", [
-                    "roles_role_id"
+                $roles_associated_table = App::getDB()->select("assigned_roles", [
+                    "id_role"
                 ], $where);
             } catch (\PDOException $e) {
                 // Obsługa błędów podczas wyszukiwania w bazie danych
@@ -96,7 +95,7 @@ class LoginCtrl {
 
                 // Przygotowanie parametrów do wyszukiwania typu roli
                 $search_params = [];
-                $search_params['role_id'] = $rat["roles_role_id"];
+                $search_params['id_role'] = $rat["id_role"];
                 $num_params = sizeof($search_params);
                 if ($num_params > 1) {
                     $where = ["AND" => &$search_params];
@@ -107,14 +106,14 @@ class LoginCtrl {
                 try {
                     // Wyszukiwanie typu roli w bazie danych
                     $roles_table = App::getDB()->select("roles", [
-                        "role_id",
-                        "type"
+                        "id_role",
+                        "role"
                     ], $where);
 
                     // Dodawanie roli do użytkownika
-                    RoleUtils::addRole($roles_table[0]["type"]);
+                    RoleUtils::addRole($roles_table[0]["role"]);
                     // Sprawdzenie, czy użytkownik ma rolę admina
-                    if ($_SESSION['admin'] == true || $roles_table[0]["type"] == "admin") {
+                    if ($_SESSION['admin'] == true || $roles_table[0]["role"] == "admin") {
                         $_SESSION['admin'] = true;
                     } else {
                         $_SESSION['admin'] = false;
@@ -148,7 +147,7 @@ class LoginCtrl {
                                                                       $this->form->records[0]["surname"]);
             // Przekazanie danych formularza do widoku i przekierowanie na stronę główną
             App::getSmarty()->assign('form', $this->form); 
-            App::getRouter()->redirectTo("homePage");
+            App::getRouter()->redirectTo("home");
         } else {
             // Ponowne wyświetlenie strony logowania w przypadku błędów
             $this->generateView();
@@ -158,7 +157,7 @@ class LoginCtrl {
     // Akcja obsługująca wylogowanie
     public function action_logout() {
         session_destroy();
-        App::getRouter()->redirectTo('homePage');
+        App::getRouter()->redirectTo('home');
     }
 
     // Generowanie widoku strony logowania
