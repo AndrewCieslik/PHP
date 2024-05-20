@@ -2,11 +2,6 @@
 
 namespace core;
 
-/**
- * Wrapper for session tools
- *
- * @author Przemysław Kudłacik
- */
 class SessionUtils {
 
     public static function store($name, $value) {
@@ -75,5 +70,4 @@ class SessionUtils {
             unset($_SESSION[$name]);
         }
     }
-
 }
