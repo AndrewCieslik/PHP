@@ -84,14 +84,13 @@
 			
 			<div class="col-md-6 widget">
 				<div class="widget-body">
-					<p>Copyright &copy; 2014</p>
+					<p>Copyright &copy; 2024, Andrzej C</p>
 				</div>
 			</div>
 
 			<div class="col-md-6 widget">
 				<div class="widget-body">
 					<p class="text-right">
-						Copyright &copy; 2024, Andrzej C<br> 
 						Design: <a href="http://www.gettemplate.com" rel="designer">Initio by GetTemplate</a> </p>
 				</div>
 			</div>
