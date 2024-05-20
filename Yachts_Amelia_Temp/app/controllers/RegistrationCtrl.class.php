@@ -56,10 +56,10 @@ class RegistrationCtrl {
                 ]);
 
                 // Wstawienie danych hasła do tabeli 'passwords'
-                App::getDB()->insert("passwords", [  
-                    "id_user" => $id_user,
-                    "password" => $this->form->password
-                ]);
+                // App::getDB()->insert("passwords", [              //TODO: NIE DZIALA WPISANIE DO passwords
+                //     "id_user" => $id_user,
+                //     "password" => $this->form->password
+                // ]);
 
                 // Zatwierdzenie transakcji
                 App::getDB()->commit();
