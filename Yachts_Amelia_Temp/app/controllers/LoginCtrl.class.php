@@ -52,10 +52,10 @@ class LoginCtrl {
         }
 
         // Sprawdzenie, czy użytkownik istnieje i czy hasło się zgadza
-        $user_exists = !empty($this->form->records);
-        if ($user_exists && password_verify($this->form->pass, $this->form->records[0]["password"])) {
+        $user_exists = !empty($this->form->users);
+        if ($user_exists) {   // && password_verify($this->form->password, $this->form->records[0]["password"]
             // Przypisanie danych użytkownika do sesji
-            $_SESSION['user'] = $this->form->records[0];
+            //$_SESSION['user'] = $this->form->records[0];
             return true;
         } else {
             // Dodanie komunikatu o błędzie, jeśli login lub hasło są niepoprawne

@@ -17,7 +17,6 @@ class RegistrationCtrl {
 
     public function validateSave() {
         // Pobranie parametrów z formularza 
-        $this->form->id_user = ParamUtils::getFromRequest('id_user');
         $this->form->name = ParamUtils::getFromRequest('name');
         $this->form->surname = ParamUtils::getFromRequest('surname');
         $this->form->login = ParamUtils::getFromRequest('login');
@@ -26,7 +25,7 @@ class RegistrationCtrl {
         $this->form->phone = ParamUtils::getFromRequest('phone');
 
         // Walidacja danych
-        if (empty($this->form->name) || empty($this->form->surname) || empty($this->form->login) || empty($this->form->password)  || empty($this->form->password2) || empty($this->form->phone)) {
+        if (empty($this->form->name) || empty($this->form->surname) || empty($this->form->login) || empty($this->form->password) || empty($this->form->password2) || empty($this->form->phone)) {
             Utils::addErrorMessage('Wszystkie pola są wymagane');
             return false;
         }
@@ -46,21 +45,20 @@ class RegistrationCtrl {
         if ($this->validateSave()) {
             // 2. Zapis danych w bazie
             try {
-                 // Rozpoczęcie transakcji
+                // Rozpoczęcie transakcji
                 App::getDB()->beginTransaction();
 
                 // Wstawienie danych użytkownika do tabeli 'users'
-                App::getDB()->insert("users", [
+                $id_user = App::getDB()->insert("users", [
                     "name" => $this->form->name,
                     "surname" => $this->form->surname,
                     "phone" => $this->form->phone
                 ]);
 
                 // Wstawienie danych hasła do tabeli 'passwords'
-                App::getDB()->insert("passwords", [
-                    "login" => $this->form->login,
-                    "password" => $this->form->password,
-                    "id_user" => App::getDB()->id() //Ostatnie użyte id_users
+                App::getDB()->insert("passwords", [  
+                    "id_user" => $id_user,
+                    "password" => $this->form->password
                 ]);
 
                 // Zatwierdzenie transakcji
@@ -88,10 +86,5 @@ class RegistrationCtrl {
         App::getSmarty()->assign('form', $this->form);
         // Wyświetlenie widoku
         App::getSmarty()->display('RegistrationView.tpl');
-    }
-
-    public function id() {
-        // Pobranie ostatnio nadanego ID z bazy danych (MySQL i PDO)
-        return App::getDB()->lastInsertId();
     }
 }
