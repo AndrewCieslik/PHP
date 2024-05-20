@@ -24,114 +24,44 @@ class LoginCtrl {
         $this->form->login = ParamUtils::getFromRequest('login');
         $this->form->pass = ParamUtils::getFromRequest('pass');
 
-        // Sprawdzenie, czy login został podany
-        if (!isset($this->form->login))
+        // Sprawdzenie, czy login i hasło zostały podane
+        if (empty($this->form->login) || empty($this->form->pass)) {
+            Utils::addErrorMessage('Nie podano loginu lub hasła');
             return false;
-        // Sprawdzenie, czy login nie jest pusty
-        if (empty($this->form->login)) {
-            Utils::addErrorMessage('Nie podano loginu');
-        }
-        // Sprawdzenie, czy hasło nie jest puste
-        if (empty($this->form->pass)) {
-            Utils::addErrorMessage('Nie podano hasła');
-        }
-        // Jeśli są jakieś błędy, zakończ walidację
-        if (App::getMessages()->isError())
-            return false;
-
-        // Przygotowanie parametrów do wyszukiwania użytkownika w bazie danych
-        $search_params = [];
-        $search_params['name'] = $this->form->login;
-        $num_params = sizeof($search_params);
-        if ($num_params > 1) {
-            $where = ["AND" => &$search_params];
-        } else {
-            $where = &$search_params;
         }
 
         try {
-            // Wyszukiwanie użytkownika w bazie danych
-            $this->form->records = App::getDB()->select("users", [
-                "id_user",
-                "name",
-                "surname",
-                "phone"
-            ], $where);
+            // Wyszukiwanie użytkownika na podstawie loginu w tabeli `passwords`
+            $this->form->records = App::getDB()->select("passwords", [
+                "[>]users" => ["id_user" => "id_user"]
+            ], [
+                "users.id_user",
+                "users.name",
+                "users.surname",
+                "users.phone",
+                "passwords.password"
+            ], [
+                "passwords.login" => $this->form->login
+            ]);
         } catch (\PDOException $e) {
             // Obsługa błędów podczas wyszukiwania w bazie danych
             Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');
             if (App::getConf()->debug)
                 Utils::addErrorMessage($e->getMessage());
+            return false;
         }
 
         // Sprawdzenie, czy użytkownik istnieje i czy hasło się zgadza
         $user_exists = !empty($this->form->records);
-        if ($user_exists && $this->form->pass == $this->form->records[0]["phone"]) {
-
-            // Przygotowanie parametrów do wyszukiwania ról użytkownika
-            $search_params = [];
-            $search_params['id_user'] = $this->form->records[0]["id_user"];
-            $num_params = sizeof($search_params);
-            if ($num_params > 1) {
-                $where = ["AND" => &$search_params];
-            } else {
-                $where = &$search_params;
-            }
-            try {
-                // Wyszukiwanie ról przypisanych do użytkownika
-                $roles_associated_table = App::getDB()->select("assigned_roles", [
-                    "id_role"
-                ], $where);
-            } catch (\PDOException $e) {
-                // Obsługa błędów podczas wyszukiwania w bazie danych
-                Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');
-                if (App::getConf()->debug)
-                    Utils::addErrorMessage($e->getMessage());
-            }
-
-            // Inicjalizacja zmiennej sesji dla roli admina
-            $_SESSION['admin'] = NULL;
-            foreach ($roles_associated_table as $rat) {
-
-                // Przygotowanie parametrów do wyszukiwania typu roli
-                $search_params = [];
-                $search_params['id_role'] = $rat["id_role"];
-                $num_params = sizeof($search_params);
-                if ($num_params > 1) {
-                    $where = ["AND" => &$search_params];
-                } else {
-                    $where = &$search_params;
-                }
-
-                try {
-                    // Wyszukiwanie typu roli w bazie danych
-                    $roles_table = App::getDB()->select("roles", [
-                        "id_role",
-                        "role"
-                    ], $where);
-
-                    // Dodawanie roli do użytkownika
-                    RoleUtils::addRole($roles_table[0]["role"]);
-                    // Sprawdzenie, czy użytkownik ma rolę admina
-                    if ($_SESSION['admin'] == true || $roles_table[0]["role"] == "admin") {
-                        $_SESSION['admin'] = true;
-                    } else {
-                        $_SESSION['admin'] = false;
-                    }
-
-                } catch (\PDOException $e) {
-                    // Obsługa błędów podczas wyszukiwania w bazie danych
-                    Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');
-                    if (App::getConf()->debug)
-                        Utils::addErrorMessage($e->getMessage());
-                }
-            }
-
+        if ($user_exists && password_verify($this->form->pass, $this->form->records[0]["password"])) {
+            // Przypisanie danych użytkownika do sesji
+            $_SESSION['user'] = $this->form->records[0];
+            return true;
         } else {
             // Dodanie komunikatu o błędzie, jeśli login lub hasło są niepoprawne
             Utils::addErrorMessage('Niepoprawny login lub hasło');
+            return false;
         }
-        return !App::getMessages()->isError();
     }
 
     // Akcja wyświetlająca stronę logowania
@@ -143,10 +73,8 @@ class LoginCtrl {
     public function action_login() {
         if ($this->validate()) {
             // Dodanie komunikatu o poprawnym logowaniu
-            Utils::addInfoMessage('Poprawnie zalogowano do systemu '. $this->form->records[0]["name"] . " ".
-                                                                      $this->form->records[0]["surname"]);
-            // Przekazanie danych formularza do widoku i przekierowanie na stronę główną
-            App::getSmarty()->assign('form', $this->form); 
+            Utils::addInfoMessage('Poprawnie zalogowano do systemu ' . $_SESSION['user']["name"] . " " . $_SESSION['user']["surname"]);
+            // Przekierowanie na stronę główną
             App::getRouter()->redirectTo("home");
         } else {
             // Ponowne wyświetlenie strony logowania w przypadku błędów
@@ -156,14 +84,16 @@ class LoginCtrl {
 
     // Akcja obsługująca wylogowanie
     public function action_logout() {
+        // Usunięcie danych użytkownika z sesji
+        unset($_SESSION['user']);
         session_destroy();
+        // Przekierowanie na stronę główną
         App::getRouter()->redirectTo('home');
     }
 
     // Generowanie widoku strony logowania
     public function generateView() {
-        App::getSmarty()->assign('form', $this->form); 
+        App::getSmarty()->assign('form', $this->form);
         App::getSmarty()->display('LoginView.tpl');
     }
-
 }
