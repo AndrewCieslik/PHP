@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-05-15 12:19:26
+/* Smarty version 3.1.30, created on 2024-05-20 10:20:51
   from "D:\xampp\htdocs\PHP\Yachts_Amelia_Temp\app\views\templates\main.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_66448c2e43dbd5_01690858',
+  'unifunc' => 'content_664b07e3230eb6_69993019',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1571bb0793d94f587c3128a400d47b1f0ae4e2f8' => 
     array (
       0 => 'D:\\xampp\\htdocs\\PHP\\Yachts_Amelia_Temp\\app\\views\\templates\\main.tpl',
-      1 => 1715768361,
+      1 => 1716193244,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66448c2e43dbd5_01690858 (Smarty_Internal_Template $_smarty_tpl) {
+function content_664b07e3230eb6_69993019 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -106,232 +106,38 @@ register" class="pure-menu-heading pure-menu-link">Zarejestruj</a></li>
 				<!-- <p class="lead text-center text-muted">Let me tell you something my friend. hope is a dangerous thing. hope can drive a man insane. you <a href="about.html">measure</a> yourself by the people who measure themselves by you. it only took me <a href="sidebar-right.html">six days</a>. </p>
 				-->
 			<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3780101466448c2e42a917_62203847', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_348251286664b07e3223506_12142629', 'top');
 ?>
 
 
 
 				<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_91709074566448c2e434f31_59771448', 'messages');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_30384788664b07e322fb64_78154902', 'messages');
 ?>
 
 				
 				<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_179132511966448c2e436632_41826975', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_712059440664b07e32304c5_07683784', 'bottom');
 ?>
 
 				</div>
 		</div> <!-- / section -->
 		
-		<div class="row section featured topspace">
-			<h2 class="section-title"><span>Services</span></h2>
-			<div class="row">
-				<div class="col-sm-6 col-md-3">
-					<h3 class="text-center">Custom website design</h3>
-					<p>I don't think they tried to market it to the billionaire, spelunking, base-jumping crowd. i did the same thing to gandhi, he didn't eat for three weeks. i once heard a wise man say there are no perfect men.</p>
-					<p class="text-center"><a href="" class="btn btn-action">Read more</a></p>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<h3 class="text-center">Wordpress integration</h3>
-					<p>I don't think they tried to market it to the billionaire, spelunking, base-jumping crowd. i did the same thing to gandhi, he didn't eat for three weeks. i once heard a wise man say there are no perfect men.</p>
-					<p class="text-center"><a href="" class="btn btn-action">Read more</a></p>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<h3 class="text-center">Application development</h3>
-					<p>I don't think they tried to market it to the billionaire, spelunking, base-jumping crowd. i did the same thing to gandhi, he didn't eat for three weeks. i once heard a wise man say there are no perfect men.</p>
-					<p class="text-center"><a href="" class="btn btn-action">Read more</a></p>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<h3 class="text-center">SEO &amp; SEM services</h3>
-					<p>I don't think they tried to market it to the billionaire, spelunking, base-jumping crowd. i did the same thing to gandhi, he didn't eat for three weeks. i once heard a wise man say there are no perfect men.</p>
-					<p class="text-center"><a href="" class="btn btn-action">Read more</a></p>
-				</div>
-			</div>
-		</div> <!-- / section -->
-	
-		<div class="row section recentworks topspace">
-			
-			<h2 class="section-title"><span>Recent Works</span></h2>
-			
-			<div class="thumbnails recentworks row">
-				
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					<a class="thumbnail" href="sidebar-right.html">
-						<span class="img">
-							<img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
-/images/s1.jpg" alt="">
-							<span class="cover"><span class="more">See details &rarr;</span></span>
-						</span>
-						<span class="title">Sample title - big data solutions</span>
-					</a>
-					<span class="details"><a href="">Web design</a> | <a href="">Wordpress</a> | <a href="">Logotype</a></span>
-					<h4></h4>
-					<p></p>
-				</div>
-				
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					<a class="thumbnail" href="sidebar-right.html">
-						<span class="img">
-							<img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
-/images/s1.jpg" alt="">
-							<span class="cover"><span class="more">See details &rarr;</span></span>
-						</span>
-						<span class="title">Pure ipsum - development services for people</span>
-					</a>
-					<span class="details"><a href="">Web design</a> | <a href="">Wordpress</a></span>
-					<h4></h4>
-					<p></p>
-				</div>
-				
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					<a class="thumbnail" href="sidebar-right.html">
-						<span class="img">
-							<img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
-/images/s1.jpg" alt="">
-							<span class="cover"><span class="more">See details &rarr;</span></span>
-						</span>
-						<span class="title">Lorem studios - interior and patio design</span>
-					</a>
-					<span class="details"><a href="">Web design</a> | <a href="">Logotype</a></span>
-					<h4></h4>
-					<p></p>
-				</div>
-
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					<a class="thumbnail" href="sidebar-right.html">
-						<span class="img">
-							<img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
-/images/s1.jpg" alt="">
-							<span class="cover"><span class="more">See details &rarr;</span></span>
-						</span>
-						<span class="title">Pure ipsum - development services for people</span>
-					</a>
-					<span class="details"><a href="">Web design</a> | <a href="">Wordpress</a></span>
-					<h4></h4>
-					<p></p>
-				</div>
-				
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					<a class="thumbnail" href="sidebar-right.html">
-						<span class="img">
-							<img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
-/images/s1.jpg" alt="">
-							<span class="cover"><span class="more">See details &rarr;</span></span>
-						</span>
-						<span class="title">Lorem studios - interior and patio design</span>
-					</a>
-					<span class="details"><a href="">Web design</a> | <a href="">Logotype</a></span>
-					<h4></h4>
-					<p></p>
-				</div>
-
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					<a class="thumbnail" href="sidebar-right.html">
-						<span class="img">
-							<img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
-/images/s1.jpg" alt="">
-							<span class="cover"><span class="more">See details &rarr;</span></span>
-						</span>
-						<span class="title">Lorem studios - interior and patio design</span>
-					</a>
-					<span class="details"><a href="">Web design</a> | <a href="">Logotype</a></span>
-					<h4></h4>
-					<p></p>
-				</div>
-			</div>
-
-		</div> <!-- /section -->
-
-		<div class="row section topspace">
-			<div class="panel panel-cta"><div class="panel-body">
-				<div class="col-lg-8">
-					<p>A simple, nice-looking <b>call to action box</b>. Boxing is about respect. getting it for yourself, 
-					and taking it away from the other guy. no, this is mount everest. </p>
-				</div>
-				<div class="col-lg-4 text-right">
-					<a href="http://www.gettemplate.com/downloads/initio.zip " class="btn btn-primary btn-lg">Download template</a>
-				</div>
-			</div></div>
-		</div> <!-- /section -->
-
-		<div class="row section clients topspace">
-			<h2 class="section-title"><span>Clients</span></h2>
-			<div class="col-lg-12">
-				<p>
-					<img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
-/images/sample_clients.png" alt="">
-				</p>
-			</div>
-		</div> <!-- /section -->
-
-	</div>	<!-- /container -->
-
-</main>
-
-
-<footer id="footer">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3 widget">
-				<h3 class="widget-title">Contact</h3>
-				<div class="widget-body">
-					<p>+234 23 9873237<br>
-						<a href="mailto:#">some.email@somewhere.com</a><br>
-						<br>
-						234 Hidden Pond Road, Ashland City, TN 37015
-					</p>	
-				</div>
-			</div>
-
-			<div class="col-md-3 widget">
-				<h3 class="widget-title">Follow me</h3>
-				<div class="widget-body">
-					<p class="follow-me-icons">
-						<a href=""><i class="fa fa-twitter fa-2"></i></a>
-						<a href=""><i class="fa fa-dribbble fa-2"></i></a>
-						<a href=""><i class="fa fa-github fa-2"></i></a>
-						<a href=""><i class="fa fa-facebook fa-2"></i></a>
-					</p>
-				</div>
-			</div>
-
-			<div class="col-md-3 widget">
-				<h3 class="widget-title">Text widget</h3>
-				<div class="widget-body">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, nihil natus explicabo ipsum quia iste aliquid repellat eveniet velit ipsa sunt libero sed aperiam id soluta officia asperiores adipisci maxime!</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, nihil natus explicabo ipsum quia iste aliquid repellat eveniet velit ipsa sunt libero sed aperiam id soluta officia asperiores adipisci maxime!</p>
-				</div>
-			</div>
-
-			<div class="col-md-3 widget">
-				<h3 class="widget-title">Form widget</h3>
-				<div class="widget-body">
-					<p>+234 23 9873237<br>
-						<a href="mailto:#">some.email@somewhere.com</a><br>
-						<br>
-						234 Hidden Pond Road, Ashland City, TN 37015
-					</p>	
-				</div>
-			</div>
-
-		</div> <!-- /row of widgets -->
-	</div>
-</footer>
-
+		
 <footer id="underfooter">
 	<div class="container">
 		<div class="row">
 			
 			<div class="col-md-6 widget">
 				<div class="widget-body">
-					<p>234 Hidden Pond Road, Ashland City, TN 37015 </p>
+					<p>Copyright &copy; 2014</p>
 				</div>
 			</div>
 
 			<div class="col-md-6 widget">
 				<div class="widget-body">
 					<p class="text-right">
-						Copyright &copy; 2014, Your awesome name here<br> 
+						Copyright &copy; 2014, Andrzej C<br> 
 						Design: <a href="http://www.gettemplate.com" rel="designer">Initio by GetTemplate</a> </p>
 				</div>
 			</div>
@@ -357,7 +163,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_179132511966448c2e
 </html>
 <?php }
 /* {block 'top'} */
-class Block_3780101466448c2e42a917_62203847 extends Smarty_Internal_Block
+class Block_348251286664b07e3223506_12142629 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -366,7 +172,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'top'} */
 /* {block 'messages'} */
-class Block_91709074566448c2e434f31_59771448 extends Smarty_Internal_Block
+class Block_30384788664b07e322fb64_78154902 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -397,7 +203,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block 'messages'} */
 /* {block 'bottom'} */
-class Block_179132511966448c2e436632_41826975 extends Smarty_Internal_Block
+class Block_712059440664b07e32304c5_07683784 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
