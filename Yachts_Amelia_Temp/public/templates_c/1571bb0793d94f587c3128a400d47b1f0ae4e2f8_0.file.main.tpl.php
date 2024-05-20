@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-05-20 10:40:20
+/* Smarty version 3.1.30, created on 2024-05-20 10:54:21
   from "D:\xampp\htdocs\PHP\Yachts_Amelia_Temp\app\views\templates\main.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_664b0c7493b4e8_85479839',
+  'unifunc' => 'content_664b0fbda35a00_67248397',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1571bb0793d94f587c3128a400d47b1f0ae4e2f8' => 
     array (
       0 => 'D:\\xampp\\htdocs\\PHP\\Yachts_Amelia_Temp\\app\\views\\templates\\main.tpl',
-      1 => 1716194405,
+      1 => 1716194931,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_664b0c7493b4e8_85479839 (Smarty_Internal_Template $_smarty_tpl) {
+function content_664b0fbda35a00_67248397 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -99,15 +99,15 @@ register" class="pure-menu-heading pure-menu-link">Zarejestruj</a></li>
 		<div class="row section topspace">
 			<div class="col-md-12">
 			<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1961553553664b0c7492cd85_22443420', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1350730679664b0fbda2c929_70641380', 'top');
 ?>
 
 			<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1778114079664b0c74939338_13168969', 'messages');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1551522608664b0fbda34659_48609868', 'messages');
 ?>
 
 			<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2086906532664b0c7493a330_74755797', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_387807108664b0fbda35048_93392052', 'bottom');
 ?>
 
 		</div>
@@ -148,7 +148,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2086906532664b0c74
 </html>
 <?php }
 /* {block 'top'} */
-class Block_1961553553664b0c7492cd85_22443420 extends Smarty_Internal_Block
+class Block_1350730679664b0fbda2c929_70641380 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -157,7 +157,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'top'} */
 /* {block 'messages'} */
-class Block_1778114079664b0c74939338_13168969 extends Smarty_Internal_Block
+class Block_1551522608664b0fbda34659_48609868 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -187,7 +187,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block 'messages'} */
 /* {block 'bottom'} */
-class Block_2086906532664b0c7493a330_74755797 extends Smarty_Internal_Block
+class Block_387807108664b0fbda35048_93392052 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

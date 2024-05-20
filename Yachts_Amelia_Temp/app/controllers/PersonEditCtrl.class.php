@@ -160,6 +160,7 @@ class PersonEditCtrl {
 
     public function generateView() {
         App::getSmarty()->assign('form', $this->form); // dane formularza dla widoku
+        App::getSmarty()->assign('_SESSION', $_SESSION);
         App::getSmarty()->display('PersonEdit.tpl');
     }
 
