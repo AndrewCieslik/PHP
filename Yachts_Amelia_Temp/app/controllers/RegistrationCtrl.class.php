@@ -5,6 +5,7 @@ use core\App;
 use core\Utils;
 use core\ParamUtils;
 use app\forms\RegistrationForm;
+use Exception;
 
 class RegistrationCtrl {
 
@@ -40,6 +41,9 @@ class RegistrationCtrl {
         return !App::getMessages()->isError();
     }
 
+    /**
+     * @throws Exception
+     */
     public function action_register() {
 
         // 1. Walidacja danych formularza (z pobraniem)
@@ -56,10 +60,27 @@ class RegistrationCtrl {
                     "phone" => $this->form->phone
                 ]);
 
+                $lastUserId = App::getDB()->id();
+
                 // Wstawienie danych hasła do tabeli 'passwords'
                 App::getDB()->insert("passwords", [
-                    "id_user" => App::getDB()->id(), //Ostatnie użyte id_users
+                    "id_user" => $lastUserId, //Ostatnie użyte id_users
                     "password" => $this->form->password
+                ]);
+
+                // Sprawdzenie, czy rola "user" istnieje w tabeli 'roles' i pobranie jej `id_role`
+                $role = App::getDB()->get("roles", "id_role", [
+                    "role" => "user"
+                ]);
+
+                if (!$role) {
+                    throw new Exception("Role 'user' does not exist in the roles table.");
+                }
+
+                // Domyślnie przypisana rola "user"
+                App::getDB()->insert("assigned_roles", [
+                    "id_user" => $lastUserId,
+                    "id_role" => $role
                 ]);
 
                 // Zatwierdzenie transakcji
