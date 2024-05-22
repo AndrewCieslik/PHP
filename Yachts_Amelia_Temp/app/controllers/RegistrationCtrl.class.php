@@ -58,9 +58,8 @@ class RegistrationCtrl {
 
                 // Wstawienie danych hasła do tabeli 'passwords'
                 App::getDB()->insert("passwords", [
-                    "login" => $this->form->login,
-                    "password" => $this->form->password,
-                    "id_user" => App::getDB()->id() //Ostatnie użyte id_users
+                    "id_user" => App::getDB()->id(), //Ostatnie użyte id_users
+                    "password" => $this->form->password
                 ]);
 
                 // Zatwierdzenie transakcji
