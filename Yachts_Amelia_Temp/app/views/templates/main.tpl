@@ -23,7 +23,7 @@
 	<div id="head" class="parallax" parallax-speed="2">
 		<h1 id="logo" class="text-center">
 			<img class="img-circle" src="{$conf->app_url}/images/2898_Jezioro-Wdzydze-rekreacja-i-relaks.jpg" alt="">
-			<span class="title">Wdzydze Czarter Jachtów</span>
+			<span class="title">Wdzydze Czarter Jachtów........</span>
 			<span class="tagline">Kaszuby zapraszają!<br>
 				<a href="">na.kaszuby@example.com</a></span>
 		</h1>
