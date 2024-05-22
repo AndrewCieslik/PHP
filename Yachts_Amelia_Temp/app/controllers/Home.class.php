@@ -7,7 +7,7 @@ use core\Utils;
 use core\ParamUtils;
 use app\forms\YachtSearchForm;
 
-class YachtListOpenCtrl {
+class Home {
 
     private $form; //dane formularza wyszukiwania
     private $records; //rekordy pobrane z bazy danych
@@ -28,7 +28,7 @@ class YachtListOpenCtrl {
         return !App::getMessages()->isError();
     }
 
-    public function action_yachtList_open() {
+    public function action_home() {
         // 1. Walidacja danych formularza (z pobraniem)
         // - W tej aplikacji walidacja nie jest potrzebna, ponieważ nie wystąpią błedy podczas podawania nazwiska.
         //   Jednak pozostawiono ją, ponieważ gdyby uzytkownik wprowadzał np. datę, lub wartość numeryczną, to trzeba
@@ -70,7 +70,7 @@ class YachtListOpenCtrl {
         // 4. wygeneruj widok
         App::getSmarty()->assign('searchForm', $this->form); // dane formularza (wyszukiwania w tym wypadku)
         App::getSmarty()->assign('people', $this->records);  // lista rekordów z bazy danych
-        App::getSmarty()->display('YachtList_open.tpl');
+        App::getSmarty()->display('Home.tpl');
     }
 
 }
