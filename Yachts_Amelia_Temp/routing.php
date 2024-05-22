@@ -3,10 +3,11 @@
 use core\App;
 use core\Utils;
 
-App::getRouter()->setDefaultRoute('home'); // akcja/ścieżka domyślna
-App::getRouter()->setLoginRoute('login'); // akcja/ścieżka na potrzeby logowania (przekierowanie, gdy nie ma dostępu)
-
+App::getRouter()->setDefaultRoute('home');
 Utils::addRoute('home',    'Home');
+
+App::getRouter()->setLoginRoute('login');
+
 Utils::addRoute('personList',    'PersonListCtrl', ['admin']);
 
 Utils::addRoute('loginShow',     'LoginCtrl');
@@ -18,7 +19,6 @@ Utils::addRoute('personEdit',    'PersonEditCtrl',	['admin']);
 Utils::addRoute('personSave',    'PersonEditCtrl',	['admin']);
 Utils::addRoute('personDelete',  'PersonEditCtrl',	['admin']);
 
-Utils::addRoute('yachtList_open',    'YachtListOpenCtrl');
 
 Utils::addRoute('yachtList',    'YachtListCtrl',    ['admin']);
 Utils::addRoute('yachtNew',     'YachtEditCtrl',	['admin']);
