@@ -34,6 +34,11 @@ class LoginCtrl {
         if (App::getMessages()->isError()){
             return false;
         }
+        if ($this->form->login == "admin" && $this->form->pass == "admin") {
+            RoleUtils::addRole('admin');
+            Utils::addErrorMessage('Witaj adminie');
+            return true;
+        }
         //4. sprawdz nazwe roli dla tego id_role i dodaj addRole
 
         //2. znajdz id_user w bazie dla tego loginu
@@ -74,24 +79,6 @@ class LoginCtrl {
             RoleUtils::addRole($this->form->db_role);
             Utils::addErrorMessage('Witaj użytkowniku');
         }
-//        if (!$this->form->db_login) {
-//            Utils::addErrorMessage('Użytkownik o podanym loginie nie jest zarejestrowany');
-//            return false;
-//        }
-//        if (!$this->form->db_password) {
-//            Utils::addErrorMessage('Nieprawidłowe hasło');
-//            return false;
-//        }
-
-        if ($this->form->login == "admin" && $this->form->pass == "admin") {
-            RoleUtils::addRole('admin');
-            Utils::addErrorMessage('Witaj adminie');
-        }
-//        } else if ($this->form->login == "user" && $this->form->pass == "user") {
-//           // RoleUtils::addRole('user');
-//        } else {
-//            Utils::addErrorMessage('Niepoprawny login lub hasło');
-//        }
         return !App::getMessages()->isError();
     }
 
