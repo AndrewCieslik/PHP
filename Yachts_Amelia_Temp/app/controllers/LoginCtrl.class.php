@@ -26,6 +26,10 @@ class LoginCtrl {
         $this->form->db_login = App::getDB()->get("users", ["id_user", "login"], [
             "login" => $this->form->login
         ]);
+        if (!$this->form->db_login) {
+            Utils::addErrorMessage('Użytkownik o podanym loginie nie jest zarejestrowany');
+            return false;
+        }
 
         // Sprawdzenie, czy login i hasło zostały podane
         if (empty($this->form->login) || empty($this->form->pass)) {
