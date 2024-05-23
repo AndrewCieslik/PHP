@@ -74,7 +74,6 @@ class LoginCtrl {
             RoleUtils::addRole('user');
 
         }
-
 //        if (!$this->form->db_login) {
 //            Utils::addErrorMessage('Użytkownik o podanym loginie nie jest zarejestrowany');
 //            return false;
