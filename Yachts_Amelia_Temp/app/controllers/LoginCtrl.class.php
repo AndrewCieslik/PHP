@@ -23,6 +23,10 @@ class LoginCtrl {
         $this->form->db_login = App::getDB()->get("users", ["id_user", "login"], [
             "login" => $this->form->login
         ]);
+        if (!$this->form->db_login) {
+            Utils::addErrorMessage('Użytkownik o podanym loginie nie jest zarejestrowany');
+            return false;
+        }
 
         //nie ma sensu walidować dalej, gdy brak parametrów
         if (!isset($this->form->login))
