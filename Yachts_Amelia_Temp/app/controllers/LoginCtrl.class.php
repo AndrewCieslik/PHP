@@ -69,10 +69,10 @@ class LoginCtrl {
         //7. przypisz tą nazwę roli użytkownikowi
         if (!$this->form->db_role) {
             RoleUtils::addRole('user');
-        } else {
+        }
+        if($this->form->db_role == "user"){
             RoleUtils::addRole($this->form->db_role);
-            RoleUtils::addRole('user');
-
+            Utils::addErrorMessage('Witaj użytkowniku');
         }
 //        if (!$this->form->db_login) {
 //            Utils::addErrorMessage('Użytkownik o podanym loginie nie jest zarejestrowany');
@@ -83,8 +83,10 @@ class LoginCtrl {
 //            return false;
 //        }
 
-//        if ($this->form->login == "marta" && $this->form->pass == "marta") {
-//            //RoleUtils::addRole('admin');
+        if ($this->form->login == "admin" && $this->form->pass == "admin") {
+            RoleUtils::addRole('admin');
+            Utils::addErrorMessage('Witaj adminie');
+        }
 //        } else if ($this->form->login == "user" && $this->form->pass == "user") {
 //           // RoleUtils::addRole('user');
 //        } else {
