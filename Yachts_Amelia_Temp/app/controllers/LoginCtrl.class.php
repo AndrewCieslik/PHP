@@ -20,13 +20,6 @@ class LoginCtrl {
     public function validate() {
         $this->form->login = ParamUtils::getFromRequest('login');
         $this->form->pass = ParamUtils::getFromRequest('pass');
-        $this->form->db_login = App::getDB()->get("users", ["id_user", "login"], [
-            "login" => $this->form->login
-        ]);
-        if (!$this->form->db_login) {
-            Utils::addErrorMessage('Użytkownik o podanym loginie nie jest zarejestrowany');
-            return false;
-        }
 
         //nie ma sensu walidować dalej, gdy brak parametrów
         if (!isset($this->form->login))
@@ -41,19 +34,39 @@ class LoginCtrl {
         }
 
         //nie ma sensu walidować dalej, gdy brak wartości
-        if (App::getMessages()->isError())
+        if (App::getMessages()->isError()){
             return false;
+        }
 
-        // sprawdzenie, czy dane logowania poprawne
-        // (takie informacje najczęściej przechowuje się w bazie danych)
-        if ($this->form->login == "marta" && $this->form->pass == "marta") {
-            RoleUtils::addRole('admin');
-        } else if ($this->form->login == "user" && $this->form->pass == "user") {
+        $this->form->db_id_user = App::getDB()->get("users", "id_user", [
+            "login" => $this->form->login  //warunek przypisania
+        ]);
+        if (!$this->form->db_id_user) {
+            Utils::addErrorMessage('Użytkownik o podanym loginie nie istnieje');
+        }
+        $this->form->db_password = App::getDB()->get("passwords", "password", [
+            "id_user" => $this->form->db_id_user  //warunek przypisania
+        ]);
+        if ($this->form->pass == $this->form->db_password) {
             RoleUtils::addRole('user');
+        }
+
+//        if (!$this->form->db_login) {
+//            Utils::addErrorMessage('Użytkownik o podanym loginie nie jest zarejestrowany');
+//            return false;
+//        }
+//        if (!$this->form->db_password) {
+//            Utils::addErrorMessage('Nieprawidłowe hasło');
+//            return false;
+//        }
+
+        if ($this->form->login == "marta" && $this->form->pass == "marta") {
+            //RoleUtils::addRole('admin');
+        } else if ($this->form->login == "user" && $this->form->pass == "user") {
+           // RoleUtils::addRole('user');
         } else {
             Utils::addErrorMessage('Niepoprawny login lub hasło');
         }
-
         return !App::getMessages()->isError();
     }
 
