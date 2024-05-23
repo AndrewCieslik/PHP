@@ -23,6 +23,9 @@ class LoginCtrl {
         // Pobranie loginu i hasła z żądania
         $this->form->login = ParamUtils::getFromRequest('login');
         $this->form->pass = ParamUtils::getFromRequest('pass');
+        $this->form->db_login = App::getDB()->get("users", ["id_user", "login"], [
+            "login" => $this->form->login
+        ]);
 
         // Sprawdzenie, czy login i hasło zostały podane
         if (empty($this->form->login) || empty($this->form->pass)) {
