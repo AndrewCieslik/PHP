@@ -40,7 +40,6 @@ class RegistrationCtrl {
 
         return !App::getMessages()->isError();
     }
-
     /**
      * @throws Exception
      */
@@ -55,6 +54,7 @@ class RegistrationCtrl {
 
                 // Wstawienie danych użytkownika do tabeli 'users'
                 App::getDB()->insert("users", [
+                    "login" => $this->form->login,
                     "name" => $this->form->name,
                     "surname" => $this->form->surname,
                     "phone" => $this->form->phone

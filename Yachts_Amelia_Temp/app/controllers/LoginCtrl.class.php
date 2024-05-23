@@ -20,6 +20,9 @@ class LoginCtrl {
     public function validate() {
         $this->form->login = ParamUtils::getFromRequest('login');
         $this->form->pass = ParamUtils::getFromRequest('pass');
+        $this->form->db_login = App::getDB()->get("users", ["id_user", "login"], [
+            "login" => $this->form->login
+        ]);
 
         //nie ma sensu walidować dalej, gdy brak parametrów
         if (!isset($this->form->login))
