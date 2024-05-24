@@ -41,11 +41,13 @@
 					<li class="active"><a href="{$conf->action_root}userPanel">Panel klienta</a></li>
 					<li><a href="{$conf->action_root}yachtList_open">Lista jachtów</a></li>
 					{if count($conf->roles)>0}
-						<li><a href="{$conf->action_root}controlPanel" class="pure-menu-heading pure-menu-link">Control Panel</a></li>
-						<li><a href="{$conf->action_root}logout" class="pure-menu-heading pure-menu-link">Wyloguj</a></li>
+						{if core\RoleUtils::inRole("admin")}
+							<li><a href="{$conf->action_root}controlPanel" class="pure-menu-heading pure-menu-link">Control Panel</a></li>
+						{/if}
+							<li><a href="{$conf->action_root}logout" class="pure-menu-heading pure-menu-link">Wyloguj</a></li>
 					{else}	
-						<li><a href="{$conf->action_root}login" class="pure-menu-heading pure-menu-link">Zaloguj</a></li>
-						<li><a href="{$conf->action_root}register" class="pure-menu-heading pure-menu-link">Zarejestruj</a></li>
+							<li><a href="{$conf->action_root}login" class="pure-menu-heading pure-menu-link">Zaloguj</a></li>
+							<li><a href="{$conf->action_root}register" class="pure-menu-heading pure-menu-link">Zarejestruj</a></li>
 					{/if}
 				</ul>
 			</div>	
