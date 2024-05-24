@@ -13,12 +13,10 @@ class LoginCtrl {
     private $form;
 
     public function __construct() {
-        //stworzenie potrzebnych obiektów
         $this->form = new LoginForm();
     }
 
     public function validate() {
-        //1. mam login i hasło z formularza
         $this->form->login = ParamUtils::getFromRequest('login');
         $this->form->pass = ParamUtils::getFromRequest('pass');
 
@@ -39,14 +37,13 @@ class LoginCtrl {
             Utils::addErrorMessage('Witaj adminie');
             return true;
         }
-        //4. sprawdz nazwe roli dla tego id_role i dodaj addRole
 
-        //2. znajdz id_user w bazie dla tego loginu
+        //znajdz id_user w bazie dla tego loginu
         $this->form->db_id_user = App::getDB()->get("users", "id_user", [
             "login" => $this->form->login  //if
         ]);
 
-        //3. znajdz i porownaj hasło z bazy z hasłem z formularza
+        //znajdz i porownaj hasło z bazy z hasłem z formularza
         if (!$this->form->db_id_user) {
             Utils::addErrorMessage('Użytkownik o podanym loginie nie istnieje');
         }
@@ -54,30 +51,28 @@ class LoginCtrl {
             "id_user" => $this->form->db_id_user
         ]);
         if (!$this->form->db_password) {
-            Utils::addErrorMessage('Brak hasła użytkownika w bazie');
+            Utils::addErrorMessage('Nieprawidłowe hasło. Skontaktuj sie z administratorem');
         }
-        //4. jeśli hasło z formularza jest takie samo, jak w tablicy passwords
-        if ($this->form->pass == $this->form->db_password) {
-            Utils::addErrorMessage('Prawidłowe hasło');
-        } else {
+        if ($this->form->pass != $this->form->db_password) {
             Utils::addErrorMessage('Nieprawidłowe hasło');
             return false;
         }
-        //5. to jakie id_role ma przypisany użytkownik (wg id_user) w tablicy assigned_roles
+        //jeśli hasło z formularza jest takie samo, jak w tablicy passwords
+        //to jakie id_role ma przypisany użytkownik (wg id_user) w tablicy assigned_roles
+
         $this->form->db_id_role = App::getDB()->get("assigned_roles", "id_role", [
             "id_user" => $this->form->db_id_user
         ]);
-        //6. sprawdź nazwę roli dla takiego id_role w tablicy roles
+        //sprawdź nazwę roli dla takiego id_role w tablicy roles
         $this->form->db_role = App::getDB()->get("roles", "role", [
             "id_role" => $this->form->db_id_role
         ]);
-        //7. przypisz tą nazwę roli użytkownikowi
-        if (!$this->form->db_role) {
+        if ($this->form->db_role == 'admin') {
+            Utils::addInfoMessage('Witaj administratorze');
+            RoleUtils::addRole('admin');
+        } else {
+            Utils::addInfoMessage('Witaj użytkowniku');
             RoleUtils::addRole('user');
-        }
-        if($this->form->db_role == "user"){
-            RoleUtils::addRole($this->form->db_role);
-            Utils::addErrorMessage('Witaj użytkowniku');
         }
         return !App::getMessages()->isError();
     }
@@ -89,7 +84,7 @@ class LoginCtrl {
     public function action_login() {
         if ($this->validate()) {
             //zalogowany => przekieruj na główną akcję (z przekazaniem messages przez sesję)
-            Utils::addErrorMessage('Poprawnie zalogowano do systemu');
+            Utils::addInfoMessage('Poprawnie zalogowano do systemu');
             App::getRouter()->redirectTo("personList");
         } else {
             //niezalogowany => pozostań na stronie logowania
@@ -101,7 +96,7 @@ class LoginCtrl {
         // 1. zakończenie sesji
         session_destroy();
         // 2. idź na stronę główną - system automatycznie przekieruje do strony logowania
-        App::getRouter()->redirectTo('personList');
+        App::getRouter()->redirectTo('yachtList');
     }
 
     public function generateView() {
