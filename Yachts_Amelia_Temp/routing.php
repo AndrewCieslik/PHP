@@ -10,7 +10,7 @@ App::getRouter()->setLoginRoute('login');
 
 Utils::addRoute('personList',    'PersonListCtrl', ['admin']);
 
-Utils::addRoute('loginShow',     'LoginCtrl');
+//Utils::addRoute('loginShow',     'LoginCtrl');
 Utils::addRoute('login',         'LoginCtrl');
 Utils::addRoute('logout',        'LoginCtrl');
 
