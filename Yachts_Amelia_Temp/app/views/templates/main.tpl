@@ -46,7 +46,7 @@
 						{/if}
 							<li><a href="{$conf->action_root}logout" class="pure-menu-heading pure-menu-link">Wyloguj</a></li>
 					{else}	
-						<li><a href="{$conf->action_root}loginShow" class="pure-menu-heading pure-menu-link">Zaloguj</a></li>
+						<li><a href="{$conf->action_root}login" class="pure-menu-heading pure-menu-link">Zaloguj</a></li>
 						<li><a href="{$conf->action_root}register" class="pure-menu-heading pure-menu-link">Zarejestruj</a></li>
 					{/if}
 				</ul>

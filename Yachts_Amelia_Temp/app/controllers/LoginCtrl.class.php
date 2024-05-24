@@ -68,18 +68,16 @@ class LoginCtrl {
             "id_role" => $this->form->db_id_role
         ]);
         if ($this->form->db_role == 'admin') {
-            Utils::addInfoMessage('Witaj administratorze');
             RoleUtils::addRole('admin');
         } else {
-            Utils::addInfoMessage('Witaj użytkowniku');
             RoleUtils::addRole('user');
         }
         return !App::getMessages()->isError();
     }
 
-    public function action_loginShow() {
-        $this->generateView();
-    }
+//    public function action_login() {
+//        $this->generateView();
+//    }
 
     public function action_login() {
         if ($this->validate()) {
@@ -103,5 +101,4 @@ class LoginCtrl {
         App::getSmarty()->assign('form', $this->form); // dane formularza do widoku
         App::getSmarty()->display('LoginView.tpl');
     }
-
 }
