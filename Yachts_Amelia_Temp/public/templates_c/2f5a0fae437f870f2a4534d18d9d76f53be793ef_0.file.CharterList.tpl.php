@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-05-25 23:40:05
+/* Smarty version 3.1.30, created on 2024-05-25 23:55:32
   from "C:\xampp\htdocs\PHP\Yachts_Amelia_Temp\app\views\CharterList.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_66525ab5c34bd3_38631497',
+  'unifunc' => 'content_66525e54035ba0_27596675',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f5a0fae437f870f2a4534d18d9d76f53be793ef' => 
     array (
       0 => 'C:\\xampp\\htdocs\\PHP\\Yachts_Amelia_Temp\\app\\views\\CharterList.tpl',
-      1 => 1716673205,
+      1 => 1716674131,
       2 => 'file',
     ),
   ),
@@ -21,26 +21,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_66525ab5c34bd3_38631497 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66525e54035ba0_27596675 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_193223955966525ab5bfc277_19311169', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8524859166525e53f3ee24_88809495', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_139735283566525ab5c33f64_11007508', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_201332451666525e54034588_19010900', 'bottom');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'top'} */
-class Block_193223955966525ab5bfc277_19311169 extends Smarty_Internal_Block
+class Block_8524859166525e53f3ee24_88809495 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -61,7 +61,7 @@ charterList">
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_139735283566525ab5c33f64_11007508 extends Smarty_Internal_Block
+class Block_201332451666525e54034588_19010900 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -77,6 +77,9 @@ charterNew">+ Nowy charter</a>
 			<th>id charteru</th>
 			<th>id jachtu</th>
 			<th>id klienta</th>
+			<th>imie</th>
+			<th>nazwisko</th>
+			<th>telefon</th>
 			<th>data rozpoczęcia</th>
 			<th>data zakończenia</th>
 			<th>zatwierdź</th>
@@ -97,9 +100,11 @@ if ($_smarty_tpl->tpl_vars['p']->value["id_user"] == $_prefixVariable1) {?>
 				<tr><td><?php echo $_smarty_tpl->tpl_vars['p']->value["id_charter"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["id_yacht"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["id_user"];?>
+</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["name"];?>
+</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["surname"];?>
+</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["phone"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["date_start"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["date_end"];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["approved"];?>
 </td><td><a class="button-small pure-button button-secondary" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
 charterEdit/<?php echo $_smarty_tpl->tpl_vars['p']->value['id_charter'];?>
 ">Edytuj</a></td></tr>
@@ -120,6 +125,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
 			<tr><td><?php echo $_smarty_tpl->tpl_vars['p']->value["id_charter"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["id_yacht"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["id_user"];?>
+</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["name"];?>
+</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["surname"];?>
+</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["phone"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["date_start"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["date_end"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["approved"];?>
