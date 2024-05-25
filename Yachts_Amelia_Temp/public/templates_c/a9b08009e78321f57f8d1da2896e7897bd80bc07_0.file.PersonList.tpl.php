@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-05-25 20:49:13
+/* Smarty version 3.1.30, created on 2024-05-25 20:56:35
   from "C:\xampp\htdocs\PHP\Yachts_Amelia_Temp\app\views\PersonList.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_665232a9122135_77640879',
+  'unifunc' => 'content_665234632fe7b4_59621007',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a9b08009e78321f57f8d1da2896e7897bd80bc07' => 
     array (
       0 => 'C:\\xampp\\htdocs\\PHP\\Yachts_Amelia_Temp\\app\\views\\PersonList.tpl',
-      1 => 1716662943,
+      1 => 1716663393,
       2 => 'file',
     ),
   ),
@@ -21,26 +21,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_665232a9122135_77640879 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665234632fe7b4_59621007 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1621269336665232a90f87a9_03124128', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1299568087665234632cdbd4_45565996', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1719209120665232a91216f7_42956675', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1396764022665234632fdb48_01834179', 'bottom');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'top'} */
-class Block_1621269336665232a90f87a9_03124128 extends Smarty_Internal_Block
+class Block_1299568087665234632cdbd4_45565996 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -63,7 +63,7 @@ personList">
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_1719209120665232a91216f7_42956675 extends Smarty_Internal_Block
+class Block_1396764022665234632fdb48_01834179 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -102,9 +102,9 @@ if ($_smarty_tpl->tpl_vars['p']->value["id_user"] == $_prefixVariable1) {?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["phone"];?>
 </td><td><a class="button-small pure-button button-secondary" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
 personEdit/<?php echo $_smarty_tpl->tpl_vars['p']->value['id_user'];?>
-">Edytuj</a>&nbsp;<a class="button-small pure-button button-warning" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+">Edytuj</a>&nbsp;<?php if (core\RoleUtils::inRole("manager") || core\RoleUtils::inRole("admin")) {?><a class="button-small pure-button button-warning" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
 personDelete/<?php echo $_smarty_tpl->tpl_vars['p']->value['id_user'];?>
-">Usuń</a></td></tr>
+">Usuń</a><?php }?></td></tr>
 		<?php }?>
 	<?php
 }
