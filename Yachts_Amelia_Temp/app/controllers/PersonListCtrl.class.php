@@ -11,6 +11,7 @@ class PersonListCtrl {
 
     private $form; //dane formularza wyszukiwania
     private $records; //rekordy pobrane z bazy danych
+    private $id;
 
     public function __construct() {
         //stworzenie potrzebnych obiektów
@@ -68,10 +69,14 @@ class PersonListCtrl {
                 Utils::addErrorMessage($e->getMessage());
         }
 
+        $this->id = 90;
+
         // 4. wygeneruj widok
         App::getSmarty()->assign('searchForm', $this->form); // dane formularza (wyszukiwania w tym wypadku)
         App::getSmarty()->assign('people', $this->records);  // lista rekordów z bazy danych
-        App::getSmarty()->assign('_SESSION', $_SESSION);
+       // App::getSmarty()->assign('_SESSION', $_SESSION);
+       App::getSmarty()->assign('id', $this->id); // Przekazanie zmiennej id do Smarty
+
         App::getSmarty()->display('PersonList.tpl');
     }
 

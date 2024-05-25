@@ -11,6 +11,7 @@ use app\forms\LoginForm;
 class LoginCtrl {
 
     private $form;
+    //public $id;
 
     public function __construct() {
         $this->form = new LoginForm();
@@ -47,14 +48,20 @@ class LoginCtrl {
         $this->form->db_id_user = App::getDB()->get("users", "id_user", [
             "login" => $this->form->login  //if
         ]);
+        //$this->id = $this->form->db_id_user;
 
         //znajdz i porownaj hasło z bazy z hasłem z formularza
         if (!$this->form->db_id_user) {
             Utils::addErrorMessage('Użytkownik o podanym loginie nie istnieje');
         }
+
         $this->form->db_password = App::getDB()->get("passwords", "password", [
             "id_user" => $this->form->db_id_user
         ]);
+
+        $this->id = $this->form->db_id_user;
+
+
         if (!$this->form->db_password) {
             Utils::addErrorMessage('Nieprawidłowe hasło. Skontaktuj sie z administratorem');
         }
@@ -79,10 +86,6 @@ class LoginCtrl {
         }
         return !App::getMessages()->isError();
     }
-
-//    public function action_login() {
-//        $this->generateView();
-//    }
 
     public function action_login() {
         if ($this->validate()) {

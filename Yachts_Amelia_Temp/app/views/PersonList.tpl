@@ -31,9 +31,13 @@
 	</tr>
 </thead>
 <tbody>
+
+	<p>User ID: {$id}</p>
+
+
 {if core\RoleUtils::inRole("user")}
 	{foreach $people as $p}
-		{if $p["id_user"] == 90}
+		{if $p["id_user"] == {$id}}
 			{strip}
 				<tr>
 					<td>{$p["id_user"]}</td>
