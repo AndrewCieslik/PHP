@@ -25,7 +25,9 @@
 	<tr>
 		<th>model</th>
 		<th>nazwa</th>
-		<th>opcje</th>
+		{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
+			<th>opcje</th>
+		{/if}
 
 	</tr>
 </thead>
@@ -35,11 +37,13 @@
 	<tr>
 		<td>{$p["model"]}</td>
 		<td>{$p["name"]}</td>
-		<td>
-			<a class="button-small pure-button button-secondary" href="{$conf->action_url}yachtEdit/{$p['id_yacht']}">Edytuj</a>
-			&nbsp;
-			<a class="button-small pure-button button-warning" href="{$conf->action_url}yachtDelete/{$p['id_yacht']}">Usuń</a>
-		</td>
+		{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
+			<td>
+				<a class="button-small pure-button button-secondary" href="{$conf->action_url}yachtEdit/{$p['id_yacht']}">Edytuj</a>
+				&nbsp;
+				<a class="button-small pure-button button-warning" href="{$conf->action_url}yachtDelete/{$p['id_yacht']}">Usuń</a>
+			</td>
+		{/if}
 	</tr>
 {/strip}
 {/foreach}

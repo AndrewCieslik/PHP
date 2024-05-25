@@ -32,6 +32,11 @@ class LoginCtrl {
         if (App::getMessages()->isError()){
             return false;
         }
+        if ($this->form->login == "manager" && $this->form->pass == "manager") {
+            RoleUtils::addRole('manager');
+            Utils::addErrorMessage('Witaj managerze');
+            return true;
+        }
         if ($this->form->login == "admin" && $this->form->pass == "admin") {
             RoleUtils::addRole('admin');
             Utils::addErrorMessage('Witaj adminie');
