@@ -43,10 +43,6 @@
 					<td>{$p["phone"]}</td>
 					<td>
 						<a class="button-small pure-button button-secondary" href="{$conf->action_url}personEdit/{$p['id_user']}">Edytuj</a>
-						&nbsp;
-						{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
-							<a class="button-small pure-button button-warning" href="{$conf->action_url}personDelete/{$p['id_user']}">Usuń</a>
-						{/if}
 					</td>
 				</tr>
 			{/strip}
@@ -64,7 +60,6 @@
 					<td>{$p["phone"]}</td>
 					<td>
 						<a class="button-small pure-button button-secondary" href="{$conf->action_url}personEdit/{$p['id_user']}">Edytuj</a>
-						&nbsp;
 						<a class="button-small pure-button button-warning" href="{$conf->action_url}personDelete/{$p['id_user']}">Usuń</a>
 					</td>
 				</tr>
