@@ -8,7 +8,7 @@
                 <legend>Dane charteru</legend>
                     <div class="pure-control-group">
                         <label for="date_start">Nazwa jachtu</label>
-                        <input id="date_start" type="date" placeholder="np. Bożena" name="yacht_name" value="{$form->yacht_name}">
+                        <input id="date_start" type="text" placeholder="np. Bożena" name="yacht_name" value="{$form->yacht_name}">
                     </div>
                     <div class="pure-control-group">
                         <label for="date_start">data rozpoczęcia</label>
