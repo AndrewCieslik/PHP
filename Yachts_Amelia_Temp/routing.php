@@ -11,23 +11,23 @@ App::getRouter()->setLoginRoute('login');
 Utils::addRoute('login',         'LoginCtrl');
 Utils::addRoute('logout',        'LoginCtrl');
 
-Utils::addRoute('personList',    'PersonListCtrl', ['admin']);
-Utils::addRoute('personNew',     'PersonEditCtrl',	['admin']);
-Utils::addRoute('personEdit',    'PersonEditCtrl',	['admin']);
-Utils::addRoute('personSave',    'PersonEditCtrl',	['admin']);
-Utils::addRoute('personDelete',  'PersonEditCtrl',	['admin']);
+Utils::addRoute('personList',    'PersonListCtrl', ['manager', 'admin']);
+Utils::addRoute('personNew',     'PersonEditCtrl',	['manager', 'admin']);
+Utils::addRoute('personEdit',    'PersonEditCtrl',	['manager', 'admin']);
+Utils::addRoute('personSave',    'PersonEditCtrl',	['manager', 'admin']);
+Utils::addRoute('personDelete',  'PersonEditCtrl',	['manager', 'admin']);
 
 Utils::addRoute('yachtList',    'YachtListCtrl');
-Utils::addRoute('yachtNew',     'YachtEditCtrl',	['admin']);
-Utils::addRoute('yachtEdit',    'YachtEditCtrl',	['admin']);
-Utils::addRoute('yachtSave',    'YachtEditCtrl',	['admin']);
-Utils::addRoute('yachtDelete',  'YachtEditCtrl',	['admin']);
+Utils::addRoute('yachtNew',     'YachtEditCtrl',	['manager', 'admin']);
+Utils::addRoute('yachtEdit',    'YachtEditCtrl',	['manager', 'admin']);
+Utils::addRoute('yachtSave',    'YachtEditCtrl',	['manager', 'admin']);
+Utils::addRoute('yachtDelete',  'YachtEditCtrl',	['manager', 'admin']);
 
-Utils::addRoute('charterList', 'CharterListCtrl',       ['admin']);
-Utils::addRoute('charterNew',     'CharterEditCtrl',	['admin']);
-Utils::addRoute('charterEdit',    'CharterEditCtrl',	['admin']);
-Utils::addRoute('charterSave',    'CharterEditCtrl',	['admin']);
-Utils::addRoute('charterDelete',  'CharterEditCtrl',	['admin']);
+Utils::addRoute('charterList', 'CharterListCtrl');
+Utils::addRoute('charterNew',     'CharterEditCtrl',	['manager', 'admin']);
+Utils::addRoute('charterEdit',    'CharterEditCtrl',	['manager', 'admin']);
+Utils::addRoute('charterSave',    'CharterEditCtrl',	['manager', 'admin']);
+Utils::addRoute('charterDelete',  'CharterEditCtrl',	['manager', 'admin']);
 
 Utils::addRoute('register', 'RegistrationCtrl');
 
