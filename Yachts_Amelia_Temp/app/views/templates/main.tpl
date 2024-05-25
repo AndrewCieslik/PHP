@@ -38,6 +38,15 @@
 
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
+					{if core\RoleUtils::inRole("user")}
+						<li color="red">Witaj!</li>
+					{/if}
+					{if core\RoleUtils::inRole("manager")}
+						<li color="red">Witaj managerze</li>
+					{/if}
+					{if core\RoleUtils::inRole("admin")}
+						<li color="red">Witaj admin</li>
+					{/if}
 					<li class="active"><a href="{$conf->action_root}charterList">Rezerwacje</a></li>
 					<li><a href="{$conf->action_root}yachtList">Jachty</a></li>
 					{if count($conf->roles)>0}

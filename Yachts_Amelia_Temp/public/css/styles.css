@@ -54,6 +54,7 @@ body {
   float: none;
   display: inline-block;
 }
+
 .navbar-collapse .navbar-nav > li > a {
   padding: 20px 30px;
 }
@@ -863,3 +864,4 @@ footer.entry-meta .meta-in {
 .button-xlarge {
     font-size: 125%;
 }
+
