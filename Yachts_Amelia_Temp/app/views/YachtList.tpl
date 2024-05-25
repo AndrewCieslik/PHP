@@ -36,7 +36,7 @@
 {strip}
 	<tr>
 		<td>{$p["model"]}</td>
-		<td>{$p["name"]}</td>
+		<td>{$p["yacht_name"]}</td>
 		{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
 			<td>
 				<a class="button-small pure-button button-secondary" href="{$conf->action_url}yachtEdit/{$p['id_yacht']}">Edytuj</a>

@@ -22,7 +22,7 @@ class YachtEditCtrl {
         //0. Pobranie parametrów z walidacją
         $this->form->id_yacht = ParamUtils::getFromRequest('id_yacht', true, 'Błędne wywołanie aplikacji');
         $this->form->model = ParamUtils::getFromRequest('model', true, 'Błędne wywołanie aplikacji');
-        $this->form->name = ParamUtils::getFromRequest('name', true, 'Błędne wywołanie aplikacji');
+        $this->form->yacht_name = ParamUtils::getFromRequest('yacht_name', true, 'Błędne wywołanie aplikacji');
 
         if (App::getMessages()->isError())
             return false;
@@ -31,7 +31,7 @@ class YachtEditCtrl {
         if (empty(trim($this->form->model))) {
             Utils::addErrorMessage('Wprowadź model');
         }
-        if (empty(trim($this->form->name))) {
+        if (empty(trim($this->form->yacht_name))) {
             Utils::addErrorMessage('Wprowadź nazwe');
         }
 
@@ -72,7 +72,7 @@ class YachtEditCtrl {
                 // 2.1 jeśli osoba istnieje to wpisz dane do obiektu formularza
                 $this->form->id_yacht = $record['id_yacht'];
                 $this->form->model = $record['model'];
-                $this->form->name = $record['name'];
+                $this->form->yacht_name = $record['yacht_name'];
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił błąd podczas odczytu rekordu');
                 if (App::getConf()->debug)
@@ -119,7 +119,7 @@ class YachtEditCtrl {
                     if ($count <= 20) {
                         App::getDB()->insert("yachts", [
                             "model" => $this->form->model,
-                            "name" => $this->form->name,
+                            "yacht_name" => $this->form->yacht_name,
                         ]);
                     } else { //za dużo rekordów
                         // Gdy za dużo rekordów to pozostań na stronie
@@ -131,7 +131,7 @@ class YachtEditCtrl {
                     //2.2 Edycja rekordu o danym ID
                     App::getDB()->update("yachts", [
                         "model" => $this->form->model,
-                        "name" => $this->form->name
+                        "yacht_name" => $this->form->yacht_name
                             ], [
                         "id_yacht" => $this->form->id_yacht
                     ]);

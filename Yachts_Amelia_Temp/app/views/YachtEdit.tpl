@@ -11,8 +11,8 @@
             <input id="model" type="text" placeholder="model" name="model" value="{$form->model}">
         </div>
 		<div class="pure-control-group">
-            <label for="name">nazwa</label>
-            <input id="name" type="text" placeholder="nazwa" name="name" value="{$form->name}">
+            <label for="yacht_name">nazwa jachtu</label>
+            <input id="yacht_name" type="text" placeholder="nazwa" name="yacht_name" value="{$form->yacht_name}">
         </div>
 		<div class="pure-controls">
 			<input type="submit" class="pure-button pure-button-primary" value="Zapisz"/>

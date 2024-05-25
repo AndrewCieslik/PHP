@@ -59,7 +59,7 @@ class YachtListCtrl {
             $this->records = App::getDB()->select("yachts", [
                 "id_yacht",
                 "model",
-                "name",
+                "yacht_name",
                     ], $where);
         } catch (\PDOException $e) {
             Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');
