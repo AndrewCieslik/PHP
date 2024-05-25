@@ -11,10 +11,13 @@ use app\forms\LoginForm;
 class LoginCtrl {
 
     private $form;
-    //public $id;
+    private $id;
 
     public function __construct() {
         $this->form = new LoginForm();
+    }
+    public function getId() {
+        return $this->id;
     }
 
     public function validate() {
@@ -48,7 +51,9 @@ class LoginCtrl {
         $this->form->db_id_user = App::getDB()->get("users", "id_user", [
             "login" => $this->form->login  //if
         ]);
-        //$this->id = $this->form->db_id_user;
+
+        $this->id = $this->form->db_id_user;
+        $_SESSION['id'] = $this->id;
 
         //znajdz i porownaj hasło z bazy z hasłem z formularza
         if (!$this->form->db_id_user) {
@@ -59,7 +64,6 @@ class LoginCtrl {
             "id_user" => $this->form->db_id_user
         ]);
 
-        $this->id = $this->form->db_id_user;
 
 
         if (!$this->form->db_password) {
@@ -100,6 +104,7 @@ class LoginCtrl {
 
     public function action_logout() {
         // 1. zakończenie sesji
+        unset($_SESSION['id']);
         session_destroy();
         // 2. idź na stronę główną - system automatycznie przekieruje do strony logowania
         App::getRouter()->redirectTo('yachtList');

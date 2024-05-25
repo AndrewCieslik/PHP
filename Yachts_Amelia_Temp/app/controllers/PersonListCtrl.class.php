@@ -11,12 +11,12 @@ class PersonListCtrl {
 
     private $form; //dane formularza wyszukiwania
     private $records; //rekordy pobrane z bazy danych
-    private $id;
 
     public function __construct() {
         //stworzenie potrzebnych obiektów
         $this->form = new PersonSearchForm();
     }
+
 
     public function validate() {
         // 1. sprawdzenie, czy parametry zostały przekazane
@@ -25,7 +25,7 @@ class PersonListCtrl {
 
         // 2. sprawdzenie poprawności przekazanych parametrów
         // - nie trzeba sprawdzać
-
+        ;
         return !App::getMessages()->isError();
     }
 
@@ -46,6 +46,7 @@ class PersonListCtrl {
         // W tym wypadku zawsze wyświetlamy listę osób bez względu na to, czy dane wprowadzone w formularzu wyszukiwania są poprawne.
         // Dlatego pobranie nie jest uwarunkowane poprawnością walidacji (jak miało to miejsce w kalkulatorze)
         //przygotowanie frazy where na wypadek większej liczby parametrów
+
         $num_params = sizeof($search_params);
         if ($num_params > 1) {
             $where = ["AND" => &$search_params];
@@ -54,8 +55,6 @@ class PersonListCtrl {
         }
         //dodanie frazy sortującej po nazwisku
         $where ["ORDER"] = "surname";
-        //wykonanie zapytania
-
         try {
             $this->records = App::getDB()->select("users", [
                 "id_user",
@@ -69,14 +68,11 @@ class PersonListCtrl {
                 Utils::addErrorMessage($e->getMessage());
         }
 
-        $this->id = 90;
-
-        // 4. wygeneruj widok
-        App::getSmarty()->assign('searchForm', $this->form); // dane formularza (wyszukiwania w tym wypadku)
-        App::getSmarty()->assign('people', $this->records);  // lista rekordów z bazy danych
-       // App::getSmarty()->assign('_SESSION', $_SESSION);
-       App::getSmarty()->assign('id', $this->id); // Przekazanie zmiennej id do Smarty
-
+        App::getSmarty()->assign('searchForm', $this->form);
+        App::getSmarty()->assign('people', $this->records);
+        if (isset($_SESSION['id'])) {
+            App::getSmarty()->assign('id', $_SESSION['id']);
+        }
         App::getSmarty()->display('PersonList.tpl');
     }
 

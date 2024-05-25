@@ -32,9 +32,6 @@
 </thead>
 <tbody>
 
-	<p>User ID: {$id}</p>
-
-
 {if core\RoleUtils::inRole("user")}
 	{foreach $people as $p}
 		{if $p["id_user"] == {$id}}
