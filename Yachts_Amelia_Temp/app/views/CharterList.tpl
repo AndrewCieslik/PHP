@@ -31,7 +31,7 @@
 	</thead>
 	<tbody>
 	{if core\RoleUtils::inRole("user")}
-		{foreach $people as $p}
+		{foreach $charters as $p}
 			{if $p["id_user"] == {$id}}
 				{strip}
 					<tr>
@@ -50,7 +50,7 @@
 		{/foreach}
 	{/if}
 	{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
-		{foreach $people as $p}
+		{foreach $charters as $p}
 			{strip}
 				<tr>
 					<td>{$p["id_charter"]}</td>
