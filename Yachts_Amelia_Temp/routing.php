@@ -11,7 +11,7 @@ App::getRouter()->setLoginRoute('login');
 Utils::addRoute('login',         'LoginCtrl');
 Utils::addRoute('logout',        'LoginCtrl');
 
-Utils::addRoute('personList',    'PersonListCtrl', ['manager', 'admin']);
+Utils::addRoute('personList',    'PersonListCtrl');
 Utils::addRoute('personNew',     'PersonEditCtrl',	['manager', 'admin']);
 Utils::addRoute('personEdit',    'PersonEditCtrl',	['manager', 'admin']);
 Utils::addRoute('personSave',    'PersonEditCtrl',	['manager', 'admin']);

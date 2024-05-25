@@ -31,21 +31,44 @@
 	</tr>
 </thead>
 <tbody>
-{foreach $people as $p}
-{strip}
-	<tr>
-		<td>{$p["id_user"]}</td>
-		<td>{$p["name"]}</td>
-		<td>{$p["surname"]}</td>
-		<td>{$p["phone"]}</td>
-		<td>
-			<a class="button-small pure-button button-secondary" href="{$conf->action_url}personEdit/{$p['id_user']}">Edytuj</a>
-			&nbsp;
-			<a class="button-small pure-button button-warning" href="{$conf->action_url}personDelete/{$p['id_user']}">Usuń</a>
-		</td>
-	</tr>
-{/strip}
-{/foreach}
+{if core\RoleUtils::inRole("user")}
+	{foreach $people as $p}
+		{if $p["id_user"] == 90}
+			{strip}
+				<tr>
+					<td>{$p["id_user"]}</td>
+					<td>{$p["name"]}</td>
+					<td>{$p["surname"]}</td>
+					<td>{$p["phone"]}</td>
+					<td>
+						<a class="button-small pure-button button-secondary" href="{$conf->action_url}personEdit/{$p['id_user']}">Edytuj</a>
+						&nbsp;
+						<a class="button-small pure-button button-warning" href="{$conf->action_url}personDelete/{$p['id_user']}">Usuń</a>
+					</td>
+				</tr>
+			{/strip}
+		{/if}
+	{/foreach}
+{/if}
+
+{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
+		{foreach $people as $p}
+			{strip}
+				<tr>
+					<td>{$p["id_user"]}</td>
+					<td>{$p["name"]}</td>
+					<td>{$p["surname"]}</td>
+					<td>{$p["phone"]}</td>
+					<td>
+						<a class="button-small pure-button button-secondary" href="{$conf->action_url}personEdit/{$p['id_user']}">Edytuj</a>
+						&nbsp;
+						<a class="button-small pure-button button-warning" href="{$conf->action_url}personDelete/{$p['id_user']}">Usuń</a>
+					</td>
+				</tr>
+			{/strip}
+		{/foreach}
+	{/if}
+
 </tbody>
 </table>
 

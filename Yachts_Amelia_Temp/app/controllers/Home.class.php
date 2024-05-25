@@ -70,12 +70,6 @@ class Home {
         // 4. wygeneruj widok
         App::getSmarty()->assign('searchForm', $this->form); // dane formularza (wyszukiwania w tym wypadku)
         App::getSmarty()->assign('people', $this->records);  // lista rekordów z bazy danych
-<<<<<<<< HEAD:Yachts_Amelia_Temp/app/controllers/YachtListOpenCtrl.class.php
-        App::getSmarty()->assign('_SESSION', $_SESSION);
-        App::getSmarty()->display('YachtList_open.tpl');
-========
         App::getSmarty()->display('Home.tpl');
->>>>>>>> f48a0e5 (home works):Yachts_Amelia_Temp/app/controllers/Home.class.php
     }
-
 }
