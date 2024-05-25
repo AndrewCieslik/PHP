@@ -12,10 +12,10 @@ Utils::addRoute('login',         'LoginCtrl');
 Utils::addRoute('logout',        'LoginCtrl');
 
 Utils::addRoute('personList',    'PersonListCtrl');
-Utils::addRoute('personNew',     'PersonEditCtrl',	['manager', 'admin']);
-Utils::addRoute('personEdit',    'PersonEditCtrl',	['manager', 'admin']);
-Utils::addRoute('personSave',    'PersonEditCtrl',	['manager', 'admin']);
-Utils::addRoute('personDelete',  'PersonEditCtrl',	['manager', 'admin']);
+Utils::addRoute('personNew',     'PersonEditCtrl');
+Utils::addRoute('personEdit',    'PersonEditCtrl');
+Utils::addRoute('personSave',    'PersonEditCtrl');
+Utils::addRoute('personDelete',  'PersonEditCtrl');
 
 Utils::addRoute('yachtList',    'YachtListCtrl');
 Utils::addRoute('yachtNew',     'YachtEditCtrl',	['manager', 'admin']);
