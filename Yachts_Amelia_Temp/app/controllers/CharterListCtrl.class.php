@@ -56,21 +56,41 @@ class CharterListCtrl {
 //                "date_end",
 //                "approved",
 //                    ], $where);
-//            $database->select("post", [
-//                // Here is the table relativity argument that tells the relativity between the table you want to join.
-//                "[>]account" => ["author_id" => "user_id"]
-//            ], [
-//                "post.title",
-//                "account.city"
-//            ]);
 
-            $this->records = App::getDB()->select("charters", [
-                "[><]users" => ["id_user" => "id_user"]
+           // $where ["ORDER"] = "charters.id_users";
+//            $this->records = App::getDB()->select("charters", [
+//                "[><]users" => ["id_user" => "id_user"]
+//            ], [
+//                "charters.id_charter",
+//                "charters.id_user",
+//                "users.name"
+//            ],
+//                $where );
+//            $this->records = App::getDB()->select('charters', [
+//                '[><]users' => ['charters.id_user' => 'users.id_user'],
+//            ], [
+//                'charters.id_charter',
+//                'charters.id_user',
+//                'users.name',
+//            ]);
+            $this->records = App::getDB()->select('charters', [
+                '[>]users' => ['id_user' => 'id_user']
             ], [
-                "charters.id_charter",
-                "charters.id_user",
-                "users.name"
+                'charters.id_charter',
+                'charters.id_user',
+                'users.name'
             ]);
+
+
+
+//            $this->records = App::getDB()->select('charters', [
+//                '[>]users' => ['id_user']
+//            ], [
+//                'charters.id_charter',
+//
+//            ], $where );
+
+
         } catch (\PDOException $e) {
             Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');
             if (App::getConf()->debug)
@@ -83,5 +103,4 @@ class CharterListCtrl {
         App::getSmarty()->assign('_SESSION', $_SESSION);
         App::getSmarty()->display('CharterList.tpl');
     }
-
 }
