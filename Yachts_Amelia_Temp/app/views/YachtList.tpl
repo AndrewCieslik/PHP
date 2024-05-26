@@ -18,24 +18,28 @@
 			<tr>
 				<th>model</th>
 				<th>nazwa</th>
+				<th>Nasz jacht</th>
 				{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
 					<th>opcje</th>
 				{/if}
 			</tr>
 		</thead>
 		<tbody>
-			{foreach $people as $p}
+			<div class="bottom-margin">
+				<a class="pure-button button-success" href="{$conf->action_root}yachtNew">+ Nowy jacht</a>
+			</div>
+			{foreach $yachts as $y}
 				{strip}
 					<tr>
-						<td>{$p["model"]}</td>
-						<td>{$p["yacht_name"]}</td>
+						<td>{$y["model"]}</td>
+						<td>{$y["yacht_name"]}</td>
+						<td><img src="{$y.image}" alt="Yacht Image" style="max-width: 200px; max-height: 150px;" /></td>
+
 						{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
-							<div class="bottom-margin">
-								<a class="pure-button button-success" href="{$conf->action_root}yachtNew">+ Nowy jacht</a>
-							</div>
+
 							<td>
-								<a class="button-small pure-button button-secondary" href="{$conf->action_url}yachtEdit/{$p['id_yacht']}">Edytuj</a>
-								<a class="button-small pure-button button-warning" href="{$conf->action_url}yachtDelete/{$p['id_yacht']}">Usuń</a>
+								<a class="button-small pure-button button-secondary" href="{$conf->action_url}yachtEdit/{$y['id_yacht']}">Edytuj</a>
+								<a class="button-small pure-button button-warning" href="{$conf->action_url}yachtDelete/{$y['id_yacht']}">Usuń</a>
 							</td>
 						{/if}
 					</tr>

@@ -14,6 +14,10 @@
             <label for="yacht_name">nazwa jachtu</label>
             <input id="yacht_name" type="text" placeholder="nazwa" name="yacht_name" value="{$form->yacht_name}">
         </div>
+		<div class="pure-control-group">
+			<label for="image">Zdjęcie jachtu</label>
+			<input id="image" type="file" name="image">
+		</div>
 		<div class="pure-controls">
 			<input type="submit" class="pure-button pure-button-primary" value="Zapisz"/>
 			<a class="pure-button button-secondary" href="{$conf->action_root}yachtList">Powrót</a>
