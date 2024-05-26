@@ -20,16 +20,11 @@
 	<table id="tab_people" class="pure-table pure-table-bordered">
 	<thead>
 		<tr>
-			<th>id charteru</th>
-			<th>id jachtu</th>
-			<th>id klienta</th>
+
 			<th>imie</th>
-			<th>nazwisko</th>
-			<th>telefon</th>
+
 			<th>data rozpoczęcia</th>
-			<th>data zakończenia</th>
-			<th>zatwierdź</th>
-			<th>opcje</th>
+
 		</tr>
 	</thead>
 	<tbody>
@@ -39,13 +34,9 @@
 				{strip}
 					<tr>
 						<td>{$p["id_charter"]}</td>
-						<td>{$p["id_yacht"]}</td>
 						<td>{$p["id_user"]}</td>
 						<td>{$p["name"]}</td>
-						<td>{$p["surname"]}</td>
-						<td>{$p["phone"]}</td>
-						<td>{$p["date_start"]}</td>
-						<td>{$p["date_end"]}</td>
+
 						<td>
 							<a class="button-small pure-button button-secondary" href="{$conf->action_url}charterEdit/{$p['id_charter']}">Edytuj</a>
 						</td>
@@ -59,14 +50,9 @@
 			{strip}
 				<tr>
 					<td>{$p["id_charter"]}</td>
-					<td>{$p["id_yacht"]}</td>
 					<td>{$p["id_user"]}</td>
 					<td>{$p["name"]}</td>
-					<td>{$p["surname"]}</td>
-					<td>{$p["phone"]}</td>
-					<td>{$p["date_start"]}</td>
-					<td>{$p["date_end"]}</td>
-					<td>{$p["approved"]}</td>
+
 					<td>
 						<a class="button-small pure-button button-secondary" href="{$conf->action_url}charterEdit/{$p['id_charter']}">Edytuj</a>
 						<a class="button-small pure-button button-warning" href="{$conf->action_url}charterDelete/{$p['id_charter']}">Usuń</a>
