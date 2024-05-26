@@ -56,7 +56,13 @@ class CharterListCtrl {
 //                "date_end",
 //                "approved",
 //                    ], $where);
-
+//            $database->select("post", [
+//                // Here is the table relativity argument that tells the relativity between the table you want to join.
+//                "[>]account" => ["author_id" => "user_id"]
+//            ], [
+//                "post.title",
+//                "account.city"
+//            ]);
 
             $this->records = App::getDB()->select("charters", [
                 "[><]users" => ["id_user" => "id_user"]

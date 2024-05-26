@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-05-26 09:15:56
+/* Smarty version 3.1.30, created on 2024-05-26 10:49:22
   from "C:\xampp\htdocs\PHP\Yachts_Amelia_Temp\app\views\CharterList.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6652e1aca046a3_30151967',
+  'unifunc' => 'content_6652f792c78ca5_58165938',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f5a0fae437f870f2a4534d18d9d76f53be793ef' => 
     array (
       0 => 'C:\\xampp\\htdocs\\PHP\\Yachts_Amelia_Temp\\app\\views\\CharterList.tpl',
-      1 => 1716707756,
+      1 => 1716711919,
       2 => 'file',
     ),
   ),
@@ -21,26 +21,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_6652e1aca046a3_30151967 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6652f792c78ca5_58165938 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_133753236652e1ac9d1645_20124597', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7260959326652f792c4e1c4_26592633', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4640178696652e1aca038f5_62286668', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4791254946652f792c78080_29227495', 'bottom');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'top'} */
-class Block_133753236652e1ac9d1645_20124597 extends Smarty_Internal_Block
+class Block_7260959326652f792c4e1c4_26592633 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -61,7 +61,7 @@ charterList">
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_4640178696652e1aca038f5_62286668 extends Smarty_Internal_Block
+class Block_4791254946652f792c78080_29227495 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -93,13 +93,8 @@ echo $_smarty_tpl->tpl_vars['id']->value;
 $_prefixVariable1=ob_get_clean();
 if ($_smarty_tpl->tpl_vars['p']->value["id_user"] == $_prefixVariable1) {?>
 				<tr><td><?php echo $_smarty_tpl->tpl_vars['p']->value["id_charter"];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["id_yacht"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["id_user"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["name"];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["surname"];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["phone"];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["date_start"];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["date_end"];?>
 </td><td><a class="button-small pure-button button-secondary" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
 charterEdit/<?php echo $_smarty_tpl->tpl_vars['p']->value['id_charter'];?>
 ">Edytuj</a></td></tr>
@@ -118,14 +113,8 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
 ?>
 			<tr><td><?php echo $_smarty_tpl->tpl_vars['p']->value["id_charter"];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["id_yacht"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["id_user"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["name"];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["surname"];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["phone"];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["date_start"];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["date_end"];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["approved"];?>
 </td><td><a class="button-small pure-button button-secondary" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
 charterEdit/<?php echo $_smarty_tpl->tpl_vars['p']->value['id_charter'];?>
 ">Edytuj</a><a class="button-small pure-button button-warning" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
