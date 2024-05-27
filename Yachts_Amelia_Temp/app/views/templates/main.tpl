@@ -57,7 +57,7 @@
 						{/if}
 						{if core\RoleUtils::inRole("admin")}
 							<li><a href="{$conf->action_root}settings" class="pure-menu-heading pure-menu-link">Konfiguracja systemu</a></li>
-							<li><a href="{$conf->action_root}logs" class="pure-menu-heading pure-menu-link">Logi</a></li>
+							<li><a href="{$conf->action_root}logList" class="pure-menu-heading pure-menu-link">Logi</a></li>
 						{/if}
 							<li><a href="{$conf->action_root}logout" class="pure-menu-heading pure-menu-link">Wyloguj</a></li>
 					{else}	

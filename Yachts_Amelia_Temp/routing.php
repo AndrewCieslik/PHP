@@ -37,3 +37,4 @@ Utils::addRoute('roleSave',      'RoleEditCtrl',	['admin']);
 Utils::addRoute('roleDelete',    'RoleEditCtrl',	['admin']);
 
 Utils::addRoute('settings',      'settingsCtrl',    ['admin']);
+Utils::addRoute('logList', 'LogCtrl',    ['admin']);
