@@ -44,8 +44,6 @@
 								<a class="button-small pure-button button-warning" href="{$conf->action_url}yachtDelete/{$y['id_yacht']}">Usuń</a>
 							</td>
 						{/if}
-						<br>
-						<br>
 					</tr>
 				{/strip}
 			{/foreach}
