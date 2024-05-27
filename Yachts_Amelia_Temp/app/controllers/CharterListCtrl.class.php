@@ -53,13 +53,13 @@ class CharterListCtrl {
             ], [
                 'charters.id_charter',
                 'charters.id_user',
-                'charters.id_yacht',
                 'charters.date_start',
                 'charters.date_end',
                 'charters.approved',
                 'users.name',
                 'users.surname'
             ]);
+
         } catch (\PDOException $e) {
             Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');
             if (App::getConf()->debug)
