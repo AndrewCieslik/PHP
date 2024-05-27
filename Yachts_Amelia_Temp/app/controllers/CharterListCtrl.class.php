@@ -49,10 +49,11 @@ class CharterListCtrl {
         //wykonanie zapytania
         try {
             $this->records = App::getDB()->select('charters', [
-                '[>]users' => ['id_user' => 'id_user']
+                '[>]users' => ['id_user' => 'id_user'],
             ], [
                 'charters.id_charter',
                 'charters.id_user',
+                'charters.id_yacht',
                 'charters.date_start',
                 'charters.date_end',
                 'charters.approved',

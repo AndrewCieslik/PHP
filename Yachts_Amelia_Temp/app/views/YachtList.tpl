@@ -16,6 +16,7 @@
 	<table id="tab_people" class="pure-table pure-table-bordered">
 		<thead>
 			<tr>
+				<th>Numer (id)</th>
 				<th>Modele</th>
 				<th>Nazwa</th>
 				<th>jachty Naszej floty</th>
@@ -33,6 +34,7 @@
 			{foreach $yachts as $y}
 				{strip}
 					<tr>
+						<td>{$y["id_yacht"]}</td>
 						<td>{$y["model"]}</td>
 						<td>{$y["yacht_name"]}</td>
 						<td><img src="{$y.image}" alt="Yacht Image" style="max-width: 200px; max-height: 150px;" /></td>

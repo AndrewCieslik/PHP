@@ -22,7 +22,7 @@
 		<tr>
 			<th>id charteru</th>
 			<th>id klienta</th>
-			<th>id jachtu</th>
+			<th>numer jachtu (id)</th>
 			<th>data rozpoczecia</th>
 			<th>data zakonczenia</th>
 			<th>imie sternika</th>

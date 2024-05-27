@@ -6,7 +6,6 @@
         <form action="{$conf->action_root}charterSave" method="post" class="pure-form pure-form-aligned">
             <fieldset>
                 <legend>Dane charteru</legend>
-
                     <div class="pure-control-group">
                         <label for="date_start">data rozpoczęcia</label>
                         <input id="date_start" type="date" placeholder="data startu" name="date_start" value="{$form->date_start}">
@@ -22,8 +21,8 @@
                             <input id="id_user" type="text" placeholder="id klienta" name="id_user" value="{$form->id_user}">
                         </div>
                         <div class="pure-control-group">
-                            <label for="yacht_name">nazwa jachtu</label>
-                            <input id="yacht_name" type="text" placeholder="np. Superowa" name="yacht_name" value="{$form->yacht_name}">
+                            <label for="id_yacht">numer wybranego jachtu</label>
+                            <input id="id_yacht" type="text" placeholder="np. 10" name="id_yacht" value="{$form->id_yacht}">
                         </div>
                         <div class="pure-control-group">
                                 <label for="approved">zatwierdź [0/1]</label>
