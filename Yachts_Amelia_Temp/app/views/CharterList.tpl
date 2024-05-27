@@ -20,11 +20,18 @@
 	<table id="tab_people" class="pure-table pure-table-bordered">
 	<thead>
 		<tr>
+			<th>id charteru</th>
+			<th>id klienta</th>
+			<th>id jachtu</th>
+			<th>data rozpoczecia</th>
+			<th>data zakonczenia</th>
+			<th>imie sternika</th>
+			<th>nazwisko</th>
+			<th>zatwierdz [0/1]</th>
+			{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
+				<th>opcje</th>
 
-			<th>imie</th>
-
-			<th>data rozpoczęcia</th>
-
+			{/if}
 		</tr>
 	</thead>
 	<tbody>
@@ -35,8 +42,12 @@
 					<tr>
 						<td>{$p["id_charter"]}</td>
 						<td>{$p["id_user"]}</td>
+						<td>{$p["id_yacht"]}</td>
+						<td>{$p["date_start"]}</td>
+						<td>{$p["date_end"]}</td>
 						<td>{$p["name"]}</td>
-
+						<td>{$p["surname"]}</td>
+						<td>{$p["approved"]}</td>
 						<td>
 							<a class="button-small pure-button button-secondary" href="{$conf->action_url}charterEdit/{$p['id_charter']}">Edytuj</a>
 						</td>
@@ -51,8 +62,12 @@
 				<tr>
 					<td>{$p["id_charter"]}</td>
 					<td>{$p["id_user"]}</td>
+					<td>{$p["id_yacht"]}</td>
+					<td>{$p["date_start"]}</td>
+					<td>{$p["date_end"]}</td>
 					<td>{$p["name"]}</td>
-
+					<td>{$p["surname"]}</td>
+					<td>{$p["approved"]}</td>
 					<td>
 						<a class="button-small pure-button button-secondary" href="{$conf->action_url}charterEdit/{$p['id_charter']}">Edytuj</a>
 						<a class="button-small pure-button button-warning" href="{$conf->action_url}charterDelete/{$p['id_charter']}">Usuń</a>

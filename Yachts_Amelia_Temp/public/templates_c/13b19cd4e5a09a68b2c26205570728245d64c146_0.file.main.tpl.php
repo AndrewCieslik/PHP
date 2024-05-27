@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-05-26 12:27:51
+/* Smarty version 3.1.30, created on 2024-05-27 12:32:46
   from "C:\xampp\htdocs\PHP\Yachts_Amelia_Temp\app\views\templates\main.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_66530ea7204972_55495667',
+  'unifunc' => 'content_6654614e68be81_11695627',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '13b19cd4e5a09a68b2c26205570728245d64c146' => 
     array (
       0 => 'C:\\xampp\\htdocs\\PHP\\Yachts_Amelia_Temp\\app\\views\\templates\\main.tpl',
-      1 => 1716719234,
+      1 => 1716805958,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66530ea7204972_55495667 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6654614e68be81_11695627 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -117,15 +117,15 @@ register" class="pure-menu-heading pure-menu-link">Zarejestruj</a></li>
 		<div class="row section topspace">
 			<div class="col-md-12">
 			<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_144150457266530ea7185ee9_86272925', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9080604736654614e67fee2_45299805', 'top');
 ?>
 
 			<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_25473091366530ea71fcc97_76750117', 'messages');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2110735386654614e689683_96919969', 'messages');
 ?>
 
 			<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_40745125566530ea7200673_90366043', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19105460366654614e68a8f7_11611332', 'bottom');
 ?>
 
 		</div>
@@ -166,7 +166,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_40745125566530ea72
 </html>
 <?php }
 /* {block 'top'} */
-class Block_144150457266530ea7185ee9_86272925 extends Smarty_Internal_Block
+class Block_9080604736654614e67fee2_45299805 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -175,7 +175,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'top'} */
 /* {block 'messages'} */
-class Block_25473091366530ea71fcc97_76750117 extends Smarty_Internal_Block
+class Block_2110735386654614e689683_96919969 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -205,7 +205,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 }
 /* {/block 'messages'} */
 /* {block 'bottom'} */
-class Block_40745125566530ea7200673_90366043 extends Smarty_Internal_Block
+class Block_19105460366654614e68a8f7_11611332 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

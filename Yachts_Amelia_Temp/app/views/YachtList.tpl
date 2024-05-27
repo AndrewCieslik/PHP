@@ -16,32 +16,34 @@
 	<table id="tab_people" class="pure-table pure-table-bordered">
 		<thead>
 			<tr>
-				<th>model</th>
-				<th>nazwa</th>
-				<th>Nasz jacht</th>
+				<th>Modele</th>
+				<th>Nazwa</th>
+				<th>jachty Naszej floty</th>
 				{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
 					<th>opcje</th>
 				{/if}
 			</tr>
 		</thead>
 		<tbody>
-			<div class="bottom-margin">
-				<a class="pure-button button-success" href="{$conf->action_root}yachtNew">+ Nowy jacht</a>
-			</div>
+			{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
+				<div class="bottom-margin">
+					<a class="pure-button button-success" href="{$conf->action_root}yachtNew">+ Nowy jacht</a>
+				</div>
+			{/if}
 			{foreach $yachts as $y}
 				{strip}
 					<tr>
 						<td>{$y["model"]}</td>
 						<td>{$y["yacht_name"]}</td>
 						<td><img src="{$y.image}" alt="Yacht Image" style="max-width: 200px; max-height: 150px;" /></td>
-
 						{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
-
 							<td>
 								<a class="button-small pure-button button-secondary" href="{$conf->action_url}yachtEdit/{$y['id_yacht']}">Edytuj</a>
 								<a class="button-small pure-button button-warning" href="{$conf->action_url}yachtDelete/{$y['id_yacht']}">Usuń</a>
 							</td>
 						{/if}
+						<br>
+						<br>
 					</tr>
 				{/strip}
 			{/foreach}

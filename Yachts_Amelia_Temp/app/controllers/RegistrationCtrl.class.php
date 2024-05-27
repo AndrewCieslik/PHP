@@ -8,9 +8,7 @@ use app\forms\RegistrationForm;
 use Exception;
 
 class RegistrationCtrl {
-
     private $form;
-
     public function __construct() {
         // Inicjalizacja formularza
         $this->form = new RegistrationForm();
@@ -50,7 +48,7 @@ class RegistrationCtrl {
             // 2. Zapis danych w bazie
             try {
                  // Rozpoczęcie transakcji
-                App::getDB()->beginTransaction();
+                //App::getDB()->beginTransaction();
 
                 // Wstawienie danych użytkownika do tabeli 'users'
                 App::getDB()->insert("users", [
@@ -84,11 +82,11 @@ class RegistrationCtrl {
                 ]);
 
                 // Zatwierdzenie transakcji
-                App::getDB()->commit();
+                //App::getDB()->commit();
 
             } catch (\PDOException $e) {
                 // W przypadku błędu transakcji, cofnięcie zmian
-                App::getDB()->rollBack();
+                //App::getDB()->rollBack();
                 
                 Utils::addErrorMessage('Wystąpił nieoczekiwany błąd podczas zapisu rekordu');
                 if (App::getConf()->debug)

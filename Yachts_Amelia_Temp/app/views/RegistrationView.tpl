@@ -18,11 +18,11 @@
         </div>
         <div class="pure-control-group">
             <label for="password">Hasło: </label>
-            <input id="password" type="text" name="password" />
+            <input id="password" type="password" name="password" />
         </div>
 		<div class="pure-control-group">
             <label for="password2">Powtórz hasło: </label>
-            <input id="password2" type="text" name="password2" />
+            <input id="password2" type="password" name="password2" />
         </div>
 	
         <div class="pure-control-group">

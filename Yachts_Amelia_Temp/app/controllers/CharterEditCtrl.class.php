@@ -100,7 +100,6 @@ class CharterEditCtrl {
     public function action_CharterDelete() {
         // 1. walidacja id osoby do usuniecia
         if ($this->validateEdit()) {
-
             try {
                 // 2. usunięcie rekordu
                 App::getDB()->delete("charters", [

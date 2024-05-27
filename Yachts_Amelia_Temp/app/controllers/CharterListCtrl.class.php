@@ -48,49 +48,18 @@ class CharterListCtrl {
         $where ["ORDER"] = "id_charter";
         //wykonanie zapytania
         try {
-//            $this->records = App::getDB()->select("charters", [
-//                "id_charter",
-//                "id_user",
-//                "id_yacht",
-//                "date_start",
-//                "date_end",
-//                "approved",
-//                    ], $where);
-
-           // $where ["ORDER"] = "charters.id_users";
-//            $this->records = App::getDB()->select("charters", [
-//                "[><]users" => ["id_user" => "id_user"]
-//            ], [
-//                "charters.id_charter",
-//                "charters.id_user",
-//                "users.name"
-//            ],
-//                $where );
-//            $this->records = App::getDB()->select('charters', [
-//                '[><]users' => ['charters.id_user' => 'users.id_user'],
-//            ], [
-//                'charters.id_charter',
-//                'charters.id_user',
-//                'users.name',
-//            ]);
             $this->records = App::getDB()->select('charters', [
                 '[>]users' => ['id_user' => 'id_user']
             ], [
                 'charters.id_charter',
                 'charters.id_user',
-                'users.name'
+                'charters.id_yacht',
+                'charters.date_start',
+                'charters.date_end',
+                'charters.approved',
+                'users.name',
+                'users.surname'
             ]);
-
-
-
-//            $this->records = App::getDB()->select('charters', [
-//                '[>]users' => ['id_user']
-//            ], [
-//                'charters.id_charter',
-//
-//            ], $where );
-
-
         } catch (\PDOException $e) {
             Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');
             if (App::getConf()->debug)
