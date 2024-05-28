@@ -30,17 +30,6 @@ class CharterEditCtrl {
         if (App::getMessages()->isError())
             return false;
 
-        // 1. sprawdzenie czy wartości wymagane nie są puste
-        // if (empty(trim($this->form->name))) {
-        //     Utils::addErrorMessage('Wprowadź imię');
-        // }
-        // if (empty(trim($this->form->surname))) {
-        //     Utils::addErrorMessage('Wprowadź nazwisko');
-        // }
-        // if (empty(trim($this->form->phone))) {
-        //     Utils::addErrorMessage('Wprowadź numer telefonu');
-        // }
-
         if (App::getMessages()->isError())
             return false;
 

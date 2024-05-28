@@ -23,7 +23,7 @@
                 {if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
                     <div class="pure-control-group">
                         <label for="id_user">id klienta</label>
-                        <input id="id_user" type="text" placeholder="id klienta" name="id_user" value="0">
+                        <input id="id_user" type="text" placeholder="id klienta" name="id_user" value={$form->id_user}>
                     </div>
                     <div class="pure-control-group">
                         <label for="approved">zatwierdź [0/1]</label>
