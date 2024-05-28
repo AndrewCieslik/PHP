@@ -1,6 +1,6 @@
 {extends file="main.tpl"}
 
-{block name=top}
+{block name=bottom}
 	<div class="bottom-margin">
 		<form class="pure-form pure-form-stacked" action="{$conf->action_url}yachtList">
 			<legend>Opcje wyszukiwania jachtów</legend>
@@ -12,7 +12,7 @@
 	</div>
 {/block}
 
-{block name=bottom}
+{block name=top}
 	<table id="tab_people" class="pure-table pure-table-bordered">
 		<thead>
 			<tr>

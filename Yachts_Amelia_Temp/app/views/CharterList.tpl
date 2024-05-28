@@ -27,17 +27,16 @@
 			<th>data zakonczenia</th>
 			<th>imie sternika</th>
 			<th>nazwisko</th>
-			<th>zatwierdz [0/1]</th>
+			<th>opcje</th>
 			{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
-				<th>opcje</th>
-
+				<th>zatwierdz [0/1]</th>
 			{/if}
 		</tr>
 	</thead>
 	<tbody>
 	{if core\RoleUtils::inRole("user")}
 		{foreach $charters as $p}
-			{if $p["id_user"] == {$id}}
+			{if $p["id_user"] == {$_SESSION['id']}}
 				{strip}
 					<tr>
 						<td>{$p["id_charter"]}</td>
@@ -47,9 +46,9 @@
 						<td>{$p["date_end"]}</td>
 						<td>{$p["name"]}</td>
 						<td>{$p["surname"]}</td>
-						<td>{$p["approved"]}</td>
 						<td>
 							<a class="button-small pure-button button-secondary" href="{$conf->action_url}charterEdit/{$p['id_charter']}">Edytuj</a>
+							<a class="button-small pure-button button-warning" href="{$conf->action_url}charterDelete/{$p['id_charter']}">Usuń</a>
 						</td>
 					</tr>
 				{/strip}
