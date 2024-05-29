@@ -7,5 +7,5 @@ class PersonEditForm {
 	public $name;
 	public $surname;
 	public $phone;
-	//public $_SESSION;
+    public $password;
 }

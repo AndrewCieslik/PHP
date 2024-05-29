@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-05-25 21:04:26
+/* Smarty version 3.1.30, created on 2024-05-29 09:06:05
   from "C:\xampp\htdocs\PHP\Yachts_Amelia_Temp\app\views\PersonList.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6652363a1c68e1_16172601',
+  'unifunc' => 'content_6656d3dd5f69d2_75497743',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a9b08009e78321f57f8d1da2896e7897bd80bc07' => 
     array (
       0 => 'C:\\xampp\\htdocs\\PHP\\Yachts_Amelia_Temp\\app\\views\\PersonList.tpl',
-      1 => 1716663860,
+      1 => 1716966358,
       2 => 'file',
     ),
   ),
@@ -21,49 +21,48 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_6652363a1c68e1_16172601 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6656d3dd5f69d2_75497743 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18782104886652363a1a7d31_65353831', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13065730066656d3dd5d8769_57269104', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14052298836652363a1c5e94_90333698', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10199328116656d3dd5f5f20_65915408', 'bottom');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'top'} */
-class Block_18782104886652363a1a7d31_65353831 extends Smarty_Internal_Block
+class Block_13065730066656d3dd5d8769_57269104 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-
-<div class="bottom-margin">
-<form class="pure-form pure-form-stacked" action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+	<?php if (core\RoleUtils::inRole("manager") || core\RoleUtils::inRole("admin")) {?>
+		<div class="bottom-margin">
+		<form class="pure-form pure-form-stacked" action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
 personList">
-	<legend>Opcje wyszukiwania</legend>
-	<fieldset>
-		<input type="text" placeholder="nazwisko" name="sf_surname" value="<?php echo $_smarty_tpl->tpl_vars['searchForm']->value->surname;?>
+			<legend>Opcje wyszukiwania</legend>
+			<fieldset>
+				<input type="text" placeholder="nazwisko" name="sf_surname" value="<?php echo $_smarty_tpl->tpl_vars['searchForm']->value->surname;?>
 " /><br />
-		<button type="submit" class="pure-button pure-button-primary">Filtruj</button>
-	</fieldset>
-</form>
-</div>	
-
-<?php
+				<button type="submit" class="pure-button pure-button-primary">Filtruj</button>
+			</fieldset>
+		</form>
+		</div>
+	<?php }
 }
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_14052298836652363a1c5e94_90333698 extends Smarty_Internal_Block
+class Block_10199328116656d3dd5f5f20_65915408 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>

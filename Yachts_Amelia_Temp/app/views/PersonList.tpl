@@ -1,17 +1,17 @@
 {extends file="main.tpl"}
 
 {block name=top}
-
-<div class="bottom-margin">
-<form class="pure-form pure-form-stacked" action="{$conf->action_url}personList">
-	<legend>Opcje wyszukiwania</legend>
-	<fieldset>
-		<input type="text" placeholder="nazwisko" name="sf_surname" value="{$searchForm->surname}" /><br />
-		<button type="submit" class="pure-button pure-button-primary">Filtruj</button>
-	</fieldset>
-</form>
-</div>	
-
+	{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
+		<div class="bottom-margin">
+		<form class="pure-form pure-form-stacked" action="{$conf->action_url}personList">
+			<legend>Opcje wyszukiwania</legend>
+			<fieldset>
+				<input type="text" placeholder="nazwisko" name="sf_surname" value="{$searchForm->surname}" /><br />
+				<button type="submit" class="pure-button pure-button-primary">Filtruj</button>
+			</fieldset>
+		</form>
+		</div>
+	{/if}
 {/block}
 
 {block name=bottom}

@@ -18,6 +18,10 @@
             <label for="phone">telefon</label>
             <input id="phone" type="text" placeholder="telefon" name="phone" value="{$form->phone}">
         </div>
+        <div class="pure-control-group">
+            <label for="password">hasło</label>
+            <input id="password" type="text" placeholder="hasło" name="password" value="{$form->password}">
+        </div>
 		<div class="pure-controls">
 			<input type="submit" class="pure-button pure-button-primary" value="Zapisz"/>
 			<a class="pure-button button-secondary" href="{$conf->action_root}personList">Powrót</a>

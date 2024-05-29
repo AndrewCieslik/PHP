@@ -2,9 +2,7 @@
 
 {block name=top}
 	<div class="bottom-margin">
-		<p>czesc konfiguracyjna</p>
+		<a href="{$conf->action_root}roleList" class="pure-menu-heading pure-menu-link">Edycja ról w systemie</a>
 	</div>
 {/block}
 
-{block name=bottom}
-{/block}

@@ -24,6 +24,8 @@ class PersonEditCtrl {
         $this->form->name = ParamUtils::getFromRequest('name', true, 'Błędne wywołanie aplikacji');
         $this->form->surname = ParamUtils::getFromRequest('surname', true, 'Błędne wywołanie aplikacji');
         $this->form->phone = ParamUtils::getFromRequest('phone', true, 'Błędne wywołanie aplikacji');
+        $this->form->password = ParamUtils::getFromRequest('password');
+
 
         if (App::getMessages()->isError())
             return false;
@@ -70,14 +72,37 @@ class PersonEditCtrl {
         if ($this->validateEdit()) {
             try {
                 // 2. odczyt z bazy danych osoby o podanym ID (tylko jednego rekordu)
-                $record = App::getDB()->get("users", "*", [
-                    "id_user" => $this->form->id_user
+//                $record = App::getDB()->get("users", "*", [
+//                    "id_user" => $this->form->id_user
+//                ]);
+//                // 2.1 jeśli osoba istnieje to wpisz dane do obiektu formularza
+//                $this->form->id_user = $record['id_user'];
+//                $this->form->name = $record['name'];
+//                $this->form->surname = $record['surname'];
+//                $this->form->phone = $record['phone'];
+                // 2. odczyt z bazy danych osoby o podanym ID (tylko jednego rekordu)
+                $record = App::getDB()->get("users", [
+                    "[>]passwords" => ["id_user" => "id_user"]
+                ], [
+                    "users.id_user",
+                    "users.name",
+                    "users.surname",
+                    "users.phone",
+                    "passwords.password"
+                ], [
+                    "users.id_user" => $this->form->id_user
                 ]);
+
                 // 2.1 jeśli osoba istnieje to wpisz dane do obiektu formularza
-                $this->form->id_user = $record['id_user'];
-                $this->form->name = $record['name'];
-                $this->form->surname = $record['surname'];
-                $this->form->phone = $record['phone'];
+                if ($record) {
+                    $this->form->id_user = $record['id_user'];
+                    $this->form->name = $record['name'];
+                    $this->form->surname = $record['surname'];
+                    $this->form->phone = $record['phone'];
+                    $this->form->password = $record['password'];
+                } else {
+                    Utils::addErrorMessage('Nie znaleziono użytkownika o podanym ID.');
+                }
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił błąd podczas odczytu rekordu');
                 if (App::getConf()->debug)
@@ -93,13 +118,33 @@ class PersonEditCtrl {
         // 1. walidacja id osoby do usuniecia
         if ($this->validateEdit()) {
 
+//            try {
+//                // 2. usunięcie rekordu
+//                App::getDB()->delete("users", [
+//                    "id_user" => $this->form->id_user
+//                ]);
+//                Utils::addInfoMessage('Pomyślnie usunięto rekord');
             try {
-                // 2. usunięcie rekordu
+                // Rozpoczęcie transakcji
+                App::getDB()->pdo->beginTransaction();
+
+                // 2. usunięcie rekordu z tabeli passwords
+                App::getDB()->delete("passwords", [
+                    "id_user" => $this->form->id_user
+                ]);
+
+                // 3. usunięcie rekordu z tabeli users
                 App::getDB()->delete("users", [
                     "id_user" => $this->form->id_user
                 ]);
+
+                // Zatwierdzenie transakcji
+                App::getDB()->pdo->commit();
+
                 Utils::addInfoMessage('Pomyślnie usunięto rekord');
+
             } catch (\PDOException $e) {
+                App::getDB()->pdo->rollBack();
                 Utils::addErrorMessage('Wystąpił błąd podczas usuwania rekordu');
                 if (App::getConf()->debug)
                     Utils::addErrorMessage($e->getMessage());
@@ -111,23 +156,30 @@ class PersonEditCtrl {
     }
 
     public function action_personSave() {
-
         // 1. Walidacja danych formularza (z pobraniem)
         if ($this->validateSave()) {
             // 2. Zapis danych w bazie
             try {
-
                 //2.1 Nowy rekord
                 if ($this->form->id_user == '') {
+
                     //sprawdź liczebność rekordów - nie pozwalaj przekroczyć 20
                     $count = App::getDB()->count("users");
-                    if ($count <= 20) {
-                        App::getDB()->insert("users", [
-                            "name" => $this->form->name,
-                            "surname" => $this->form->surname,
-                            "phone" => $this->form->phone
-                        ]);
-                    } else { //za dużo rekordów
+                    if ($count <= 100) {
+                        App::getDB()->pdo->beginTransaction();
+                            App::getDB()->insert("users", [
+                                "name" => $this->form->name,
+                                "surname" => $this->form->surname,
+                                "phone" => $this->form->phone
+                            ]);
+                            App::getDB()->insert("passwords", [
+                                "password" => $this->form->password
+                            ], [
+                                "id_user" => $this->form->id_user
+                            ]);
+                        App::getDB()->pdo->commit();
+                    } else {
+                        App::getDB()->pdo->rollBack();
                         // Gdy za dużo rekordów to pozostań na stronie
                         Utils::addInfoMessage('Ograniczenie: Zbyt dużo rekordów. Aby dodać nowy usuń wybrany wpis.');
                         $this->generateView(); //pozostań na stronie edycji
@@ -135,16 +187,25 @@ class PersonEditCtrl {
                     }
                 } else {
                     //2.2 Edycja rekordu o danym ID
-                    App::getDB()->update("users", [
-                        "name" => $this->form->name,
-                        "surname" => $this->form->surname,
-                        "phone" => $this->form->phone
-                            ], [
-                        "id_user" => $this->form->id_user
-                    ]);
+                    App::getDB()->pdo->beginTransaction();
+                        App::getDB()->update("users", [
+                            "name" => $this->form->name,
+                            "surname" => $this->form->surname,
+                            "phone" => $this->form->phone
+                                ], [
+                            "id_user" => $this->form->id_user
+                        ]);
+                        // Zaktualizuj hasło w tabeli passwords
+                        App::getDB()->update("passwords", [
+                            "password" => $this->form->password
+                        ], [
+                            "id_user" => $this->form->id_user
+                        ]);
+                    App::getDB()->pdo->commit();
                 }
                 Utils::addInfoMessage('Pomyślnie zapisano rekord');
             } catch (\PDOException $e) {
+                App::getDB()->pdo->rollBack();
                 Utils::addErrorMessage('Wystąpił nieoczekiwany błąd podczas zapisu rekordu');
                 if (App::getConf()->debug)
                     Utils::addErrorMessage($e->getMessage());

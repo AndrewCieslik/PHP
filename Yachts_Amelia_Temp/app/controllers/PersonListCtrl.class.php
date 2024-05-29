@@ -62,6 +62,16 @@ class PersonListCtrl {
                 "surname",
                 "phone",
                     ], $where);
+//            $this->records = App::getDB()->select('users', [
+//                '[>]passwords' => ['id_user' => 'id_user'],
+//            ], [
+//
+//                'users.id_user',
+//                'users.name',
+//                'users.surname',
+//                'users.phone',
+//                'passwords.password'
+//            ]);
         } catch (\PDOException $e) {
             Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');
             if (App::getConf()->debug)

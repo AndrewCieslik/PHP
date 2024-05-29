@@ -12,7 +12,7 @@
         </div>
 		<div class="pure-controls">
 			<input type="submit" class="pure-button pure-button-primary" value="Zapisz"/>
-			<a class="pure-button button-secondary" href="{$conf->action_root}roleEdit">Powrót</a>
+			<a class="pure-button button-secondary" href="{$conf->action_root}roleList">Powrót</a>
 		</div>
 	</fieldset>
     <input type="hidden" name="id_role" value="{$form->id_role}">
