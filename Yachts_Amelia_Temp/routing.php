@@ -24,7 +24,7 @@ Utils::addRoute('yachtEdit',     'YachtEditCtrl',	['manager', 'admin']);
 Utils::addRoute('yachtSave',     'YachtEditCtrl',	['manager', 'admin']);
 Utils::addRoute('yachtDelete',   'YachtEditCtrl',	['manager', 'admin']);
 
-Utils::addRoute('charterList',   'CharterListCtrl', ['user','manager', 'admin']);
+Utils::addRoute('charterList',   'CharterListCtrl');
 Utils::addRoute('charterNew',    'CharterEditCtrl', ['user','manager', 'admin']);
 Utils::addRoute('charterEdit',   'CharterEditCtrl', ['user','manager', 'admin']);
 Utils::addRoute('charterSave',   'CharterEditCtrl', ['user','manager', 'admin']);

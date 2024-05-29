@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-05-28 22:02:59
+/* Smarty version 3.1.30, created on 2024-05-29 10:23:38
   from "C:\xampp\htdocs\PHP\Yachts_Amelia_Temp\app\views\CharterList.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_66563873cddbe4_51737513',
+  'unifunc' => 'content_6656e60a6f9632_11083845',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f5a0fae437f870f2a4534d18d9d76f53be793ef' => 
     array (
       0 => 'C:\\xampp\\htdocs\\PHP\\Yachts_Amelia_Temp\\app\\views\\CharterList.tpl',
-      1 => 1716926578,
+      1 => 1716971016,
       2 => 'file',
     ),
   ),
@@ -21,26 +21,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_66563873cddbe4_51737513 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6656e60a6f9632_11083845 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_149625913666563873c64552_73595957', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15522263496656e60a6c6cf9_21855049', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_96207111766563873cdac65_67169225', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9983353276656e60a6f8526_83865601', 'bottom');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'top'} */
-class Block_149625913666563873c64552_73595957 extends Smarty_Internal_Block
+class Block_15522263496656e60a6c6cf9_21855049 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -61,33 +61,50 @@ charterList">
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_96207111766563873cdac65_67169225 extends Smarty_Internal_Block
+class Block_9983353276656e60a6f8526_83865601 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
-	<div class="bottom-margin">
-	<a class="pure-button button-success" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-charterNew">+ Nowy charter</a>
-	</div>
 
 	<table id="tab_people" class="pure-table pure-table-bordered">
 	<thead>
 		<tr>
-			<th>id charteru</th>
-			<th>id klienta</th>
-			<th>numer jachtu (id)</th>
-			<th>data rozpoczecia</th>
-			<th>data zakonczenia</th>
-			<th>imie sternika</th>
-			<th>nazwisko</th>
-			<th>opcje</th>
+			<?php if (core\RoleUtils::inRole("user") || core\RoleUtils::inRole("manager") || core\RoleUtils::inRole("admin")) {?>
+				<th>id charteru</th>
+				<th>id klienta</th>
+			<?php }?>
+				<th>numer jachtu (id)</th>
+				<th>data rozpoczecia</th>
+				<th>data zakonczenia</th>
+			<?php if (core\RoleUtils::inRole("user") || core\RoleUtils::inRole("manager") || core\RoleUtils::inRole("admin")) {?>
+				<th>imie sternika</th>
+				<th>nazwisko</th>
+				<th>opcje</th>
+			<?php }?>
 			<?php if (core\RoleUtils::inRole("manager") || core\RoleUtils::inRole("admin")) {?>
 				<th>zatwierdz [0/1]</th>
 			<?php }?>
 		</tr>
 	</thead>
 	<tbody>
+	<?php if (!core\RoleUtils::inRole("user") && !core\RoleUtils::inRole("manager") && !core\RoleUtils::inRole("admin")) {?>
+		<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['charters']->value, 'p');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
+?>
+				<tr><td><?php echo $_smarty_tpl->tpl_vars['p']->value["id_yacht"];?>
+</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["date_start"];?>
+</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["date_end"];?>
+</td></tr>
+		<?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+	<?php }?>
 	<?php if (core\RoleUtils::inRole("user")) {?>
 		<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['charters']->value, 'p');
@@ -119,6 +136,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
 	<?php }?>
 	<?php if (core\RoleUtils::inRole("manager") || core\RoleUtils::inRole("admin")) {?>
+		<div class="bottom-margin">
+			<a class="pure-button button-success" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+charterNew">+ Nowy charter</a>
+		</div>
 		<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['charters']->value, 'p');
 if ($_from !== null) {
