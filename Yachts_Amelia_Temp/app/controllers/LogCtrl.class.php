@@ -8,7 +8,6 @@ use core\ParamUtils;
 use app\forms\LogForm;
 
 class LogCtrl {
-
     private $form;
 
     public function __construct() {

@@ -56,7 +56,6 @@ class YachtListCtrl {
         }
         App::getSmarty()->assign('searchForm', $this->form);
         App::getSmarty()->assign('yachts', $this->records);
-       // App::getSmarty()->assign('_SESSION', $_SESSION);
         App::getSmarty()->display('YachtList.tpl');
     }
 

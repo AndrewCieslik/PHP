@@ -9,23 +9,17 @@ use core\Validator;
 use app\forms\PersonEditForm;
 
 class PersonEditCtrl {
-
-    private $form; //dane formularza
+    private $form;
 
     public function __construct() {
-        //stworzenie potrzebnych obiektów
         $this->form = new PersonEditForm();
     }
-
-    // Walidacja danych przed zapisem (nowe dane lub edycja).
     public function validateSave() {
-        //0. Pobranie parametrów z walidacją
         $this->form->id_user = ParamUtils::getFromRequest('id_user', true, 'Błędne wywołanie aplikacji');
         $this->form->name = ParamUtils::getFromRequest('name', true, 'Błędne wywołanie aplikacji');
         $this->form->surname = ParamUtils::getFromRequest('surname', true, 'Błędne wywołanie aplikacji');
         $this->form->phone = ParamUtils::getFromRequest('phone', true, 'Błędne wywołanie aplikacji');
         $this->form->password = ParamUtils::getFromRequest('password');
-
 
         if (App::getMessages()->isError())
             return false;
@@ -44,20 +38,9 @@ class PersonEditCtrl {
         if (App::getMessages()->isError())
             return false;
 
-        // 2. sprawdzenie poprawności przekazanych parametrów
-
-        // $d = \DateTime::createFromFormat('Y-m-d', $this->form->birthdate);
-        // if ($d === false) {
-        //     Utils::addErrorMessage('Zły format daty. Przykład: 2015-12-20');
-        // }
-
         return !App::getMessages()->isError();
     }
-
-    //validacja danych przed wyswietleniem do edycji
     public function validateEdit() {
-        //pobierz parametry na potrzeby wyswietlenia danych do edycji
-        //z widoku listy osób (parametr jest wymagany)
         $this->form->id_user = ParamUtils::getFromCleanURL(1, true, 'Błędne wywołanie aplikacji');
         return !App::getMessages()->isError();
     }
@@ -65,22 +48,9 @@ class PersonEditCtrl {
     public function action_personNew() {
         $this->generateView();
     }
-
-    //wysiweltenie rekordu do edycji wskazanego parametrem 'id'
     public function action_personEdit() {
-        // 1. walidacja id osoby do edycji
         if ($this->validateEdit()) {
             try {
-                // 2. odczyt z bazy danych osoby o podanym ID (tylko jednego rekordu)
-//                $record = App::getDB()->get("users", "*", [
-//                    "id_user" => $this->form->id_user
-//                ]);
-//                // 2.1 jeśli osoba istnieje to wpisz dane do obiektu formularza
-//                $this->form->id_user = $record['id_user'];
-//                $this->form->name = $record['name'];
-//                $this->form->surname = $record['surname'];
-//                $this->form->phone = $record['phone'];
-                // 2. odczyt z bazy danych osoby o podanym ID (tylko jednego rekordu)
                 $record = App::getDB()->get("users", [
                     "[>]passwords" => ["id_user" => "id_user"]
                 ], [
@@ -115,30 +85,19 @@ class PersonEditCtrl {
     }
 
     public function action_personDelete() {
-        // 1. walidacja id osoby do usuniecia
         if ($this->validateEdit()) {
-
-//            try {
-//                // 2. usunięcie rekordu
-//                App::getDB()->delete("users", [
-//                    "id_user" => $this->form->id_user
-//                ]);
-//                Utils::addInfoMessage('Pomyślnie usunięto rekord');
             try {
                 // Rozpoczęcie transakcji
                 App::getDB()->pdo->beginTransaction();
 
-                // 2. usunięcie rekordu z tabeli passwords
                 App::getDB()->delete("passwords", [
                     "id_user" => $this->form->id_user
                 ]);
 
-                // 3. usunięcie rekordu z tabeli users
                 App::getDB()->delete("users", [
                     "id_user" => $this->form->id_user
                 ]);
 
-                // Zatwierdzenie transakcji
                 App::getDB()->pdo->commit();
 
                 Utils::addInfoMessage('Pomyślnie usunięto rekord');
@@ -150,22 +109,18 @@ class PersonEditCtrl {
                     Utils::addErrorMessage($e->getMessage());
             }
         }
-
-        // 3. Przekierowanie na stronę listy osób
         App::getRouter()->forwardTo('personList');
     }
 
     public function action_personSave() {
-        // 1. Walidacja danych formularza (z pobraniem)
         if ($this->validateSave()) {
-            // 2. Zapis danych w bazie
+            // Zapis danych w bazie
             try {
-                //2.1 Nowy rekord
+                //Nowy rekord
                 if ($this->form->id_user == '') {
-
-                    //sprawdź liczebność rekordów - nie pozwalaj przekroczyć 20
+                    //sprawdź liczebność rekordów - nie pozwalaj przekroczyć 200
                     $count = App::getDB()->count("users");
-                    if ($count <= 100) {
+                    if ($count <= 200) {
                         App::getDB()->pdo->beginTransaction();
                             App::getDB()->insert("users", [
                                 "name" => $this->form->name,
@@ -180,13 +135,12 @@ class PersonEditCtrl {
                         App::getDB()->pdo->commit();
                     } else {
                         App::getDB()->pdo->rollBack();
-                        // Gdy za dużo rekordów to pozostań na stronie
                         Utils::addInfoMessage('Ograniczenie: Zbyt dużo rekordów. Aby dodać nowy usuń wybrany wpis.');
-                        $this->generateView(); //pozostań na stronie edycji
-                        exit(); //zakończ przetwarzanie, aby nie dodać wiadomości o pomyślnym zapisie danych
+                        $this->generateView();
+                        exit();
                     }
                 } else {
-                    //2.2 Edycja rekordu o danym ID
+                    //Edycja rekordu o danym ID
                     App::getDB()->pdo->beginTransaction();
                         App::getDB()->update("users", [
                             "name" => $this->form->name,
@@ -195,7 +149,6 @@ class PersonEditCtrl {
                                 ], [
                             "id_user" => $this->form->id_user
                         ]);
-                        // Zaktualizuj hasło w tabeli passwords
                         App::getDB()->update("passwords", [
                             "password" => $this->form->password
                         ], [
@@ -210,17 +163,14 @@ class PersonEditCtrl {
                 if (App::getConf()->debug)
                     Utils::addErrorMessage($e->getMessage());
             }
-
-            // 3b. Po zapisie przejdź na stronę listy osób (w ramach tego samego żądania http)
             App::getRouter()->forwardTo('personList');
         } else {
-            // 3c. Gdy błąd walidacji to pozostań na stronie
             $this->generateView();
         }
     }
 
     public function generateView() {
-        App::getSmarty()->assign('form', $this->form); // dane formularza dla widoku
+        App::getSmarty()->assign('form', $this->form);
         App::getSmarty()->assign('_SESSION', $_SESSION);
         App::getSmarty()->display('PersonEdit.tpl');
     }

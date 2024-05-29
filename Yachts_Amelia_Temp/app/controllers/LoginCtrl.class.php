@@ -64,8 +64,6 @@ class LoginCtrl {
             "id_user" => $this->form->db_id_user
         ]);
 
-
-
         if (!$this->form->db_password) {
             Utils::addErrorMessage('Nieprawidłowe hasło. Skontaktuj sie z administratorem');
         }
@@ -93,25 +91,21 @@ class LoginCtrl {
 
     public function action_login() {
         if ($this->validate()) {
-            //zalogowany => przekieruj na główną akcję (z przekazaniem messages przez sesję)
             Utils::addInfoMessage('Poprawnie zalogowano do systemu');
             App::getRouter()->redirectTo("home");
         } else {
-            //niezalogowany => pozostań na stronie logowania
             $this->generateView();
         }
     }
 
     public function action_logout() {
-        // 1. zakończenie sesji
         unset($_SESSION['id']);
         session_destroy();
-        // 2. idź na stronę główną - system automatycznie przekieruje do strony logowania
         App::getRouter()->redirectTo('yachtList');
     }
 
     public function generateView() {
-        App::getSmarty()->assign('form', $this->form); // dane formularza do widoku
+        App::getSmarty()->assign('form', $this->form);
         App::getSmarty()->display('LoginView.tpl');
     }
 }
