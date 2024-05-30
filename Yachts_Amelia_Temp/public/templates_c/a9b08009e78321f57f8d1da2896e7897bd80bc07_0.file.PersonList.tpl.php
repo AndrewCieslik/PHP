@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-05-29 10:00:10
+/* Smarty version 3.1.30, created on 2024-05-30 13:23:15
   from "C:\xampp\htdocs\PHP\Yachts_Amelia_Temp\app\views\PersonList.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6656e08a000e70_14209276',
+  'unifunc' => 'content_665861a3087932_54573355',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a9b08009e78321f57f8d1da2896e7897bd80bc07' => 
     array (
       0 => 'C:\\xampp\\htdocs\\PHP\\Yachts_Amelia_Temp\\app\\views\\PersonList.tpl',
-      1 => 1716969543,
+      1 => 1717068192,
       2 => 'file',
     ),
   ),
@@ -21,26 +21,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_6656e08a000e70_14209276 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665861a3087932_54573355 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18551361946656e089f12b28_17607197', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1404701024665861a3062ec4_57909842', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6351866456656e08a000069_56631961', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1235253662665861a3086c84_53624138', 'bottom');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'top'} */
-class Block_18551361946656e089f12b28_17607197 extends Smarty_Internal_Block
+class Block_1404701024665861a3062ec4_57909842 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -62,7 +62,7 @@ personList">
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_6351866456656e08a000069_56631961 extends Smarty_Internal_Block
+class Block_1235253662665861a3086c84_53624138 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -74,7 +74,6 @@ personNew">+ Nowa osoba</a>
 	<table id="tab_people" class="pure-table pure-table-bordered">
 		<thead>
 			<tr>
-				<th>id</th>
 				<th>imię</th>
 				<th>nazwisko</th>
 				<th>telefon</th>
@@ -92,8 +91,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
 echo $_smarty_tpl->tpl_vars['id']->value;
 $_prefixVariable1=ob_get_clean();
 if ($_smarty_tpl->tpl_vars['p']->value["id_user"] == $_prefixVariable1) {?>
-						<tr><td><?php echo $_smarty_tpl->tpl_vars['p']->value["id_user"];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["name"];?>
+						<tr><td><?php echo $_smarty_tpl->tpl_vars['p']->value["name"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["surname"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["phone"];?>
 </td><td><a class="button-small pure-button button-secondary" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
@@ -107,14 +105,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
 			<?php }?>
-			<?php if (core\RoleUtils::inRole("manager") || core\RoleUtils::inRole("admin")) {?>
+			<?php if (core\RoleUtils::inRole("admin")) {?>
 					<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['people']->value, 'p');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['p']->value) {
 ?>
-						<tr><td><?php echo $_smarty_tpl->tpl_vars['p']->value["id_user"];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["name"];?>
+						<tr><td><?php echo $_smarty_tpl->tpl_vars['p']->value["name"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["surname"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['p']->value["phone"];?>
 </td><td><a class="button-small pure-button button-secondary" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>

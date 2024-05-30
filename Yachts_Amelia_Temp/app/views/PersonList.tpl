@@ -21,7 +21,6 @@
 	<table id="tab_people" class="pure-table pure-table-bordered">
 		<thead>
 			<tr>
-				<th>id</th>
 				<th>imię</th>
 				<th>nazwisko</th>
 				<th>telefon</th>
@@ -34,7 +33,6 @@
 					{if $p["id_user"] == {$id}}
 						{strip}
 							<tr>
-								<td>{$p["id_user"]}</td>
 								<td>{$p["name"]}</td>
 								<td>{$p["surname"]}</td>
 								<td>{$p["phone"]}</td>
@@ -46,11 +44,10 @@
 					{/if}
 				{/foreach}
 			{/if}
-			{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
+			{if core\RoleUtils::inRole("admin")}
 					{foreach $people as $p}
 						{strip}
 							<tr>
-								<td>{$p["id_user"]}</td>
 								<td>{$p["name"]}</td>
 								<td>{$p["surname"]}</td>
 								<td>{$p["phone"]}</td>

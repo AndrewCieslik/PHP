@@ -42,7 +42,7 @@ class LoginCtrl {
         ]);
 
         $this->id = $this->form->db_id_user;
-       // $_SESSION['id'] = $this->id;
+        $_SESSION['id'] = $this->id;
 
         //znajdz i porownaj hasło z bazy z hasłem z formularza
         if (!$this->form->db_id_user) {
@@ -100,6 +100,9 @@ class LoginCtrl {
 
     public function generateView() {
         App::getSmarty()->assign('form', $this->form);
+        if (isset($_SESSION['id'])) {
+            App::getSmarty()->assign('id', $_SESSION['id']);
+        }
         App::getSmarty()->display('LoginView.tpl');
     }
 }
