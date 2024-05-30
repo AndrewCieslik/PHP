@@ -24,7 +24,9 @@
 				<th>imię</th>
 				<th>nazwisko</th>
 				<th>telefon</th>
-				<th>opcje</th>
+				{if core\RoleUtils::inRole("admin")}
+					<th>opcje</th>
+				{/if}
 			</tr>
 		</thead>
 		<tbody>
@@ -44,7 +46,18 @@
 					{/if}
 				{/foreach}
 			{/if}
-			{if core\RoleUtils::inRole("admin")}
+			{if core\RoleUtils::inRole("manager")}
+					{foreach $people as $p}
+						{strip}
+							<tr>
+								<td>{$p["name"]}</td>
+								<td>{$p["surname"]}</td>
+								<td>{$p["phone"]}</td>
+							</tr>
+						{/strip}
+					{/foreach}
+				{/if}
+				{if core\RoleUtils::inRole("admin")}
 					{foreach $people as $p}
 						{strip}
 							<tr>
