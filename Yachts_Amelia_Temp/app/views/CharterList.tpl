@@ -10,6 +10,9 @@
 		</fieldset>
 	</form>
 	</div>
+	<div class="bottom-margin">
+		<a class="pure-button button-success" href="{$conf->action_root}charterNew">+ Nowy charter</a>
+	</div>
 {/block}
 
 {block name=bottom}
@@ -68,9 +71,6 @@
 		{/foreach}
 	{/if}
 	{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
-		<div class="bottom-margin">
-			<a class="pure-button button-success" href="{$conf->action_root}charterNew">+ Nowy charter</a>
-		</div>
 		{foreach $charters as $p}
 			{strip}
 				<tr>

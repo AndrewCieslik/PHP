@@ -36,24 +36,13 @@ class LoginCtrl {
         if (App::getMessages()->isError()){
             return false;
         }
-        if ($this->form->login == "manager" && $this->form->pass == "manager") {
-            RoleUtils::addRole('manager');
-            Utils::addErrorMessage('Witaj managerze');
-            return true;
-        }
-        if ($this->form->login == "admin" && $this->form->pass == "admin") {
-            RoleUtils::addRole('admin');
-            Utils::addErrorMessage('Witaj adminie');
-            return true;
-        }
-
         //znajdz id_user w bazie dla tego loginu
         $this->form->db_id_user = App::getDB()->get("users", "id_user", [
             "login" => $this->form->login  //if
         ]);
 
         $this->id = $this->form->db_id_user;
-        $_SESSION['id'] = $this->id;
+       // $_SESSION['id'] = $this->id;
 
         //znajdz i porownaj hasło z bazy z hasłem z formularza
         if (!$this->form->db_id_user) {
@@ -81,9 +70,14 @@ class LoginCtrl {
         $this->form->db_role = App::getDB()->get("roles", "role", [
             "id_role" => $this->form->db_id_role
         ]);
+        if (!$this->form->db_role) {
+            Utils::addErrorMessage('brak roli');
+        }
         if ($this->form->db_role == 'admin') {
             RoleUtils::addRole('admin');
-        } else {
+        } else if ($this->form->db_role == 'manager') {
+            RoleUtils::addRole('manager');
+        } else{
             RoleUtils::addRole('user');
         }
         return !App::getMessages()->isError();
