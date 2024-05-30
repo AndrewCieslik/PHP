@@ -20,21 +20,23 @@
 	<table id="tab_people" class="pure-table pure-table-bordered">
 	<thead>
 		<tr>
-			{if core\RoleUtils::inRole("user") or core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
-				<th>id charteru</th>
+			{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
 				<th>id klienta</th>
 			{/if}
-				<th>numer jachtu (id)</th>
+				<th>nazwa jachtu</th>
 				<th>data rozpoczecia</th>
 				<th>data zakonczenia</th>
 			{if core\RoleUtils::inRole("user") or core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
 				<th>imie sternika</th>
 				<th>nazwisko</th>
-				<th>opcje</th>
 			{/if}
 			{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
 				<th>zatwierdz [0/1]</th>
 			{/if}
+			{if core\RoleUtils::inRole("user") or core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
+				<th>opcje</th>
+			{/if}
+
 		</tr>
 	</thead>
 	<tbody>
@@ -42,7 +44,7 @@
 		{foreach $charters as $p}
 				{strip}
 					<tr>
-						<td>{$p["id_yacht"]}</td>
+						<td>{$p["yacht_name"]}</td>
 						<td>{$p["date_start"]}</td>
 						<td>{$p["date_end"]}</td>
 					</tr>
@@ -54,9 +56,8 @@
 			{if $p["id_user"] == {$_SESSION['id']}}
 				{strip}
 					<tr>
-						<td>{$p["id_charter"]}</td>
 						<td>{$p["id_user"]}</td>
-						<td>{$p["id_yacht"]}</td>
+						<td>{$p["yacht_name"]}</td>
 						<td>{$p["date_start"]}</td>
 						<td>{$p["date_end"]}</td>
 						<td>{$p["name"]}</td>
@@ -74,9 +75,8 @@
 		{foreach $charters as $p}
 			{strip}
 				<tr>
-					<td>{$p["id_charter"]}</td>
 					<td>{$p["id_user"]}</td>
-					<td>{$p["id_yacht"]}</td>
+					<td>{$p["yacht_name"]}</td>
 					<td>{$p["date_start"]}</td>
 					<td>{$p["date_end"]}</td>
 					<td>{$p["name"]}</td>

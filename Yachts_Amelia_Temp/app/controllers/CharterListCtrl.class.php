@@ -18,12 +18,7 @@ class CharterListCtrl {
     }
 
     public function validate() {
-        // 1. sprawdzenie, czy parametry zostały przekazane
-        // - nie trzeba sprawdzać
         $this->form->id_charter = ParamUtils::getFromRequest('sf_charter');
-
-        // 2. sprawdzenie poprawności przekazanych parametrów
-        // - nie trzeba sprawdzać
 
         return !App::getMessages()->isError();
     }
@@ -34,10 +29,6 @@ class CharterListCtrl {
         if (isset($this->form->id_charter) && strlen($this->form->id_charter) > 0) {
             $search_params['id_charter[~]'] = $this->form->id_charter . '%'; // dodanie symbolu % zastępuje dowolny ciąg znaków na końcu
         }
-        // 3. Pobranie listy rekordów z bazy danych
-        // W tym wypadku zawsze wyświetlamy listę osób bez względu na to, czy dane wprowadzone w formularzu wyszukiwania są poprawne.
-        // Dlatego pobranie nie jest uwarunkowane poprawnością walidacji (jak miało to miejsce w kalkulatorze)
-        //przygotowanie frazy where na wypadek większej liczby parametrów
         $num_params = sizeof($search_params);
         if ($num_params > 1) {
             $where = ["AND" => &$search_params];
@@ -50,10 +41,12 @@ class CharterListCtrl {
         try {
             $this->records = App::getDB()->select('charters', [
                 '[>]users' => ['id_user' => 'id_user'],
+                '[>]yachts' => ['id_yacht' => 'id_yacht']
             ], [
                 'charters.id_charter',
                 'charters.id_user',
                 'charters.id_yacht',
+                'yachts.yacht_name',
                 'charters.date_start',
                 'charters.date_end',
                 'charters.approved',
