@@ -8,4 +8,5 @@ class PersonEditForm {
 	public $surname;
 	public $phone;
     public $password;
+    public $password2;
 }

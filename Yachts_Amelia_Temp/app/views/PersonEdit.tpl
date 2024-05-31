@@ -20,7 +20,11 @@
         </div>
         <div class="pure-control-group">
             <label for="password">hasło</label>
-            <input id="password" type="text" placeholder="hasło" name="password" value="{$form->password}">
+            <input id="password" type="password" name="password" value="{$form->password}">
+        </div>
+        <div class="pure-control-group">
+            <label for="password2">powtórz hasło</label>
+            <input id="password2" type="password" name="password2" value="{$form->password2}">
         </div>
 		<div class="pure-controls">
 			<input type="submit" class="pure-button pure-button-primary" value="Zapisz"/>

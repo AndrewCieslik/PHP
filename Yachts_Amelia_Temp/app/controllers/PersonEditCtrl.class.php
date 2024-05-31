@@ -19,7 +19,8 @@ class PersonEditCtrl {
         $this->form->name = ParamUtils::getFromRequest('name', true, 'Błędne wywołanie aplikacji');
         $this->form->surname = ParamUtils::getFromRequest('surname', true, 'Błędne wywołanie aplikacji');
         $this->form->phone = ParamUtils::getFromRequest('phone', true, 'Błędne wywołanie aplikacji');
-        $this->form->password = ParamUtils::getFromRequest('password');
+        $this->form->password = ParamUtils::getFromRequest('password', true, 'Błędne wywołanie aplikacji');
+        $this->form->password2 = ParamUtils::getFromRequest('password2', true, 'Błędne wywołanie aplikacji');
 
         if (App::getMessages()->isError())
             return false;
@@ -33,6 +34,18 @@ class PersonEditCtrl {
         }
         if (empty(trim($this->form->phone))) {
             Utils::addErrorMessage('Wprowadź numer telefonu');
+        }
+        if (empty(trim($this->form->password))) {
+            Utils::addErrorMessage('Wprowadź hasło');
+        }
+        if (empty(trim($this->form->password2))) {
+            Utils::addErrorMessage('Powtórz hasło');
+        }
+        if ($this->form->password != $this->form->password2) {
+            Utils::addErrorMessage('Powtórz poprawnie hasło');
+        }
+        if (strlen($this->form->password) <= 6) {
+            Utils::addErrorMessage('Za mała liczba znaków. Minimum 6');
         }
 
         if (App::getMessages()->isError())
@@ -58,6 +71,7 @@ class PersonEditCtrl {
                     "users.name",
                     "users.surname",
                     "users.phone",
+                    "users.login",
                     "passwords.password"
                 ], [
                     "users.id_user" => $this->form->id_user
@@ -69,7 +83,10 @@ class PersonEditCtrl {
                     $this->form->name = $record['name'];
                     $this->form->surname = $record['surname'];
                     $this->form->phone = $record['phone'];
+                    $this->form->login = $record['login'];
                     $this->form->password = $record['password'];
+                    $this->form->password2 = $record['password2'];
+
                 } else {
                     Utils::addErrorMessage('Nie znaleziono użytkownika o podanym ID.');
                 }
@@ -145,7 +162,7 @@ class PersonEditCtrl {
                         App::getDB()->update("users", [
                             "name" => $this->form->name,
                             "surname" => $this->form->surname,
-                            "phone" => $this->form->phone
+                            "phone" => $this->form->phone,
                                 ], [
                             "id_user" => $this->form->id_user
                         ]);
