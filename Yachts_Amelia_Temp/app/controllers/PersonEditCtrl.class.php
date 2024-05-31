@@ -45,7 +45,7 @@ class PersonEditCtrl {
             Utils::addErrorMessage('Powtórz poprawnie hasło');
         }
         if (strlen($this->form->password) <= 6) {
-            Utils::addErrorMessage('Za mała liczba znaków. Minimum 6');
+            Utils::addErrorMessage('Za mała liczba znaków hasła. Minimum 6');
         }
 
         if (App::getMessages()->isError())
