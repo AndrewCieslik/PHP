@@ -37,6 +37,7 @@ class PersonListCtrl {
         try {
             $this->records = App::getDB()->select("users", [
                 "id_user",
+                "login",
                 "name",
                 "surname",
                 "phone",

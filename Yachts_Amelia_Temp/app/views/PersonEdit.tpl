@@ -6,6 +6,10 @@
 <form action="{$conf->action_root}personSave" method="post" class="pure-form pure-form-aligned">
 	<fieldset>
 		<legend>Dane osoby</legend>
+        <div class="pure-control-group">
+            <label for="login">login</label>
+            <input id="login" type="text" placeholder="login" name="login" value="{$form->login}" readonly>
+        </div>
 		<div class="pure-control-group">
             <label for="name">imię</label>
             <input id="name" type="text" placeholder="imię" name="name" value="{$form->name}">
