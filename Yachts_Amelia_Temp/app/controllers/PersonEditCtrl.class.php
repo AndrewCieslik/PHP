@@ -47,6 +47,9 @@ class PersonEditCtrl {
         if (strlen($this->form->password) <= 6) {
             Utils::addErrorMessage('Za mała liczba znaków hasła. Minimum 6');
         }
+        if (strlen($this->form->phone) != 11) {
+            Utils::addErrorMessage('Podaj nr kierunkowy np. 48 i 9 cyfrowy numer telefonu');
+        }
 
         if (App::getMessages()->isError())
             return false;
