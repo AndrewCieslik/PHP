@@ -1,0 +1,3 @@
+[2024-05-27 10:00:00] INFO: Aplikacja uruchomiona
+[2024-05-27 10:05:00] ERROR: Błąd połączenia z bazą danych
+[2024-05-27 10:10:00] WARNING: Mało pamięci

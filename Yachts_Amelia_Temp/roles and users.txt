@@ -1,0 +1,39 @@
+Role i Uprawnienia
+
+#all
+Przeglądanie listy jachtów. (yachtList)
+	Ribbon: Rezerwacje, Jachty, Zaloguj, Zarejestruj
+
+#user:
+Wszystkie uprawnienia all.
+(bez dodatkowego user panel - wszystko na pasku)
+Rezerwowanie jachtów.		
+Przeglądanie własnych rezerwacji.
+Edytowanie swojego profilu.
+	Ribbon: Rezerwacje, Edytuj profil, Jachty(przeglądanie), Wyloguj
+
+#manager:
+Wszystkie uprawnienia user.
+Dodawanie, edytowanie i usuwanie jachtów. (yachtEdit)
+Przeglądanie wszystkich rezerwacji.  (charterList)
+Zarządzanie rezerwacjami (zatwierdzanie, anulowanie).
+Przeglądanie profili użytkowników.
+	Ribbon: Rezerwacje(edycja all), Klienci(Edytuj profil all), Jachty(edycja), Wyloguj
+
+#admin:
+Wszystkie uprawnienia manager.
+Zarządzanie użytkownikami (dodawanie, usuwanie, zmiana ról).
+Zarządzanie uprawnieniami i rolami.
+Przeglądanie logów systemowych.
+Konfiguracja systemu.
+	Ribbon: Rezerwacje(edycja all), Użytkownicy(+role i uprawnienia), Jachty(edycja), Konfiguracja systemu, Logi, Wyloguj
+
+
+update:
+-brak id_yacht->wszedzie nazwa jachtu (w zamawianiu i przeglądaniu)
+-id_user po najechaniu na imie lub nazwisko (manager i admin)
+-manager nie edytuje uzytkownikow, tylko admin
+-hasło: niewidoczne, pytanie o powtórzenie, porównanie i sprawdzenie czy minimum 6 znaków
+-wybor jachtu z listy rozwijalnej
+-przyciski zatwierdzenia (manager i admin)
+	dodatkowo: kolory :niezatwierdzony-czarny, zatwierdzony-zielony, odrzucony-czerwony
