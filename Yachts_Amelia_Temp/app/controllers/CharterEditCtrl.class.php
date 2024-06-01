@@ -52,16 +52,39 @@ class CharterEditCtrl {
     public function action_CharterEdit() {
         if ($this->validateEdit()) {
             try {
-                $record = App::getDB()->get("charters", "*", [
-                    "id_charter" => $this->form->id_charter
+//                $record = App::getDB()->get("charters", "*", [
+//                    "id_charter" => $this->form->id_charter
+//                ]);
+//                $this->form->id_charter = $record['id_charter'];
+//                $this->form->id_user = $record['id_user'];
+//                $this->form->id_yacht = $record['id_yacht'];
+//                $this->form->date_start = $record['date_start'];
+//                $this->form->date_end = $record['date_end'];
+//                $this->form->approved = $record['approved'];
+                $record = App::getDB()->get("charters", [
+                    "[>]yachts" => ["id_yacht" => "id_yacht"]
+                ], [
+                    "charters.id_charter",
+                    "charters.id_user",
+                    "charters.id_yacht",
+                    "charters.date_start",
+                    "charters.date_end",
+                    "charters.approved",
+                    "yachts.yacht_name"
+                ], [
+                    "charters.id_charter" => $this->form->id_charter
                 ]);
-                $this->form->id_charter = $record['id_charter'];
-                $this->form->id_user = $record['id_user'];
-                $this->form->id_yacht = $record['id_yacht'];
-                $this->form->date_start = $record['date_start'];
-                $this->form->date_end = $record['date_end'];
-                $this->form->approved = $record['approved'];
-
+                if ($record) {
+                    $this->form->id_charter = $record['id_charter'];
+                    $this->form->id_user = $record['id_user'];
+                    $this->form->id_yacht = $record['id_yacht'];
+                    $this->form->yacht_name = $record['yacht_name'];
+                    $this->form->date_start = $record['date_start'];
+                    $this->form->date_end = $record['date_end'];
+                    $this->form->approved = $record['approved'];
+                } else {
+                    Utils::addErrorMessage('Nie znaleziono charteru o podanym ID.');
+                }
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił błąd podczas odczytu rekordu');
                 if (App::getConf()->debug)
@@ -132,6 +155,15 @@ class CharterEditCtrl {
         }
     }
     public function generateView() {
+        try {
+            $yachts = App::getDB()->select("yachts", ["id_yacht", "yacht_name"]);
+            App::getSmarty()->assign('yachts', $yachts);
+        } catch (\PDOException $e) {
+            Utils::addErrorMessage('Wystąpił błąd podczas pobierania listy jachtów');
+            if (App::getConf()->debug)
+                Utils::addErrorMessage($e->getMessage());
+        }
+
         App::getSmarty()->assign('form', $this->form); // dane formularza dla widoku
         App::getSmarty()->assign('_SESSION', $_SESSION);
         App::getSmarty()->display('CharterEdit.tpl');
