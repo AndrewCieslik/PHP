@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-06-01 12:19:56
+/* Smarty version 3.1.30, created on 2024-06-01 12:21:14
   from "C:\xampp\htdocs\PHP\Yachts_Amelia_Temp\app\views\CharterList.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_665af5ccf3bcc9_55270923',
+  'unifunc' => 'content_665af61a26fb13_27781140',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f5a0fae437f870f2a4534d18d9d76f53be793ef' => 
     array (
       0 => 'C:\\xampp\\htdocs\\PHP\\Yachts_Amelia_Temp\\app\\views\\CharterList.tpl',
-      1 => 1717237192,
+      1 => 1717237234,
       2 => 'file',
     ),
   ),
@@ -21,24 +21,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_665af5ccf3bcc9_55270923 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665af61a26fb13_27781140 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1934595728665af5cce8cb25_12077467', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_367623343665af61a1c65a6_97075755', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1916091511665af5ccf39370_40099399', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_59847806665af61a26ccf0_37032683', 'bottom');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'top'} */
-class Block_1934595728665af5cce8cb25_12077467 extends Smarty_Internal_Block
+class Block_367623343665af61a1c65a6_97075755 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -66,7 +66,7 @@ charterNew">+ Nowy charter</a>
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_1916091511665af5ccf39370_40099399 extends Smarty_Internal_Block
+class Block_59847806665af61a26ccf0_37032683 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
