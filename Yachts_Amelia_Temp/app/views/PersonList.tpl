@@ -37,8 +37,8 @@
 				{if $p["id_user"] == {$id}}
 					{strip}
 						<tr>
-							<td title="ID: {$p['id_user']}">{$p["name"]}</td>
-							<td title="ID: {$p['id_user']}">{$p["surname"]}</td>
+							<td>{$p["name"]}</td>
+							<td>{$p["surname"]}</td>
 							<td>{$p["phone"]}</td>
 							<td>
 								<a class="button-small pure-button button-secondary" href="{$conf->action_url}personEdit/{$p['id_user']}">Edytuj</a>
