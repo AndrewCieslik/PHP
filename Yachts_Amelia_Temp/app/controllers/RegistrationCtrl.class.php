@@ -34,6 +34,9 @@ class RegistrationCtrl {
         if (strlen($this->form->password) <= 6) {
             Utils::addErrorMessage('Za mała liczba znaków hasła. Minimum 6');
         }
+        if (strlen($this->form->phone) < 9) {
+            Utils::addErrorMessage('Podaj 9 cyfrowy numer telefonu');
+        }
 
         return !App::getMessages()->isError();
     }
