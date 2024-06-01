@@ -10,9 +10,12 @@
             </fieldset>
         </form>
     </div>
-    <div class="bottom-margin">
-        <a class="pure-button button-success" href="{$conf->action_root}charterNew">+ Nowy charter</a>
-    </div>
+    {if core\RoleUtils::inRole("user")}
+        <div class="bottom-margin">
+            <a class="pure-button button-success" href="{$conf->action_root}charterNew">+ Nowy charter</a>
+        </div>
+    {/if}
+
 {/block}
 
 {block name=bottom}

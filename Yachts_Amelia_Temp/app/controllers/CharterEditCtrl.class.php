@@ -46,21 +46,13 @@ class CharterEditCtrl {
     }
 
     public function action_CharterNew() {
+        $this->form->id_user = isset($_SESSION['id']) ? $_SESSION['id'] : null;
         $this->generateView();
     }
 
     public function action_CharterEdit() {
         if ($this->validateEdit()) {
             try {
-//                $record = App::getDB()->get("charters", "*", [
-//                    "id_charter" => $this->form->id_charter
-//                ]);
-//                $this->form->id_charter = $record['id_charter'];
-//                $this->form->id_user = $record['id_user'];
-//                $this->form->id_yacht = $record['id_yacht'];
-//                $this->form->date_start = $record['date_start'];
-//                $this->form->date_end = $record['date_end'];
-//                $this->form->approved = $record['approved'];
                 $record = App::getDB()->get("charters", [
                     "[>]yachts" => ["id_yacht" => "id_yacht"]
                 ], [
@@ -164,8 +156,7 @@ class CharterEditCtrl {
                 Utils::addErrorMessage($e->getMessage());
         }
 
-        App::getSmarty()->assign('form', $this->form); // dane formularza dla widoku
-        App::getSmarty()->assign('_SESSION', $_SESSION);
+        App::getSmarty()->assign('form', $this->form);
         App::getSmarty()->display('CharterEdit.tpl');
     }
 

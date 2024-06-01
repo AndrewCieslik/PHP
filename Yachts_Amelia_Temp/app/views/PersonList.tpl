@@ -24,7 +24,7 @@
 			<th>imię</th>
 			<th>nazwisko</th>
 			<th>telefon</th>
-			{if core\RoleUtils::inRole("admin")}
+			{if core\RoleUtils::inRole("admin") or core\RoleUtils::inRole("user")}
 				<th>opcje</th>
 			{/if}
 		</tr>

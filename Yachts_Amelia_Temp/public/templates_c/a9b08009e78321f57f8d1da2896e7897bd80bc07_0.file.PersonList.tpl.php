@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-05-31 21:20:51
+/* Smarty version 3.1.30, created on 2024-06-01 07:05:49
   from "C:\xampp\htdocs\PHP\Yachts_Amelia_Temp\app\views\PersonList.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_665a23139fd7f0_65062749',
+  'unifunc' => 'content_665aac2da51ed2_65703942',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a9b08009e78321f57f8d1da2896e7897bd80bc07' => 
     array (
       0 => 'C:\\xampp\\htdocs\\PHP\\Yachts_Amelia_Temp\\app\\views\\PersonList.tpl',
-      1 => 1717183092,
+      1 => 1717218347,
       2 => 'file',
     ),
   ),
@@ -21,24 +21,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_665a23139fd7f0_65062749 (Smarty_Internal_Template $_smarty_tpl) {
+function content_665aac2da51ed2_65703942 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_242640331665a23139cbf67_17385176', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1630995829665aac2d9de4e9_17258114', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1966022162665a23139fc940_20832522', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1018540152665aac2da4f958_20070019', 'bottom');
 $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'top'} */
-class Block_242640331665a23139cbf67_17385176 extends Smarty_Internal_Block
+class Block_1630995829665aac2d9de4e9_17258114 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -60,7 +60,7 @@ personList">
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_1966022162665a23139fc940_20832522 extends Smarty_Internal_Block
+class Block_1018540152665aac2da4f958_20070019 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -75,7 +75,7 @@ personNew">+ Nowa osoba</a>
 			<th>imię</th>
 			<th>nazwisko</th>
 			<th>telefon</th>
-			<?php if (core\RoleUtils::inRole("admin")) {?>
+			<?php if (core\RoleUtils::inRole("admin") || core\RoleUtils::inRole("user")) {?>
 				<th>opcje</th>
 			<?php }?>
 		</tr>
