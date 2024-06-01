@@ -22,9 +22,26 @@
                         <label for="date_end">data zakończenia</label>
                         <input id="date_end" type="date" placeholder="data końca" name="date_end" value="{$form->date_end}">
                     </div>
+{*                    <div class="pure-control-group">*}
+{*                        <label for="approved">zatwierdź [0/1]</label>*}
+{*                        <input id="approved" type="text" placeholder="[0-nie/ 1-tak]" name="approved" value="0">*}
+{*                    </div>*}
                     <div class="pure-control-group">
-                        <label for="approved">zatwierdź [0/1]</label>
-                        <input id="approved" type="text" placeholder="[0-nie/ 1-tak]" name="approved" value="0">
+                        <label for="approved">Status zatwierdzenia</label>
+                        <div id="approved">
+                            <label for="not_approved">
+                                <input type="radio" id="not_approved" name="approved" value="0" {if $form->approved == '0'}checked{/if}>
+                                Niezatwierdzony
+                            </label>
+                            <label for="approved">
+                                <input type="radio" id="approved" name="approved" value="1" {if $form->approved == '1'}checked{/if}>
+                                Zatwierdzony
+                            </label>
+                            <label for="rejected">
+                                <input type="radio" id="rejected" name="approved" value="2" {if $form->approved == '2'}checked{/if}>
+                                Odrzucony
+                            </label>
+                        </div>
                     </div>
                     <div class="pure-controls">
                         <input type="submit" class="pure-button pure-button-primary" value="Zapisz"/>

@@ -31,7 +31,7 @@
                 <th>nazwisko</th>
             {/if}
             {if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
-                <th>zatwierdz [0/1]</th>
+                <th>status</th>
             {/if}
             {if core\RoleUtils::inRole("user") or core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
                 <th>opcje</th>
@@ -78,7 +78,14 @@
                         <td>{$p["date_end"]}</td>
                         <td title="ID: {$p["id_user"]}">{$p["name"]}</td>
                         <td title="ID: {$p["id_user"]}">{$p["surname"]}</td>
-                        <td>{$p["approved"]}</td>
+                        <td style="color: {if $p['approved'] == 1}green{elseif $p['approved'] == 2}red{else}black{/if}">
+                            {if {$p["approved"]} == 0}
+                                Niezatwierdzony
+                            {elseif {$p["approved"]} == 1}
+                                Zatwierdzony
+                            {elseif {$p["approved"]} == 2}
+                                Odrzucony
+                            {/if}
                         <td>
                             <a class="button-small pure-button button-secondary" href="{$conf->action_url}charterEdit/{$p['id_charter']}">Edytuj</a>
                             <a class="button-small pure-button button-warning" href="{$conf->action_url}charterDelete/{$p['id_charter']}">Usuń</a>
