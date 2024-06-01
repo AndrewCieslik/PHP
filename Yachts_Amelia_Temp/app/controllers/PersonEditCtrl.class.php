@@ -85,7 +85,6 @@ class PersonEditCtrl {
                     $this->form->phone = $record['phone'];
                     $this->form->login = $record['login'];
                     $this->form->password = $record['password'];
-                    $this->form->password2 = $record['password2'];
 
                 } else {
                     Utils::addErrorMessage('Nie znaleziono użytkownika o podanym ID.');
@@ -188,8 +187,6 @@ class PersonEditCtrl {
 
     public function generateView() {
         App::getSmarty()->assign('form', $this->form);
-        App::getSmarty()->assign('_SESSION', $_SESSION);
         App::getSmarty()->display('PersonEdit.tpl');
     }
-
 }
