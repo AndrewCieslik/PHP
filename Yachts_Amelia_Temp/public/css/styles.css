@@ -11,6 +11,13 @@ body {
 .topspace {
   margin-top: 40px;
 }
+
+/* Centering the table within the container */
+.table-wrapper {
+  margin: 0 auto;
+
+}
+
 /*********************************************************************
 
 

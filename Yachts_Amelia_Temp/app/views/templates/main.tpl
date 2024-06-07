@@ -5,10 +5,10 @@
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
-	
+
 	<title>Portal charterowy</title>
 	<link rel="shortcut icon" href="{$conf->app_url}/images/gt_favicon.png">
-	
+
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
@@ -31,7 +31,7 @@
 
 	<nav class="navbar navbar-default navbar-sticky">
 		<div class="container-fluid">
-			
+
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 			</div>
@@ -63,24 +63,24 @@
 							<li><a href="{$conf->action_root}logList" class="pure-menu-heading pure-menu-link">Logi</a></li>
 						{/if}
 							<li><a href="{$conf->action_root}logout" class="pure-menu-heading pure-menu-link">Wyloguj</a></li>
-					{else}	
+					{else}
 							<li><a href="{$conf->action_root}login" class="pure-menu-heading pure-menu-link">Zaloguj</a></li>
 							<li><a href="{$conf->action_root}register" class="pure-menu-heading pure-menu-link">Zarejestruj</a></li>
 					{/if}
 				</ul>
-			</div>	
-		</div>	
+			</div>
+		</div>
 	</nav>
 </header>
 
 <main id="main">
 
 	<div class="container">
-		
+
 		<div class="row section topspace">
 			<div class="col-md-12">
 			{block name=top} {/block}
-			{block name=messages}	
+			{block name=messages}
 				{if $msgs->isMessage()}
 					<div class="messages bottom-margin">
 						<ul>
@@ -92,16 +92,16 @@
 						</ul>
 					</div>
 				{/if}
-				
+
 			{/block}
 			{block name=bottom} {/block}
 		</div>
 	</div>
-		
+
 <footer id="underfooter">
 	<div class="container">
 		<div class="row">
-			
+
 			<div class="col-md-6 widget">
 				<div class="widget-body">
 					<p>Copyright &copy; 2024, Andrzej C</p>

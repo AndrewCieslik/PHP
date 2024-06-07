@@ -18,7 +18,7 @@
 			<tr>
 				<th>Modele</th>
 				<th>Nazwa</th>
-				<th>jachty Naszej floty</th>
+				<th>Jachty Naszej floty</th>
 				{if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
 					<th>opcje</th>
 				{/if}

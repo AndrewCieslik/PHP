@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2024-05-30 09:25:32
+/* Smarty version 3.1.30, created on 2024-06-07 23:10:27
   from "C:\xampp\htdocs\PHP\Yachts_Amelia_Temp\app\views\YachtList.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_665829ec80f202_83647451',
+  'unifunc' => 'content_66637743d1bd51_75109204',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '613e981c8548d165dc9c0f08a75229929c58d24b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\PHP\\Yachts_Amelia_Temp\\app\\views\\YachtList.tpl',
-      1 => 1717053930,
+      1 => 1717794627,
       2 => 'file',
     ),
   ),
@@ -21,26 +21,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:main.tpl' => 1,
   ),
 ),false)) {
-function content_665829ec80f202_83647451 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66637743d1bd51_75109204 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1788814950665829ec7e4509_43878137', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_109094181366637743cff8b3_05900326', 'bottom');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_92969892665829ec80dad3_87921482', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_36441371466637743d1b377_10957268', 'top');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild();
 $_smarty_tpl->_subTemplateRender("file:main.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 2, false);
 }
 /* {block 'bottom'} */
-class Block_1788814950665829ec7e4509_43878137 extends Smarty_Internal_Block
+class Block_109094181366637743cff8b3_05900326 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -61,7 +61,7 @@ yachtList">
 }
 /* {/block 'bottom'} */
 /* {block 'top'} */
-class Block_92969892665829ec80dad3_87921482 extends Smarty_Internal_Block
+class Block_36441371466637743d1b377_10957268 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -71,7 +71,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 			<tr>
 				<th>Modele</th>
 				<th>Nazwa</th>
-				<th>jachty Naszej floty</th>
+				<th>Jachty Naszej floty</th>
 				<?php if (core\RoleUtils::inRole("manager") || core\RoleUtils::inRole("admin")) {?>
 					<th>opcje</th>
 				<?php }?>

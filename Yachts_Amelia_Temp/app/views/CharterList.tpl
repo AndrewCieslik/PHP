@@ -5,8 +5,18 @@
         <form class="pure-form pure-form-stacked" action="{$conf->action_url}charterList">
             <legend>Opcje wyszukiwania</legend>
             <fieldset>
-                <input type="text" placeholder="numer charteru" name="sf_charter" value="{$searchForm->id_charter}" /><br />
-                <button type="submit" class="pure-button pure-button-primary">Filtruj</button>
+{*                <input type="text" placeholder="numer charteru" name="sf_charter" value="{$searchForm->id_charter}" /><br />*}
+                {if !core\RoleUtils::inRole("user")}
+                    <select name="sf_yacht_name">
+                        <option value="">Wybierz jacht</option>
+                        {foreach $yachts as $yacht}
+                            <option value="{$yacht}" {if $searchForm->yacht_name == $yacht}selected{/if}>{$yacht}</option>
+                        {/foreach}
+                    </select><br />
+                    <button type="submit" class="pure-button pure-button-primary">Filtruj</button>
+                {/if}
+
+
             </fieldset>
         </form>
     </div>
@@ -15,7 +25,6 @@
             <a class="pure-button button-success" href="{$conf->action_root}charterNew">+ Nowy charter</a>
         </div>
     {/if}
-
 {/block}
 
 {block name=bottom}
