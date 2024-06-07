@@ -30,6 +30,8 @@ Konfiguracja systemu.
 
 
 update:
+poprawione: blad weryfikacji roli zapisanej w bazie
+
 -brak id_yacht->wszedzie nazwa jachtu (w zamawianiu i przeglądaniu)
 -id_user po najechaniu na imie lub nazwisko (manager i admin)
 -manager nie edytuje uzytkownikow, tylko admin
