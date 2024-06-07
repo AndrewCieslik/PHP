@@ -15,9 +15,11 @@
 {/block}
 
 {block name=bottom}
-	<div class="bottom-margin">
-		<a class="pure-button button-success" href="{$conf->action_root}personNew">+ Nowa osoba</a>
-	</div>
+	{if core\RoleUtils::inRole("admin")}
+		<div class="bottom-margin">
+			<a class="pure-button button-success" href="{$conf->action_root}personNew">+ Nowa osoba</a>
+		</div>
+	{/if}
 	<table id="tab_people" class="pure-table pure-table-bordered">
 		<thead>
 		<tr>

@@ -58,8 +58,8 @@
                             <td>{$p["yacht_name"]}</td>
                             <td>{$p["date_start"]}</td>
                             <td>{$p["date_end"]}</td>
-                            <td title="ID: {$p["id_user"]}">{$p["name"]}</td>
-                            <td title="ID: {$p["id_user"]}">{$p["surname"]}</td>
+                            <td>{$p["name"]}</td>
+                            <td>{$p["surname"]}</td>
                             <td>
                                 <a class="button-small pure-button button-secondary" href="{$conf->action_url}charterEdit/{$p['id_charter']}">Edytuj</a>
                                 <a class="button-small pure-button button-warning" href="{$conf->action_url}charterDelete/{$p['id_charter']}">Usuń</a>

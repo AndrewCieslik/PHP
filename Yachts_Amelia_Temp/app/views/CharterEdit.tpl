@@ -22,6 +22,9 @@
                         <label for="date_end">data zakończenia</label>
                         <input id="date_end" type="date" placeholder="data końca" name="date_end" value="{$form->date_end}">
                     </div>
+                {if core\RoleUtils::inRole("user")}
+                    <input type="hidden" name="approved" value="0">
+                {/if}
                 {if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
                     <div class="pure-control-group">
                         <div id="approved">
@@ -47,7 +50,6 @@
             </fieldset>
             <input type="hidden" name="id_charter" value="{$form->id_charter}">
             <input type="hidden" name="id_user" value="{$form->id_user}">
-            <input type="hidden" name="approved" value="{$form->approved}">
         </form>
     </div>
 {/block}
