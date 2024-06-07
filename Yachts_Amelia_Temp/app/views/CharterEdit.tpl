@@ -22,12 +22,8 @@
                         <label for="date_end">data zakończenia</label>
                         <input id="date_end" type="date" placeholder="data końca" name="date_end" value="{$form->date_end}">
                     </div>
-{*                    <div class="pure-control-group">*}
-{*                        <label for="approved">zatwierdź [0/1]</label>*}
-{*                        <input id="approved" type="text" placeholder="[0-nie/ 1-tak]" name="approved" value="0">*}
-{*                    </div>*}
+                {if core\RoleUtils::inRole("manager") or core\RoleUtils::inRole("admin")}
                     <div class="pure-control-group">
-                        <label for="approved">Status zatwierdzenia</label>
                         <div id="approved">
                             <label for="not_approved">
                                 <input type="radio" id="not_approved" name="approved" value="0" {if $form->approved == '0'}checked{/if}>
@@ -43,6 +39,7 @@
                             </label>
                         </div>
                     </div>
+                {/if}
                     <div class="pure-controls">
                         <input type="submit" class="pure-button pure-button-primary" value="Zapisz"/>
                         <a class="pure-button button-secondary" href="{$conf->action_root}charterList">Powrót</a>
@@ -50,6 +47,7 @@
             </fieldset>
             <input type="hidden" name="id_charter" value="{$form->id_charter}">
             <input type="hidden" name="id_user" value="{$form->id_user}">
+            <input type="hidden" name="approved" value="{$form->approved}">
         </form>
     </div>
 {/block}
